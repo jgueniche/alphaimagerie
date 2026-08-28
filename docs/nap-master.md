@@ -29,7 +29,7 @@
 
 ## Entité juridique (mentions légales)
 
-SELAS ALPHA IMAGERIE — SIREN 928 012 830 · SIRET siège 928 012 830 00016 · RCS Pontoise · siège : 2 Mail des Cerclades, 95000 Cergy · capital : `[[À COMPLÉTER : q.23 — note LCEN]]` · TVA : FR83 928 012 830 `[[À CONFIRMER]]` · Directeur de la publication : Dr Jérémy Gueniche `[[À CONFIRMER : q.24]]`.
+SELAS ALPHA IMAGERIE — société d'exercice libéral par actions simplifiée au **capital de 10 000 €** (confirmé client 28/08/2026) · SIREN 928 012 830 · SIRET siège 928 012 830 00016 · RCS Pontoise · siège : 2 Mail des Cerclades, 95000 Cergy · TVA : FR83 928 012 830 `[[À CONFIRMER]]` · Directeur de la publication : Dr Jérémy Gueniche (repris du site actuel — q.24).
 
 ## Harmonisations à opérer à la bascule (ordre)
 

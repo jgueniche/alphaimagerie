@@ -55,8 +55,8 @@
 ## P0.4 — Juridique / mentions légales
 
 22. Registre (INSEE/RNE/BODACC, à confirmer) : **SELAS ALPHA IMAGERIE**, SIREN **928 012 830**, SIRET siège **928 012 830 00016**, **RCS Pontoise**, immatriculée le **24/04/2024** (INSEE : création 23/05/2024, début d'activité 19/04/2024), NAF 86.22A, siège **2 Mail des Cerclades, 95000 Cergy**, Président Jérémy Gueniche, DG Yoram Gueniche. Exact ?
-23. **Capital social** : `[[À COMPLÉTER]]` €
-    > **Réponse client (28/08/2026)** : « pas besoin sur un site vitrine ». **Note juridique** : l'art. 6, III, 1°, c) LCEN (loi n° 2004-575) impose, pour un éditeur personne morale inscrite au RCS, la publication du « numéro de son inscription, **son capital social** et l'adresse de son siège social » — sanction : 1 an / 75 000 € pour le dirigeant (375 000 € personne morale). En attente : soit le montant, soit une omission expressément assumée par le directeur de la publication.
+23. **Capital social** : ✅ **Répondu (28/08/2026) : 10 000 €** (« SELAS Alpha Imagerie, 10 000 euros de capital social »). Intégré aux mentions légales et à `docs/nap-master.md`.
+    > Note conservée pour mémoire : l'art. 6, III, 1°, c) LCEN impose la publication du capital social pour un éditeur personne morale inscrite au RCS.
 24. **Directeur de la publication** : Dr Jérémy Gueniche (comme aujourd'hui) ? Contact affiché : contact@alphaimagerie.fr (l'actuel `Jgueniche@yahoo.fr` sera retiré). OK ?
 25. **DPO / référent RGPD** : désigné (nom/contact) ou à désigner ? : `[[À COMPLÉTER]]`
 26. **Ordre des médecins** : conseil départemental d'inscription et n° RPPS à citer pour chaque praticien mentionné : `[[À COMPLÉTER]]`

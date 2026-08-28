@@ -48,5 +48,5 @@ Lighthouse mobile ≥ 95/100/100/100 ; LCP < 1,8 s, CLS < 0,05, INP < 200 ms (la
 - **Goussainville : teaser seulement** — « nouveau centre Goussainville Gare, au sein d'une maison de santé, ouverture prévue fin 2027 » ; aucune coordonnée publiée, pas de pages modalité×ville au lancement.
 - Conventionnement : secteur 2, dépassements possibles, tiers payant (validé client).
 - E-mail unique : contact@alphaimagerie.fr (bannir `info@`).
-- SELAS ALPHA IMAGERIE — SIREN 928 012 830, RCS Pontoise, siège 2 Mail des Cerclades 95000 Cergy (capital : en attente, note LCEN dans `docs/questions.md` q.23 ; DPO : q.25).
+- SELAS ALPHA IMAGERIE — **capital 10 000 €** (confirmé 28/08/2026), SIREN 928 012 830, RCS Pontoise, siège 2 Mail des Cerclades 95000 Cergy (DPO : q.25 en attente).
 - Doctolib Cergy : https://www.doctolib.fr/centre-d-imagerie-medicale/cergy/alpha-imagerie · Portail résultats : https://imcp-dmz.xplore.fr/Xaportaildiffusionmobile

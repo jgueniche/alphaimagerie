@@ -1,0 +1,98 @@
+import type { Metadata } from "next";
+import { Breadcrumb } from "@/components/breadcrumb";
+import { Confirmer } from "@/components/confirmer";
+import { CERGY, SITE } from "@/lib/site";
+
+export const metadata: Metadata = {
+  title: { absolute: "Mentions légales – Alpha Imagerie" },
+  description:
+    "Mentions légales du site alphaimagerie.fr : éditeur SELAS Alpha Imagerie (RCS Pontoise), directeur de la publication, hébergeur, profession réglementée.",
+  alternates: { canonical: "/mentions-legales" },
+};
+
+export default function MentionsLegalesPage() {
+  return (
+    <>
+      <Breadcrumb items={[{ label: "Mentions légales", href: "/mentions-legales" }]} />
+      <div className="mx-auto max-w-6xl px-4 pt-6 sm:px-6">
+        <h1 className="text-3xl font-extrabold sm:text-4xl">Mentions légales</h1>
+        <div className="prose prose-slate mt-6 prose-headings:font-display prose-headings:text-brand-900 prose-a:text-action">
+          <h2>Éditeur du site</h2>
+          <p>
+            Le site <strong>www.alphaimagerie.fr</strong> est édité par la{" "}
+            <strong>SELAS ALPHA IMAGERIE</strong>, société d’exercice libéral par actions
+            simplifiée au capital de <strong>10 000 €</strong>, immatriculée au registre du
+            commerce et des sociétés de <strong>Pontoise</strong> sous le numéro{" "}
+            <strong>928 012 830</strong> (SIRET du siège : 928 012 830 00016), dont le siège
+            social est situé <strong>2 Mail des Cerclades, 95000 Cergy</strong>.
+          </p>
+          <p>
+            Téléphone : <a href={`tel:${CERGY.phoneE164}`}>{CERGY.phoneDisplay}</a> — E-mail :{" "}
+            <a href={`mailto:${SITE.email}`}>{SITE.email}</a>
+            <br />
+            {/* [[À CONFIRMER : numéro de TVA intracommunautaire (q.27)]] */}
+            N° de TVA intracommunautaire : FR83 928 012 830{" "}
+            <Confirmer>numéro de TVA à vérifier (q.27)</Confirmer>
+          </p>
+
+          <h2>Directeur de la publication</h2>
+          <p>
+            Dr Jérémy Gueniche, président de la SELAS ALPHA IMAGERIE. Contact :{" "}
+            <a href={`mailto:${SITE.email}`}>{SITE.email}</a>.
+          </p>
+
+          <h2>Profession réglementée</h2>
+          <p>
+            Les médecins radiologues exerçant au sein d’Alpha Imagerie sont titulaires du diplôme
+            d’État de docteur en médecine, spécialistes en radiodiagnostic et imagerie médicale,
+            et inscrits au tableau de l’Ordre des médecins.{" "}
+            {/* [[À CONFIRMER : conseil départemental d'inscription et numéros RPPS (q.26)]] */}
+            <Confirmer>conseil départemental d’inscription et numéros RPPS (q.26)</Confirmer>
+          </p>
+          <p>
+            Autorité de rattachement : Conseil national de l’Ordre des médecins —{" "}
+            <a href="https://www.conseil-national.medecin.fr" target="_blank" rel="noopener">
+              conseil-national.medecin.fr
+            </a>
+            . La profession est régie par le code de déontologie médicale (articles R.4127-1 à
+            R.4127-112 du code de la santé publique).
+          </p>
+
+          <h2>Hébergeur</h2>
+          <p>
+            Vercel Inc., 440 N Barranca Ave #4133, Covina, CA 91723, États-Unis —{" "}
+            <a href="https://vercel.com" target="_blank" rel="noopener">
+              vercel.com
+            </a>
+            . Ce site est un site d’information statique : il n’héberge ni ne traite aucune donnée
+            de santé.
+          </p>
+
+          <h2>Données personnelles</h2>
+          <p>
+            Les modalités de traitement des données personnelles (formulaire de contact, mesure
+            d’audience) sont détaillées dans la politique de confidentialité, en cours de
+            rédaction et publiée avant la mise en ligne du site.{" "}
+            {/* [[À CONFIRMER : DPO ou référent RGPD à désigner (q.25)]] */}
+            <Confirmer>DPO / référent RGPD à désigner (q.25)</Confirmer>
+          </p>
+
+          <h2>Prise de rendez-vous et résultats</h2>
+          <p>
+            La prise de rendez-vous en ligne est assurée par Doctolib (Doctolib GmbH / Doctolib
+            SAS), service tiers accessible par lien depuis ce site. La consultation des comptes
+            rendus et images est assurée par le portail sécurisé Xplore, service tiers exploité
+            indépendamment de ce site.
+          </p>
+
+          <h2>Propriété intellectuelle</h2>
+          <p>
+            L’ensemble des contenus de ce site (textes, illustrations, logo, pictogrammes) est la
+            propriété de la SELAS ALPHA IMAGERIE, sauf mention contraire. Toute reproduction ou
+            représentation, totale ou partielle, sans autorisation écrite préalable est interdite.
+          </p>
+        </div>
+      </div>
+    </>
+  );
+}
