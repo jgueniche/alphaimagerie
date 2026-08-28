@@ -1,0 +1,104 @@
+cluster;intention;mot_cle;page_cible;priorite;notes
+locale;transactionnelle;irm cergy;/centres/cergy/irm;P1;requete reine — landing Ads
+locale;transactionnelle;irm cergy pontoise;/centres/cergy/irm;P1;
+locale;transactionnelle;centre irm cergy;/centres/cergy/irm;P1;
+locale;transactionnelle;irm 95;/centres/cergy/irm;P2;
+locale;transactionnelle;irm val d'oise;/centres/cergy/irm;P2;
+locale;transactionnelle;rdv irm cergy;/prendre-rendez-vous;P1;
+locale;transactionnelle;irm sans delai 95;/centres/cergy/irm;P2;promesse delai uniquement si q.21 confirmee
+locale;transactionnelle;irm dimanche 95;/centres/cergy/irm;P1;argument 7j/7 feries inclus
+locale;transactionnelle;irm ouverte dimanche val d'oise;/centres/cergy/irm;P2;
+locale;transactionnelle;radiologie ouverte dimanche 95;/centres/cergy;P1;
+locale;transactionnelle;irm jour ferie ile de france;/centres/cergy/irm;P3;
+locale;transactionnelle;scanner cergy;/centres/cergy/scanner;P1;landing Ads
+locale;transactionnelle;scanner cergy pontoise;/centres/cergy/scanner;P1;
+locale;transactionnelle;scanner 95 sans rdv;/prendre-rendez-vous;P3;pas de sans-rdv — repondre honnetement
+locale;transactionnelle;radiologie cergy;/centres/cergy;P1;
+locale;transactionnelle;radiologie cergy prefecture;/centres/cergy;P1;quartier + RER A
+locale;transactionnelle;centre de radiologie cergy;/centres/cergy;P1;
+locale;transactionnelle;centre imagerie medicale cergy;/centres/cergy;P1;
+locale;transactionnelle;radiologue cergy;/centres/cergy;P2;
+locale;transactionnelle;echographie cergy;/centres/cergy/echographie;P1;
+locale;transactionnelle;echographie val d'oise;/centres/cergy/echographie;P2;
+locale;transactionnelle;doppler cergy;/centres/cergy/echographie;P2;
+locale;transactionnelle;mammographie cergy;/centres/cergy/mammographie;P1;
+locale;transactionnelle;mammographie 95;/centres/cergy/mammographie;P2;
+locale;transactionnelle;depistage cancer du sein cergy;/centres/cergy/mammographie;P1;programme organise
+locale;transactionnelle;tomosynthese cergy;/centres/cergy/mammographie;P2;equipement Hologic 3D confirme
+locale;transactionnelle;radiographie cergy;/centres/cergy/radiographie;P1;
+locale;transactionnelle;radio cergy sans rdv;/centres/cergy/radiographie;P2;politique acces a confirmer (q.19)
+locale;transactionnelle;osteodensitometrie cergy;/centres/cergy/osteodensitometrie;P1;
+locale;transactionnelle;densitometrie osseuse 95;/centres/cergy/osteodensitometrie;P2;
+locale;transactionnelle;infiltration cergy;/examens/radiologie-interventionnelle;P1;
+locale;transactionnelle;infiltration sous echographie 95;/examens/radiologie-interventionnelle;P2;
+locale;transactionnelle;biopsie mammaire cergy;/examens/radiologie-interventionnelle;P2;imagerie de la femme
+locale;transactionnelle;hysterosalpingographie 95;/examens/hysterosalpingographie;P1;tres faible concurrence
+locale;transactionnelle;hysterosalpingographie ile de france;/examens/hysterosalpingographie;P2;
+locale;transactionnelle;radiologie goussainville;/centres/goussainville;P2;teaser fin 2027 — poser l'ancrage des maintenant
+locale;transactionnelle;irm goussainville;/centres/goussainville;P3;activable a l'ouverture selon plateau
+locale;transactionnelle;centre imagerie goussainville;/centres/goussainville;P2;
+modalite;informationnelle-transactionnelle;irm genou;/examens/irm/genou;P1;
+modalite;informationnelle-transactionnelle;irm cerebrale;/examens/irm/cerebrale;P1;
+modalite;informationnelle-transactionnelle;irm lombaire;/examens/irm/rachis-lombaire;P1;
+modalite;informationnelle-transactionnelle;irm cervicale;/examens/irm/cervicale;P2;
+modalite;informationnelle-transactionnelle;irm epaule;/examens/irm/epaule;P1;
+modalite;informationnelle-transactionnelle;irm hanche;/examens/irm/hanche;P2;
+modalite;informationnelle-transactionnelle;irm cheville;/examens/irm/cheville-pied;P2;
+modalite;informationnelle-transactionnelle;irm poignet;/examens/irm/poignet-main;P3;
+modalite;informationnelle-transactionnelle;irm prostate;/examens/irm/prostatique;P1;
+modalite;informationnelle-transactionnelle;irm prostate pirads;/examens/irm/prostatique;P2;lectorat mixte patients/prescripteurs
+modalite;informationnelle-transactionnelle;irm pelvienne;/examens/irm/pelvienne;P1;endometriose — reseau EndoIDF citable
+modalite;informationnelle-transactionnelle;irm pelvienne endometriose;/examens/irm/pelvienne;P1;
+modalite;informationnelle-transactionnelle;irm mammaire;/examens/irm/mammaire;P1;
+modalite;informationnelle-transactionnelle;irm abdominale;/examens/irm/abdominale-hepatique;P2;
+modalite;informationnelle-transactionnelle;irm hepatique;/examens/irm/abdominale-hepatique;P3;
+modalite;informationnelle-transactionnelle;scanner thoracique;/examens/scanner/thoracique;P1;
+modalite;informationnelle-transactionnelle;scanner abdominal;/examens/scanner/abdomino-pelvien;P1;
+modalite;informationnelle-transactionnelle;scanner abdomino pelvien;/examens/scanner/abdomino-pelvien;P2;
+modalite;informationnelle-transactionnelle;scanner cerebral;/examens/scanner/cerebral;P2;
+modalite;informationnelle-transactionnelle;scanner des sinus;/examens/scanner/sinus;P2;
+modalite;informationnelle-transactionnelle;scanner rachis lombaire;/examens/scanner/rachis;P3;
+modalite;informationnelle-transactionnelle;uroscanner;/examens/scanner/uroscanner;P2;sous reserve q.18
+modalite;informationnelle-transactionnelle;echographie abdominale;/examens/echographie/abdominale;P1;
+modalite;informationnelle-transactionnelle;echographie pelvienne;/examens/echographie/pelvienne;P1;
+modalite;informationnelle-transactionnelle;echographie thyroide;/examens/echographie/thyroide;P1;
+modalite;informationnelle-transactionnelle;echo doppler veineux;/examens/echographie/doppler-veineux-arteriel;P1;
+modalite;informationnelle-transactionnelle;echographie mammaire;/examens/echographie/mammaire;P1;
+modalite;informationnelle-transactionnelle;echographie musculo squelettique;/examens/echographie/musculo-squelettique;P3;
+modalite;informationnelle-transactionnelle;mammographie tomosynthese;/examens/mammographie;P2;
+modalite;informationnelle-transactionnelle;prp injection genou;/examens/radiologie-interventionnelle;P2;ton strictement informatif (deontologie)
+modalite;informationnelle-transactionnelle;viscosupplementation acide hyaluronique;/examens/radiologie-interventionnelle;P2;
+modalite;informationnelle-transactionnelle;cytoponction thyroide;/examens/radiologie-interventionnelle;P2;
+preparation;inquietude;irm a jeun;/examens/irm;P1;FAQ + fiche preparation
+preparation;inquietude;combien de temps dure une irm;/examens/irm;P1;FAQ
+preparation;inquietude;irm claustrophobie;/examens/irm;P1;FAQ + reassurance (casque, musique)
+preparation;inquietude;irm pacemaker;/examens/irm;P1;contre-indications
+preparation;inquietude;irm enceinte;/examens/irm;P2;
+preparation;inquietude;irm avec injection gadolinium effets;/examens/irm;P2;
+preparation;inquietude;ordonnance obligatoire irm;/faq;P1;
+preparation;inquietude;scanner a jeun;/examens/scanner;P1;
+preparation;inquietude;scanner produit de contraste creatinine;/examens/scanner;P1;
+preparation;inquietude;metformine scanner;/examens/scanner;P2;
+preparation;inquietude;allergie iode scanner;/examens/scanner;P2;
+preparation;inquietude;scanner enceinte;/examens/scanner;P2;
+preparation;inquietude;mammographie douloureux;/examens/mammographie;P2;
+preparation;inquietude;quand faire une mammographie;/examens/mammographie;P1;depistage 50-74
+preparation;inquietude;hysterosalpingographie douleur;/examens/hysterosalpingographie;P1;
+preparation;inquietude;hysterosalpingographie quel jour du cycle;/examens/hysterosalpingographie;P1;J6-J12 valide client
+preparation;inquietude;osteodensitometrie remboursement;/examens/osteodensitometrie;P1;conditions secu validees
+preparation;inquietude;preparation examen radiologie documents;/preparer-mon-examen;P1;checklist
+resultats;post-examen;resultats irm delai;/resultats;P1;
+resultats;post-examen;compte rendu radiologie en ligne;/resultats;P1;portail Xplore
+resultats;post-examen;recuperer images scanner en ligne;/resultats;P2;
+resultats;post-examen;dmp compte rendu radiologie;/resultats;P3;
+prescripteurs;b2b;irm urgente val d'oise;/professionnels-de-sante;P1;ligne dediee (q.41)
+prescripteurs;b2b;portail medecin imagerie cergy;/professionnels-de-sante;P2;
+prescripteurs;b2b;adresser un patient radiologie cergy;/professionnels-de-sante;P2;
+marque;navigationnelle;alpha imagerie;/;P1;
+marque;navigationnelle;alpha imagerie cergy;/centres/cergy;P1;
+marque;navigationnelle;alpha imagerie doctolib;/prendre-rendez-vous;P1;
+marque;navigationnelle;alpha imagerie horaires;/centres/cergy;P1;
+marque;navigationnelle;alpha imagerie telephone;/contact;P2;
+marque;navigationnelle;alpha imagerie resultats;/resultats;P1;
+recrutement;emploi;emploi manipulateur radio cergy;/recrutement;P2;JobPosting des offres fournies
+recrutement;emploi;radiologue remplacement val d'oise;/recrutement;P3;
