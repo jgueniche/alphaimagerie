@@ -119,3 +119,4 @@
 55. **Langues parlées** à l'accueil (GBP + pages centres) : `[[À COMPLÉTER]]`
 56. **PMR** : GBP Cergy indique entrée/parking/WC accessibles — précisions à afficher (ascenseur, table adaptée…) + équivalent Goussainville : `[[À COMPLÉTER]]`
 57. L'Instagram se présente comme « **centre de référence imagerie de la femme** » : cette formulation relève du superlatif à éviter sur le site (R.4127-19-1). Je propose « pôle dédié à l'imagerie de la femme » — OK ?
+58. **RGPD — durées de conservation à valider** (publiées le 28/08 dans `/politique-de-confidentialite` et `docs/rgpd/registre-traitement.md`) : e-mails du formulaire de contact supprimés **au plus tard 12 mois** après le dernier échange ; candidatures supprimées **au plus tard 2 ans** après réception (recommandation CNIL). Ces engagements opérationnels vous conviennent-ils (c'est le secrétariat qui devra les appliquer) ?

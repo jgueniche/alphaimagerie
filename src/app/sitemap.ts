@@ -25,6 +25,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/recrutement",
     "/contact",
     "/mentions-legales",
+    "/politique-de-confidentialite",
+    "/cookies",
+    "/accessibilite",
+    "/plan-du-site",
   ];
   const examens = listExamens().map((s) => `/examens/${s}`);
   const zones = ZONE_PARENTS.flatMap((parent) =>
@@ -48,6 +52,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     url: `${SITE.url}${path}`,
     lastModified: new Date("2026-08-28"),
     changeFrequency: "monthly",
-    priority: path === "" ? 1 : path === "/mentions-legales" ? 0.3 : 0.8,
+    priority:
+      path === ""
+        ? 1
+        : ["/mentions-legales", "/politique-de-confidentialite", "/cookies", "/accessibilite", "/plan-du-site"].includes(path)
+          ? 0.3
+          : 0.8,
   }));
 }

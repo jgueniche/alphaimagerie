@@ -66,10 +66,11 @@ export default function MentionsLegalesPage() {
 
           <h2>Données personnelles</h2>
           <p>
-            Les modalités de traitement des données personnelles (formulaire de contact, mesure
-            d’audience) sont détaillées dans la politique de confidentialité, en cours de
-            rédaction et publiée avant la mise en ligne du site. Pour toute question relative à
-            vos données personnelles : <a href={`mailto:${SITE.email}`}>{SITE.email}</a>.
+            Les modalités de traitement des données personnelles sont détaillées dans la{" "}
+            <a href="/politique-de-confidentialite">politique de confidentialité</a> ; la
+            gestion des traceurs est décrite sur la page <a href="/cookies">cookies</a>. Pour
+            toute question relative à vos données personnelles :{" "}
+            <a href={`mailto:${SITE.email}`}>{SITE.email}</a>.
           </p>
 
           <h2>Prise de rendez-vous et résultats</h2>

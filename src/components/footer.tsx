@@ -53,9 +53,16 @@ export function Footer() {
       <div className="border-t border-white/15">
         <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-2 px-4 py-4 text-xs text-white/60 sm:px-6">
           <p>© {new Date().getFullYear()} {SITE.legalName} — RCS Pontoise 928 012 830</p>
-          <p>
+          <p className="space-x-2">
             <Link href="/mentions-legales" className="hover:underline">Mentions légales</Link>
-            {" · Confidentialité · Cookies · Accessibilité (Phase 3)"}
+            <span aria-hidden="true">·</span>
+            <Link href="/politique-de-confidentialite" className="hover:underline">Confidentialité</Link>
+            <span aria-hidden="true">·</span>
+            <Link href="/cookies" className="hover:underline">Cookies</Link>
+            <span aria-hidden="true">·</span>
+            <Link href="/accessibilite" className="hover:underline">Accessibilité</Link>
+            <span aria-hidden="true">·</span>
+            <Link href="/plan-du-site" className="hover:underline">Plan du site</Link>
           </p>
         </div>
       </div>
