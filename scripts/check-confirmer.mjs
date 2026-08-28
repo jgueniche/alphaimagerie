@@ -4,7 +4,10 @@
  * des jetons [[À CONFIRMER : …]] dans le contenu ou le code applicatif.
  * En dev/préprod : simple avertissement listant les occurrences.
  *
- * Le build est considéré « production » si VERCEL_ENV === "production" ou CHECK_CONFIRMER === "strict".
+ * Strict (bloquant) si : CHECK_CONFIRMER === "strict", ou déploiement Vercel « production »
+ * depuis la branche `main` (la vraie prod du brief). Tant que la branche de travail sert de
+ * branche par défaut, ses déploiements Vercel sont étiquetés "production" mais restent des
+ * previews d'arbitrage : avertissement seulement.
  */
 import { readdirSync, readFileSync, statSync } from "node:fs";
 import path from "node:path";
@@ -12,7 +15,10 @@ import path from "node:path";
 const ROOTS = ["content", "src"];
 const EXT = new Set([".mdx", ".md", ".ts", ".tsx"]);
 const TOKEN = "[[À CONFIRMER";
-const strict = process.env.VERCEL_ENV === "production" || process.env.CHECK_CONFIRMER === "strict";
+const ref = process.env.VERCEL_GIT_COMMIT_REF;
+const strict =
+  process.env.CHECK_CONFIRMER === "strict" ||
+  (process.env.VERCEL_ENV === "production" && (!ref || ref === "main"));
 
 function* walk(dir) {
   for (const name of readdirSync(dir)) {

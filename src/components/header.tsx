@@ -1,6 +1,8 @@
+import Image from "next/image";
 import Link from "next/link";
 import { CERGY, XPLORE } from "@/lib/site";
 import { PictoPhone } from "@/components/pictos";
+import logo from "../../public/brand/logo-principal-bleu.png";
 
 const NAV = [
   { href: "/examens", label: "Examens" },
@@ -13,13 +15,14 @@ export function Header() {
   return (
     <header className="border-b border-line bg-surface">
       <div className="mx-auto flex max-w-6xl items-center gap-4 px-4 py-3 sm:px-6">
-        <Link href="/" className="flex items-baseline gap-2" aria-label="Alpha Imagerie — accueil">
-          <span className="font-display text-xl font-extrabold tracking-tight text-brand-900">
-            Alpha Imagerie
-          </span>
-          <span className="hidden text-xs font-medium tracking-wide text-ink-600 md:inline">
-            Imagerie médicale · Val-d&rsquo;Oise
-          </span>
+        <Link href="/" className="flex shrink-0 items-center" aria-label="Alpha Imagerie — accueil">
+          <Image
+            src={logo}
+            alt="Alpha Imagerie"
+            priority
+            className="h-11 w-auto"
+            sizes="92px"
+          />
         </Link>
 
         <nav aria-label="Navigation principale" className="ml-auto hidden items-center gap-5 lg:flex">

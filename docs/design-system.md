@@ -4,11 +4,11 @@
 
 ## 1. Couleur
 
-Le bleu de marque est **extrait du logo réel** (PNG HD Wix, couleur dominante à 97 % des pixels opaques) : **`#001068`** — un marine indigo très profond. Il est trop sombre pour servir de couleur d'action : il devient la couleur d'**identité** (titres, footer, fonds de marque), et on en dérive une couleur d'**action** plus lumineuse de même teinte (hue ≈ 228°). À re-vérifier sur le logo vectoriel quand il sera fourni (q.36).
+Le bleu de marque est **extrait du logo réel** (PNG HD Wix, couleur dominante des pixels opaques, mesure exacte) : **`#01176A`** — un marine indigo très profond. Il est trop sombre pour servir de couleur d'action : il devient la couleur d'**identité** (titres, footer, fonds de marque), et on en dérive une couleur d'**action** plus lumineuse de même teinte (hue ≈ 228°). À re-vérifier sur le logo vectoriel quand il sera fourni (q.36).
 
 | Token | Hex | Usage | Contraste sur blanc |
 |---|---|---|---|
-| `brand-900` | `#001068` | identité : H1/H2, footer, fonds profonds (texte blanc dessus : 17,4:1) | 17,4:1 |
+| `brand-900` | `#01176A` | identité : H1/H2, footer, fonds profonds (texte blanc dessus : 17,4:1) | 17,4:1 |
 | `brand-700` | `#1A2FA5` | liens visités/hover appuyé, dégradés discrets | 10,2:1 |
 | `action` (`brand-600`) | `#2447D1` | **CTA primaires (Doctolib, appel), liens, focus ring** | 7,6:1 AA/AAA |
 | `brand-100` | `#E8ECFB` | fonds de sections « wash », hover cartes | — |

@@ -3,10 +3,10 @@
 
 /*
  * Tokens Alpha Imagerie — source de vérité : docs/design-system.md
- * Bleu de marque extrait du logo réel (#001068).
+ * Bleu de marque extrait du logo réel (#01176A).
  */
 @theme {
-  --color-brand-900: #001068;
+  --color-brand-900: #01176a;
   --color-brand-700: #1a2fa5;
   --color-action: #2447d1;
   --color-action-hover: #1a37b0;
