@@ -22,13 +22,17 @@
 | `/examens/irm` | pilier IRM (≥ 900 mots) | gabarit §8.2 ; FAQPage ; ImagingTest (MRI) |
 | `/examens/irm/[zone]` | longue traîne | cerebrale · rachis-lombaire · cervicale · genou · epaule · hanche · cheville-pied · poignet-main · prostatique · pelvienne · mammaire · abdominale-hepatique — arthro-irm & angio-irm `[[À CONFIRMER : pratiqués ? (q.18)]]` |
 | `/examens/scanner` | pilier scanner | irradiation, iode, créatinine, jeûne, metformine |
-| `/examens/scanner/[zone]` | longue traîne | thoracique · abdomino-pelvien · cerebral · rachis · sinus — uroscanner · arthro-scanner · coroscanner · coloscanner `[[À CONFIRMER : q.18]]` |
+| `/examens/scanner/[zone]` | longue traîne | thoracique · abdomino-pelvien · cerebral · rachis · sinus · **score-calcique (confirmé 28/08)** — uroscanner · arthro-scanner · coroscanner · coloscanner `[[À CONFIRMER : q.18 — non cités dans la liste client]]` |
 | `/examens/echographie` (+ `[type]`) | pilier + types | abdominale · pelvienne · thyroide · doppler-veineux-arteriel · mammaire · musculo-squelettique — obstetricale `[[À CONFIRMER : q.18]]` |
 | `/examens/mammographie` | pilier + dépistage organisé | programme 50–74 ans, tomosynthèse |
-| `/examens/radiographie` | pilier | — |
+| `/examens/radiographie` | pilier | + section **radiographie pédiatrique** (confirmée 28/08) |
 | `/examens/osteodensitometrie` | pilier | — |
 | `/examens/hysterosalpingographie` | examen spécifique (pratiqué, quasi aucune concurrence locale) | J6–J12, β-HCG ; imagerie de la femme |
-| `/examens/radiologie-interventionnelle` | pilier interventionnel | infiltrations (radio/écho-guidées), biopsies, cytoponctions, **PRP, viscosupplémentation** (validés Doctolib, q.18) |
+| `/examens/radiologie-interventionnelle` | pilier interventionnel | hub — liste client 28/08 |
+| `/examens/radiologie-interventionnelle/infiltrations` | « infiltration sous scanner/écho » | guidages **échographie, radiographie et scanner** (confirmés 28/08) |
+| `/examens/radiologie-interventionnelle/biopsie-mammaire` | imagerie de la femme | confirmée 28/08 |
+| `/examens/radiologie-interventionnelle/cytoponctions` | « cytoponction thyroïde » | **thyroïde, ganglions, glandes salivaires/parotides** (confirmées 28/08) |
+| `/examens/radiologie-interventionnelle/ponctions-evacuations` | longue traîne | **collections, hématomes, kystes** (confirmées 28/08) — PRP/viscosupplémentation `[[À CONFIRMER : présents dans la description Doctolib mais absents de la liste client]]` |
 | `/preparer-mon-examen` (+ `[slug]`) | préparation / inquiétude | fiches courtes imprimables ; checklist documents (modèle SIMAGO réécrit) |
 | `/resultats` | « résultats irm délai » | portail Xplore, DMP, MS-Santé, délais (q.21) |
 | `/equipe` | E-E-A-T | **2 fiches seulement** : Dr Jérémy Gueniche, Dr Yoram Gueniche (photos à refaire) |

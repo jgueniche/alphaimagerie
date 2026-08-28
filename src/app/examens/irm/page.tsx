@@ -36,7 +36,7 @@ export default function ExamenIrmPage() {
         <h1 className="max-w-3xl text-3xl font-extrabold sm:text-4xl">{fm.title}</h1>
         <p className="mt-3 max-w-2xl text-lg text-ink-600">
           Un examen indolore, sans rayons X, réalisé 7j/7 à Cergy Préfecture sur deux IRM Philips
-          MR5300 (1,5 tesla).
+          MR5300 (1,5 tesla). Rendez-vous le plus souvent sous 48&nbsp;h.
         </p>
 
         <div className="mt-7">

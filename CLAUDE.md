@@ -46,6 +46,7 @@ Lighthouse mobile ≥ 95/100/100/100 ; LCP < 1,8 s, CLS < 0,05, INP < 200 ms (la
 - **Plateau Cergy confirmé** : 2 IRM Philips MR5300 1,5 T · scanner CT 3500 `[[À CONFIRMER : constructeur]]` · mammographe Hologic tomosynthèse 3D avec IA intégrée · table télécommandée Stephanix D2RS · 4 échographes Canon · ostéodensitomètre `[[À CONFIRMER : marque]]`.
 - **Équipe affichée : uniquement les Drs Jérémy et Yoram Gueniche** (pas de liste des autres praticiens) ; photos actuelles à remplacer.
 - **Goussainville : teaser seulement** — « nouveau centre Goussainville Gare, au sein d'une maison de santé, ouverture prévue fin 2027 » ; aucune coordonnée publiée, pas de pages modalité×ville au lancement.
+- **Examens confirmés (28/08)** : IRM, scanner (dont score calcique), radiographie (dont pédiatrique), mammographie, échographie + Doppler artériel/veineux, ostéodensitométrie, hystérosalpingographie, infiltrations (écho/radio/scanner-guidées), biopsie mammaire, cytoponctions (thyroïde, ganglions, glandes salivaires/parotides), ponctions-évacuations (collections/hématomes/kystes). **Délais de RDV < 48 h confirmés** — écrire « le plus souvent sous 48 h », jamais de promesse absolue. Délai de remise des résultats : encore à confirmer.
 - Conventionnement : secteur 2, dépassements possibles, tiers payant (validé client).
 - E-mail unique : contact@alphaimagerie.fr (bannir `info@`).
 - SELAS ALPHA IMAGERIE — **capital 10 000 €** (confirmé 28/08/2026), SIREN 928 012 830, RCS Pontoise, siège 2 Mail des Cerclades 95000 Cergy (DPO : q.25 en attente).

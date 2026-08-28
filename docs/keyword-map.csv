@@ -102,3 +102,39 @@ marque;navigationnelle;alpha imagerie telephone;/contact;P2;
 marque;navigationnelle;alpha imagerie resultats;/resultats;P1;
 recrutement;emploi;emploi manipulateur radio cergy;/recrutement;P2;JobPosting des offres fournies
 recrutement;emploi;radiologue remplacement val d'oise;/recrutement;P3;
+locale;transactionnelle;score calcique cergy;/examens/scanner/score-calcique;P1;motif confirme client 28/08
+locale;transactionnelle;score calcique 95;/examens/scanner/score-calcique;P2;
+locale;transactionnelle;scanner score calcique val d'oise;/examens/scanner/score-calcique;P2;
+locale;transactionnelle;cytoponction thyroide cergy;/examens/radiologie-interventionnelle/cytoponctions;P1;motif confirme
+locale;transactionnelle;cytoponction thyroide 95;/examens/radiologie-interventionnelle/cytoponctions;P2;
+locale;transactionnelle;cytoponction ganglion cergy;/examens/radiologie-interventionnelle/cytoponctions;P2;motif confirme
+locale;transactionnelle;cytoponction parotide ile de france;/examens/radiologie-interventionnelle/cytoponctions;P2;glandes salivaires — longue traine rare
+locale;transactionnelle;biopsie mammaire sous echographie cergy;/examens/radiologie-interventionnelle/biopsie-mammaire;P1;motif confirme
+locale;transactionnelle;biopsie mammaire val d'oise;/examens/radiologie-interventionnelle/biopsie-mammaire;P2;
+locale;transactionnelle;infiltration sous scanner cergy;/examens/radiologie-interventionnelle/infiltrations;P1;guidage scanner confirme
+locale;transactionnelle;infiltration sous scanner 95;/examens/radiologie-interventionnelle/infiltrations;P2;
+locale;transactionnelle;infiltration hanche sous scanner;/examens/radiologie-interventionnelle/infiltrations;P2;
+locale;transactionnelle;infiltration echoguidee epaule cergy;/examens/radiologie-interventionnelle/infiltrations;P2;
+locale;transactionnelle;infiltration lombaire val d'oise;/examens/radiologie-interventionnelle/infiltrations;P2;guidage radio/scanner
+locale;transactionnelle;ponction kyste cergy;/examens/radiologie-interventionnelle/ponctions-evacuations;P2;motif confirme
+locale;transactionnelle;ponction evacuation hematome 95;/examens/radiologie-interventionnelle/ponctions-evacuations;P3;
+locale;transactionnelle;drainage collection imagerie val d'oise;/examens/radiologie-interventionnelle/ponctions-evacuations;P3;
+locale;transactionnelle;radiographie enfant cergy;/examens/radiographie;P1;radio pediatrique confirmee
+locale;transactionnelle;radio pediatrique val d'oise;/examens/radiographie;P2;
+locale;transactionnelle;doppler arteriel cergy;/examens/echographie/doppler-veineux-arteriel;P1;motif confirme
+locale;transactionnelle;doppler veineux membres inferieurs cergy;/examens/echographie/doppler-veineux-arteriel;P1;
+locale;transactionnelle;echo doppler 95;/examens/echographie/doppler-veineux-arteriel;P2;
+locale;transactionnelle;rdv radiologie sous 48h;/prendre-rendez-vous;P1;delai <48h confirme client — formulation « le plus souvent sous 48 h »
+locale;transactionnelle;irm rapide cergy;/centres/cergy/irm;P1;idem — jamais de promesse absolue
+locale;transactionnelle;scanner rapide val d'oise;/centres/cergy/scanner;P2;
+preparation;inquietude;score calcique a jeun;/examens/scanner/score-calcique;P2;FAQ
+preparation;inquietude;score calcique comment ca se passe;/examens/scanner/score-calcique;P2;FAQ
+preparation;inquietude;score calcique remboursement;/examens/scanner/score-calcique;P2;FAQ
+preparation;inquietude;cytoponction thyroide douloureux;/examens/radiologie-interventionnelle/cytoponctions;P1;FAQ
+preparation;inquietude;cytoponction resultats combien de temps;/examens/radiologie-interventionnelle/cytoponctions;P2;FAQ
+preparation;inquietude;biopsie mammaire douleur;/examens/radiologie-interventionnelle/biopsie-mammaire;P1;FAQ
+preparation;inquietude;biopsie mammaire resultats delai;/examens/radiologie-interventionnelle/biopsie-mammaire;P2;FAQ
+preparation;inquietude;infiltration cortisone effets secondaires;/examens/radiologie-interventionnelle/infiltrations;P1;FAQ — ton prudent
+preparation;inquietude;infiltration combien de temps pour agir;/examens/radiologie-interventionnelle/infiltrations;P2;FAQ
+preparation;inquietude;doppler comment se passe l'examen;/examens/echographie/doppler-veineux-arteriel;P2;FAQ
+preparation;inquietude;radio enfant precautions;/examens/radiographie;P3;radioprotection pediatrique

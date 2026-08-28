@@ -49,8 +49,8 @@ export default function Home() {
           </h1>
           <p className="mt-4 max-w-2xl text-lg text-ink-600">
             IRM, scanner, échographie, mammographie, radiographie, ostéodensitométrie et
-            radiologie interventionnelle — au pied du RER A Cergy Préfecture, sur rendez-vous en
-            ligne ou par téléphone.
+            radiologie interventionnelle — au pied du RER A Cergy Préfecture. Rendez-vous en
+            ligne ou par téléphone, le plus souvent sous 48&nbsp;h.
           </p>
           <div className="mt-8 flex flex-wrap items-center gap-3">
             <a

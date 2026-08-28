@@ -18,8 +18,8 @@ export default function PrendreRdvPage() {
         <h1 className="max-w-3xl text-3xl font-extrabold sm:text-4xl">Prendre rendez-vous</h1>
         <p className="mt-3 max-w-2xl text-lg text-ink-600">
           Munissez-vous de votre <strong>ordonnance</strong> : elle est indispensable pour tout
-          examen d’imagerie. Le sélecteur site → examen (avec les pré-requis de chaque examen)
-          arrivera dans une prochaine version de cette page.
+          examen d’imagerie. Nos délais de rendez-vous sont courts — le plus souvent{" "}
+          <strong>sous 48&nbsp;h</strong>.
         </p>
 
         <div className="mt-8 grid gap-4 md:grid-cols-2">
@@ -55,10 +55,13 @@ export default function PrendreRdvPage() {
           <p>
             <strong className="text-brand-900">Tous nos examens sont ouverts à la réservation en
             ligne</strong>{" "}
-            sur Doctolib : IRM, scanner, échographie, mammographie, radiographie,
-            ostéodensitométrie et gestes interventionnels. Lors de la réservation, Doctolib vous
-            présente le questionnaire et les éventuelles consignes de préparation propres à votre
-            examen. En cas de doute sur le motif à choisir, appelez-nous.
+            sur Doctolib : IRM · scanner (dont score calcique) · radiographie (dont radio
+            pédiatrique) · mammographie · échographie et Doppler artériel/veineux ·
+            ostéodensitométrie · infiltrations (écho-guidées, radio-guidées ou sous scanner) ·
+            biopsie mammaire · cytoponctions (thyroïde, ganglions, glandes salivaires) · ponctions
+            et évacuations (collections, hématomes, kystes) · hystérosalpingographie. Lors de la
+            réservation, Doctolib vous présente le questionnaire et les consignes de préparation
+            propres à votre examen. En cas de doute sur le motif à choisir, appelez-nous.
           </p>
         </div>
       </div>
