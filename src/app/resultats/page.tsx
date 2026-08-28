@@ -1,0 +1,56 @@
+import type { Metadata } from "next";
+import { Breadcrumb } from "@/components/breadcrumb";
+import { XPLORE } from "@/lib/site";
+
+export const metadata: Metadata = {
+  title: { absolute: "Vos résultats d'imagerie en ligne – Alpha Imagerie" },
+  description:
+    "Consultez vos comptes rendus et vos images d'imagerie médicale en ligne via notre portail patients sécurisé. Votre médecin les reçoit par messagerie sécurisée et DMP.",
+  alternates: { canonical: "/resultats" },
+};
+
+export default function ResultatsPage() {
+  return (
+    <>
+      <Breadcrumb items={[{ label: "Mes résultats", href: "/resultats" }]} />
+      <div className="mx-auto max-w-6xl px-4 pt-6 sm:px-6">
+        <h1 className="max-w-3xl text-3xl font-extrabold sm:text-4xl">Récupérer vos résultats</h1>
+        <div className="prose prose-slate mt-6 prose-headings:font-display prose-headings:text-brand-900 prose-a:text-action">
+          <p>
+            Après votre examen, le radiologue analyse vos images et rédige un compte rendu. Vos{" "}
+            <strong>images et comptes rendus</strong> sont mis à votre disposition sur notre
+            portail patients sécurisé (Xplore).{" "}
+            {/* [[À CONFIRMER : délai de mise à disposition des résultats (q.21)]] */}
+            <mark className="rounded bg-warn-100 px-1.5 py-0.5 font-semibold text-warn">
+              À confirmer&nbsp;: délai de mise à disposition (q.21)
+            </mark>
+          </p>
+          <p>
+            Votre <strong>médecin prescripteur</strong> reçoit automatiquement le compte rendu par
+            messagerie sécurisée de santé (MS Santé) et via votre{" "}
+            <strong>Dossier Médical Partagé (DMP)</strong>. Il dispose d’une interface dédiée pour
+            consulter vos images, avec des reconstructions 3D.
+          </p>
+        </div>
+        <div className="mt-8 flex flex-wrap gap-3">
+          <a
+            href={XPLORE.url}
+            target="_blank"
+            rel="noopener"
+            className="rounded-full bg-action px-6 py-3 font-bold text-white shadow-card transition-colors hover:bg-action-hover"
+          >
+            Portail patients — mes résultats
+          </a>
+          <a
+            href={XPLORE.url}
+            target="_blank"
+            rel="noopener"
+            className="rounded-full border border-line bg-surface px-6 py-3 font-bold text-brand-900 transition-colors hover:border-action hover:text-action"
+          >
+            Portail médecins
+          </a>
+        </div>
+      </div>
+    </>
+  );
+}

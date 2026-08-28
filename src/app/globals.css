@@ -1,0 +1,102 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+/*
+ * Tokens Alpha Imagerie — source de vérité : docs/design-system.md
+ * Bleu de marque extrait du logo réel (#001068).
+ */
+@theme {
+  --color-brand-900: #001068;
+  --color-brand-700: #1a2fa5;
+  --color-action: #2447d1;
+  --color-action-hover: #1a37b0;
+  --color-brand-100: #e8ecfb;
+  --color-brand-50: #f3f5fd;
+  --color-paper: #fafbfd;
+  --color-surface: #ffffff;
+  --color-ink: #101a38;
+  --color-ink-600: #46536f;
+  --color-ink-400: #7d89a3;
+  --color-accent: #b4632a;
+  --color-accent-100: #f9ede3;
+  --color-ok: #116b48;
+  --color-warn: #8a5a00;
+  --color-warn-100: #fdf3d9;
+  --color-error: #a52333;
+  --color-line: #dde3ee;
+
+  --font-display: var(--font-bricolage), "Avenir Next", "Segoe UI", sans-serif;
+  --font-sans: var(--font-source-sans), -apple-system, "Segoe UI", Roboto, sans-serif;
+
+  --shadow-card: 0 1px 2px rgb(16 26 56 / 0.05), 0 8px 24px -12px rgb(16 26 56 / 0.12);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+body {
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-display);
+  color: var(--color-brand-900);
+  text-wrap: balance;
+  letter-spacing: -0.01em;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-action);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* Longueur de ligne confortable pour la prose MDX */
+.prose {
+  max-width: 42rem;
+}
+
+/* Résumé/detail FAQ sans JS */
+details.faq > summary {
+  cursor: pointer;
+  list-style: none;
+}
+details.faq > summary::-webkit-details-marker {
+  display: none;
+}
+details.faq > summary::after {
+  content: "+";
+  float: right;
+  font-family: var(--font-display);
+  color: var(--color-action);
+  font-weight: 700;
+}
+details.faq[open] > summary::after {
+  content: "–";
+}
+
+@media print {
+  .no-print {
+    display: none !important;
+  }
+}
