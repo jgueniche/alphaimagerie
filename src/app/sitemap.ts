@@ -4,6 +4,7 @@ import {
   listExamenZones,
   listInterventionnels,
   listModalitesVille,
+  listPreparations,
   ZONE_PARENTS,
 } from "@/lib/content";
 import { SITE } from "@/lib/site";
@@ -16,6 +17,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/centres/cergy",
     "/centres/goussainville",
     "/examens",
+    "/preparer-mon-examen",
     "/equipe",
     "/resultats",
     "/mentions-legales",
@@ -28,8 +30,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
     (s) => `/examens/radiologie-interventionnelle/${s}`,
   );
   const modalitesVille = listModalitesVille("cergy").map((s) => `/centres/cergy/${s}`);
+  const preparations = listPreparations().map((s) => `/preparer-mon-examen/${s}`);
 
-  const all = [...staticRoutes, ...examens, ...zones, ...interventionnels, ...modalitesVille];
+  const all = [
+    ...staticRoutes,
+    ...examens,
+    ...zones,
+    ...interventionnels,
+    ...modalitesVille,
+    ...preparations,
+  ];
   return all.map((path) => ({
     url: `${SITE.url}${path}`,
     lastModified: new Date("2026-08-28"),

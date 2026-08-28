@@ -21,7 +21,7 @@ export function Breadcrumb({ items }: { items: Crumb[] }) {
     ],
   };
   return (
-    <nav aria-label="Fil d'Ariane" className="mx-auto max-w-6xl px-4 pt-4 text-sm text-ink-400 sm:px-6">
+    <nav aria-label="Fil d'Ariane" className="no-print mx-auto max-w-6xl px-4 pt-4 text-sm text-ink-400 sm:px-6">
       <JsonLd data={data} />
       <ol className="flex flex-wrap items-center gap-1.5">
         <li>

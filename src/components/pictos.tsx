@@ -107,6 +107,23 @@ export function PictoPin(props: SVGProps<SVGSVGElement>) {
     </Base>
   );
 }
+export function PictoImprimer(props: SVGProps<SVGSVGElement>) {
+  return (
+    <Base {...props}>
+      <path d="M7 8V3.5h10V8" />
+      <rect x="4" y="8" width="16" height="9" rx="1.5" />
+      <path d="M7 13.5h10v7H7z" />
+    </Base>
+  );
+}
+export function PictoChecklist(props: SVGProps<SVGSVGElement>) {
+  return (
+    <Base {...props}>
+      <rect x="4" y="3" width="16" height="18" rx="2" />
+      <path d="M8 8.5l1.5 1.5L12.5 7M8 14.5l1.5 1.5L12.5 13M15 9.5h2M15 15.5h2" />
+    </Base>
+  );
+}
 export function PictoHoraires(props: SVGProps<SVGSVGElement>) {
   return (
     <Base {...props}>

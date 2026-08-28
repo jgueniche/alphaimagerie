@@ -96,8 +96,33 @@ details.faq[open] > summary::after {
   content: "–";
 }
 
+/* Impression : fiches de préparation propres — chrome du site masqué, encre noire. */
+.print-only {
+  display: none;
+}
 @media print {
-  .no-print {
+  .no-print,
+  body > header,
+  body > footer {
     display: none !important;
+  }
+  .print-only {
+    display: block !important;
+  }
+  body {
+    background: #fff;
+    color: #000;
+    font-size: 11pt;
+    line-height: 1.45;
+  }
+  main {
+    padding-bottom: 0 !important;
+  }
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+  .print-checklist li {
+    break-inside: avoid;
   }
 }

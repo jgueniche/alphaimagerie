@@ -81,7 +81,27 @@ export const examenZoneSchema = examenSchema.extend({
   faq: faqSchema.min(4).max(6),
 });
 
+/** Fiches de préparation imprimables (/preparer-mon-examen/[slug], §5 du brief). */
+export const preparationSchema = z.object({
+  type: z.literal("preparation"),
+  slug: z.string(),
+  /** Libellé court de l'examen : « IRM », « Scanner »… */
+  examen: z.string().max(60),
+  title: z.string().max(90),
+  metaTitle: z.string().max(60),
+  metaDescription: z.string().max(155),
+  /** Checklist « À apporter » (cases à cocher imprimables). */
+  apporter: z.array(z.string().min(4)).min(3),
+  /** Durée indicative de présence sur place. */
+  surPlace: z.string(),
+  /** Page examen détaillée liée. */
+  lienExamen: z.string().startsWith("/examens"),
+  aValiderMedicalement: z.boolean().default(true),
+  updatedAt: z.string().regex(/^\d{4}-\d{2}-\d{2}$/),
+});
+
 export type ExamenFrontmatter = z.infer<typeof examenSchema>;
+export type PreparationFrontmatter = z.infer<typeof preparationSchema>;
 export type ExamenZoneFrontmatter = z.infer<typeof examenZoneSchema>;
 export type CentreFrontmatter = z.infer<typeof centreSchema>;
 export type ModaliteVilleFrontmatter = z.infer<typeof modaliteVilleSchema>;
@@ -132,6 +152,16 @@ export function getInterventionnel(slug: string): { frontmatter: ExamenFrontmatt
 
 export function listInterventionnels(): string[] {
   return listSlugs(path.join("examens", "interventionnel"));
+}
+
+export function getPreparation(slug: string): { frontmatter: PreparationFrontmatter; body: string } {
+  const { data, content } = load(path.join("preparation", `${slug}.mdx`));
+  const frontmatter = preparationSchema.parse(data);
+  return { frontmatter, body: content };
+}
+
+export function listPreparations(): string[] {
+  return listSlugs("preparation");
 }
 
 export function getCentre(slug: string): { frontmatter: CentreFrontmatter; body: string } {

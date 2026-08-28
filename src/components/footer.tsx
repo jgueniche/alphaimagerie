@@ -25,6 +25,7 @@ export function Footer() {
         <nav aria-label="Liens du pied de page" className="grid grid-cols-2 gap-x-6 gap-y-2 text-sm">
           <Link href="/examens" className="hover:underline">Nos examens</Link>
           <Link href="/centres/cergy" className="hover:underline">Centre de Cergy</Link>
+          <Link href="/preparer-mon-examen" className="hover:underline">Préparer mon examen</Link>
           <Link href="/prendre-rendez-vous" className="hover:underline">Prendre rendez-vous</Link>
           <Link href="/centres/goussainville" className="hover:underline">Goussainville (fin 2027)</Link>
           <Link href="/equipe" className="hover:underline">L’équipe médicale</Link>
