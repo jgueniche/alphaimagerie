@@ -16,6 +16,7 @@ import {
   ZONE_PARENTS,
   type ZoneParent,
 } from "@/lib/content";
+import { ogImages } from "@/lib/og";
 import { CERGY, SITE } from "@/lib/site";
 
 export const dynamicParams = false;
@@ -42,6 +43,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     title: { absolute: fm.metaTitle },
     description: fm.metaDescription,
     alternates: { canonical: `/examens/${slug}` },
+    openGraph: ogImages(fm.title, "À Cergy Préfecture · 7j/7, le plus souvent sous 48 h"),
   };
 }
 
@@ -120,6 +122,10 @@ export default async function ExamenPage({ params }: { params: Promise<{ slug: s
             href={CERGY.doctolibUrl}
             target="_blank"
             rel="noopener"
+            data-track="cta_doctolib_click"
+            data-track-site="cergy"
+            data-track-modality={fm.modality}
+            data-track-position="fiche"
             className="inline-flex items-center gap-2 rounded-full bg-action px-5 py-2.5 font-bold text-white shadow-card transition-colors hover:bg-action-hover"
           >
             <PictoAgenda className="h-5 w-5" />
@@ -127,6 +133,10 @@ export default async function ExamenPage({ params }: { params: Promise<{ slug: s
           </a>
           <a
             href={`tel:${CERGY.phoneE164}`}
+            data-track="phone_click"
+            data-track-site="cergy"
+            data-track-position="fiche"
+            data-track-line="patients"
             className="inline-flex items-center gap-2 rounded-full border border-line bg-surface px-5 py-2.5 font-bold text-brand-900 transition-colors hover:border-action hover:text-action"
           >
             <PictoPhone className="h-5 w-5" />

@@ -166,6 +166,9 @@ export default function EquipePage() {
             href={CERGY.doctolibUrl}
             target="_blank"
             rel="noopener"
+            data-track="cta_doctolib_click"
+            data-track-site="cergy"
+            data-track-position="card"
             className="inline-flex items-center gap-2 rounded-full bg-action px-5 py-2.5 font-bold text-white shadow-card transition-colors hover:bg-action-hover"
           >
             <PictoAgenda className="h-5 w-5" />
@@ -173,6 +176,10 @@ export default function EquipePage() {
           </a>
           <a
             href={`tel:${CERGY.phoneE164}`}
+            data-track="phone_click"
+            data-track-site="cergy"
+            data-track-position="card"
+            data-track-line="patients"
             className="inline-flex items-center gap-2 rounded-full border border-line bg-surface px-5 py-2.5 font-bold text-brand-900 transition-colors hover:border-action hover:text-action"
           >
             <PictoPhone className="h-5 w-5" />

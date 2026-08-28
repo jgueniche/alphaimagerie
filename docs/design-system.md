@@ -18,7 +18,7 @@ Les bleus proviennent du **logo vectoriel officiel** (fourni par le client le 28
 | `surface` | `#FFFFFF` | cartes, formulaires | — |
 | `ink` | `#101A38` | texte courant (bleu-noir, pas de #000) | 16,6:1 |
 | `ink-600` | `#46536F` | texte secondaire | 7,4:1 |
-| `accent` (chaud) | `#A85A22` | **avec parcimonie** : pastille « Ouvert 7j/7, jours fériés inclus », nocturne, points d'attention | 5,1:1 AA |
+| `accent` (chaud) | `#9D5420` | **avec parcimonie** : pastille « Ouvert 7j/7, jours fériés inclus », nocturne, points d'attention | 5,6:1 sur blanc, 4,9:1 sur `accent-100` (AA vérifié axe-core 28/08 ; `ink-400` foncé à `#626F8C` pour la même raison) |
 | `accent-100` | `#F9EDE3` | fond de la pastille/encarts chaleureux | — |
 | `ok` / `warn` / `error` | `#116B48` / `#8A5A00` / `#A52333` | états formulaire uniquement | ≥ 4,5:1 |
 

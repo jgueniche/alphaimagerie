@@ -8,6 +8,7 @@ import { Mdx } from "@/components/mdx";
 import { PictoAgenda, PictoPhone } from "@/components/pictos";
 import { PrintButton } from "@/components/print-button";
 import { getPreparation, listPreparations } from "@/lib/content";
+import { ogImages } from "@/lib/og";
 import { CERGY, SITE } from "@/lib/site";
 
 export const dynamicParams = false;
@@ -23,6 +24,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     title: { absolute: fm.metaTitle },
     description: fm.metaDescription,
     alternates: { canonical: `/preparer-mon-examen/${slug}` },
+    openGraph: ogImages(fm.title, "Fiche de préparation imprimable · Alpha Imagerie Cergy"),
   };
 }
 
@@ -72,6 +74,9 @@ export default async function PreparationPage({ params }: { params: Promise<{ sl
             href={CERGY.doctolibUrl}
             target="_blank"
             rel="noopener"
+            data-track="cta_doctolib_click"
+            data-track-site="cergy"
+            data-track-position="fiche"
             className="inline-flex items-center gap-2 rounded-full bg-action px-5 py-2.5 font-bold text-white shadow-card transition-colors hover:bg-action-hover"
           >
             <PictoAgenda className="h-5 w-5" />
@@ -79,6 +84,10 @@ export default async function PreparationPage({ params }: { params: Promise<{ sl
           </a>
           <a
             href={`tel:${CERGY.phoneE164}`}
+            data-track="phone_click"
+            data-track-site="cergy"
+            data-track-position="fiche"
+            data-track-line="patients"
             className="inline-flex items-center gap-2 rounded-full border border-line bg-surface px-5 py-2.5 font-bold text-brand-900 transition-colors hover:border-action hover:text-action"
           >
             <PictoPhone className="h-5 w-5" />

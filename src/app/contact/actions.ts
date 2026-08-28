@@ -4,7 +4,14 @@ import { headers } from "next/headers";
 import { redirect } from "next/navigation";
 import { z } from "zod";
 import { deliverContactMessage } from "@/lib/mailer";
-import { CIVILITES, DEMANDES, SITES, type ContactFormState } from "@/app/contact/champs";
+import {
+  CIVILITES,
+  DEMANDES,
+  DEMANDE_SLUGS,
+  SITES,
+  SITE_SLUGS,
+  type ContactFormState,
+} from "@/app/contact/champs";
 
 /**
  * Server Action du formulaire de contact (§3.2 du brief) :
@@ -66,16 +73,6 @@ export async function envoyerContact(
     redirect("/contact/merci");
   }
 
-  const entetes = await headers();
-  const ip = (entetes.get("x-forwarded-for") ?? "inconnue").split(",")[0].trim();
-  if (depasseLaLimite(ip)) {
-    return {
-      ok: false,
-      erreurs: { _: "Trop de messages envoyés en peu de temps. Réessayez dans quelques minutes ou appelez le secrétariat." },
-      valeurs,
-    };
-  }
-
   const resultat = contactSchema.safeParse(valeurs);
   if (!resultat.success) {
     const erreurs: Record<string, string> = {};
@@ -84,6 +81,17 @@ export async function envoyerContact(
       if (!erreurs[champ]) erreurs[champ] = pb.message;
     }
     return { ok: false, erreurs, valeurs };
+  }
+
+  // Le rate limiting protège l'envoi d'e-mails : il ne compte que les soumissions valides.
+  const entetes = await headers();
+  const ip = (entetes.get("x-forwarded-for") ?? "inconnue").split(",")[0].trim();
+  if (depasseLaLimite(ip)) {
+    return {
+      ok: false,
+      erreurs: { _: "Trop de messages envoyés en peu de temps. Réessayez dans quelques minutes ou appelez le secrétariat." },
+      valeurs,
+    };
   }
 
   try {
@@ -100,5 +108,15 @@ export async function envoyerContact(
     };
   }
 
-  redirect("/contact/merci");
+  // Le client émet contact_submit puis navigue vers /contact/merci (aucune donnée dans l'URL).
+  return {
+    ok: true,
+    envoye: true,
+    meta: {
+      site: SITE_SLUGS[resultat.data.site],
+      request_type: DEMANDE_SLUGS[resultat.data.demande],
+    },
+    erreurs: {},
+    valeurs: {},
+  };
 }

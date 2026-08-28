@@ -1,8 +1,10 @@
 "use client";
 
 import Link from "next/link";
-import { useActionState, useId } from "react";
+import { useRouter } from "next/navigation";
+import { useActionState, useEffect, useId } from "react";
 import { envoyerContact } from "@/app/contact/actions";
+import { track } from "@/components/analytics";
 import { CIVILITES, DEMANDES, ETAT_INITIAL, SITES } from "@/app/contact/champs";
 
 const CHAMP =
@@ -22,7 +24,25 @@ function MessageErreur({ id, texte }: { id: string; texte?: string }) {
 /** Formulaire §3.2 : liste fermée, honeypot, aucune donnée de santé, erreurs accessibles. */
 export function FormulaireContact() {
   const [etat, action, enCours] = useActionState(envoyerContact, ETAT_INITIAL);
+  const router = useRouter();
   const uid = useId();
+
+  useEffect(() => {
+    if (etat.envoye) {
+      track("contact_submit", etat.meta ?? {});
+      router.replace("/contact/merci");
+    }
+  }, [etat.envoye, etat.meta, router]);
+
+  // Repli sans JavaScript : la page se re-rend avec l'état de succès, sans navigation.
+  if (etat.envoye) {
+    return (
+      <p role="status" className="mt-6 max-w-2xl rounded-lg border border-line bg-brand-50 px-5 py-4 font-semibold text-brand-900">
+        Merci, votre message a bien été envoyé. Notre secrétariat vous répondra dans les
+        meilleurs délais.
+      </p>
+    );
+  }
   const idErreur = (champ: string) => `${uid}-erreur-${champ}`;
   const propsChamp = (champ: string) =>
     etat.erreurs[champ]

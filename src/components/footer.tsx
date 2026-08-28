@@ -13,7 +13,14 @@ export function Footer() {
             {CERGY.streetAddress}, {CERGY.postalCode} {CERGY.city}
           </p>
           <p className="mt-2 text-sm">
-            <a href={`tel:${CERGY.phoneE164}`} className="font-semibold text-white underline-offset-2 hover:underline">
+            <a
+              href={`tel:${CERGY.phoneE164}`}
+              data-track="phone_click"
+              data-track-site="cergy"
+              data-track-position="footer"
+              data-track-line="patients"
+              className="font-semibold text-white underline-offset-2 hover:underline"
+            >
               {CERGY.phoneDisplay}
             </a>
             <br />
@@ -34,7 +41,17 @@ export function Footer() {
           <Link href="/faq" className="hover:underline">Questions fréquentes</Link>
           <Link href="/professionnels-de-sante" className="hover:underline">Professionnels de santé</Link>
           <Link href="/recrutement" className="hover:underline">Recrutement</Link>
-          <a href={XPLORE.url} target="_blank" rel="noopener" className="hover:underline">Portail médecins</a>
+          <a
+            href={XPLORE.url}
+            target="_blank"
+            rel="noopener"
+            data-track="portal_click"
+            data-track-audience="medecin"
+            data-track-position="footer"
+            className="hover:underline"
+          >
+            Portail médecins
+          </a>
           <a href={SOCIALS.instagram} target="_blank" rel="noopener" className="hover:underline">Instagram</a>
           <a href={SOCIALS.linkedin} target="_blank" rel="noopener" className="hover:underline">LinkedIn</a>
         </nav>

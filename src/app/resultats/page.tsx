@@ -35,6 +35,9 @@ export default function ResultatsPage() {
             href={XPLORE.url}
             target="_blank"
             rel="noopener"
+            data-track="portal_click"
+            data-track-audience="patient"
+            data-track-position="fiche"
             className="rounded-full bg-action px-6 py-3 font-bold text-white shadow-card transition-colors hover:bg-action-hover"
           >
             Portail patients — mes résultats
@@ -43,6 +46,9 @@ export default function ResultatsPage() {
             href={XPLORE.url}
             target="_blank"
             rel="noopener"
+            data-track="portal_click"
+            data-track-audience="medecin"
+            data-track-position="fiche"
             className="rounded-full border border-line bg-surface px-6 py-3 font-bold text-brand-900 transition-colors hover:border-action hover:text-action"
           >
             Portail médecins

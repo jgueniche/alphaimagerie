@@ -27,6 +27,9 @@ export default function PrendreRdvPage() {
             href={CERGY.doctolibUrl}
             target="_blank"
             rel="noopener"
+            data-track="cta_doctolib_click"
+            data-track-site="cergy"
+            data-track-position="prise-rdv"
             className="rounded-lg bg-action p-6 text-white shadow-card transition-colors hover:bg-action-hover"
           >
             <PictoAgenda className="h-7 w-7" />
@@ -40,7 +43,14 @@ export default function PrendreRdvPage() {
             <PictoPhone className="h-7 w-7 text-action" />
             <p className="mt-3 font-display text-xl font-bold text-brand-900">
               Par téléphone :{" "}
-              <a href={`tel:${CERGY.phoneE164}`} className="text-action underline-offset-4 hover:underline">
+              <a
+                href={`tel:${CERGY.phoneE164}`}
+                data-track="phone_click"
+                data-track-site="cergy"
+                data-track-position="prise-rdv"
+                data-track-line="patients"
+                className="text-action underline-offset-4 hover:underline"
+              >
                 {CERGY.phoneDisplay}
               </a>
             </p>

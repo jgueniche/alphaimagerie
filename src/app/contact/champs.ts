@@ -12,8 +12,26 @@ export const DEMANDES = [
   "Autre",
 ] as const;
 
+/** Slugs de tracking (docs/tracking-plan.md) — jamais de texte libre dans le dataLayer. */
+export const SITE_SLUGS: Record<(typeof SITES)[number], string> = {
+  "Cergy Préfecture": "cergy",
+  "Goussainville (ouverture fin 2027)": "goussainville",
+};
+
+export const DEMANDE_SLUGS: Record<(typeof DEMANDES)[number], string> = {
+  "Renseignement général": "renseignement",
+  "Prise de rendez-vous": "rendez-vous",
+  "Résultats d'examen": "resultats",
+  "Professionnel de santé": "prescripteur",
+  Autre: "autre",
+};
+
 export type ContactFormState = {
   ok: boolean;
+  /** Vrai après un envoi réussi : le client émet contact_submit puis navigue vers /contact/merci. */
+  envoye?: boolean;
+  /** Slugs pour l'événement contact_submit (aucune donnée du formulaire dans l'URL). */
+  meta?: { site: string; request_type: string };
   /** Erreurs par champ (clé = nom du champ, "_" = erreur globale). */
   erreurs: Record<string, string>;
   /** Valeurs saisies, réinjectées dans le formulaire en cas d'erreur. */

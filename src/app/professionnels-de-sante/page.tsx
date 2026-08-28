@@ -44,7 +44,15 @@ export default function ProfessionnelsPage() {
                 <PictoAgenda className="mt-0.5 h-4 w-4 shrink-0 text-action" />
                 <span>
                   <strong>En ligne</strong> : tous les examens sont réservables sur{" "}
-                  <a href={CERGY.doctolibUrl} target="_blank" rel="noopener" className="font-semibold text-action underline-offset-2 hover:underline">
+                  <a
+                    href={CERGY.doctolibUrl}
+                    target="_blank"
+                    rel="noopener"
+                    data-track="cta_doctolib_click"
+                    data-track-site="cergy"
+                    data-track-position="card"
+                    className="font-semibold text-action underline-offset-2 hover:underline"
+                  >
                     Doctolib
                   </a>{" "}
                   — votre patient choisit son créneau, questionnaire de sécurité inclus.
@@ -54,7 +62,14 @@ export default function ProfessionnelsPage() {
                 <PictoPhone className="mt-0.5 h-4 w-4 shrink-0 text-action" />
                 <span>
                   <strong>Par téléphone</strong> :{" "}
-                  <a href={`tel:${CERGY.phoneE164}`} className="font-semibold text-brand-900 hover:text-action">
+                  <a
+                    href={`tel:${CERGY.phoneE164}`}
+                    data-track="phone_click"
+                    data-track-site="cergy"
+                    data-track-position="card"
+                    data-track-line="prescripteurs"
+                    className="font-semibold text-brand-900 hover:text-action"
+                  >
                     {CERGY.phoneDisplay}
                   </a>{" "}
                   (Lun–Ven 8h–18h30, Sam 8h–12h30).
@@ -91,6 +106,9 @@ export default function ProfessionnelsPage() {
               href={XPLORE.url}
               target="_blank"
               rel="noopener"
+              data-track="portal_click"
+              data-track-audience="medecin"
+              data-track-position="card"
               className="mt-4 inline-flex items-center gap-2 rounded-full bg-action px-5 py-2.5 text-sm font-bold text-white shadow-card transition-colors hover:bg-action-hover"
             >
               Accéder au portail médecins (Xplore)

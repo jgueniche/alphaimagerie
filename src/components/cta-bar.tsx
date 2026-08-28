@@ -12,6 +12,10 @@ export function CtaBar() {
       <div className="mx-auto grid max-w-lg grid-cols-3 gap-1 p-2">
         <a
           href={`tel:${CERGY.phoneE164}`}
+          data-track="phone_click"
+          data-track-site="cergy"
+          data-track-position="sticky"
+          data-track-line="patients"
           className="flex min-h-11 flex-col items-center justify-center gap-0.5 rounded-lg text-xs font-bold text-brand-900"
         >
           <PictoPhone className="h-5 w-5 text-action" />
@@ -21,6 +25,9 @@ export function CtaBar() {
           href={CERGY.doctolibUrl}
           target="_blank"
           rel="noopener"
+          data-track="cta_doctolib_click"
+          data-track-site="cergy"
+          data-track-position="sticky"
           className="flex min-h-11 flex-col items-center justify-center gap-0.5 rounded-lg bg-action text-xs font-bold text-white"
         >
           <PictoAgenda className="h-5 w-5" />
@@ -30,6 +37,9 @@ export function CtaBar() {
           href={CERGY.mapsUrl}
           target="_blank"
           rel="noopener"
+          data-track="directions_click"
+          data-track-site="cergy"
+          data-track-provider="google"
           className="flex min-h-11 flex-col items-center justify-center gap-0.5 rounded-lg text-xs font-bold text-brand-900"
         >
           <PictoPin className="h-5 w-5 text-action" />

@@ -17,8 +17,9 @@
   --color-surface: #ffffff;
   --color-ink: #101a38;
   --color-ink-600: #46536f;
-  --color-ink-400: #7d89a3;
-  --color-accent: #a85a22;
+  /* ink-400 et accent foncés le 28/08 (axe-core) : AA garanti sur paper, surface et fonds -100. */
+  --color-ink-400: #626f8c;
+  --color-accent: #9d5420;
   --color-accent-100: #f9ede3;
   --color-ok: #116b48;
   --color-warn: #8a5a00;

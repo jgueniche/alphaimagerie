@@ -68,6 +68,9 @@ export default function CentreCergyPage() {
             href={CERGY.mapsUrl}
             target="_blank"
             rel="noopener"
+            data-track="directions_click"
+            data-track-site="cergy"
+            data-track-provider="google"
             className="flex items-start gap-3 rounded-lg border border-line bg-surface p-4 shadow-card transition-colors hover:border-action"
           >
             <PictoPin className="mt-0.5 h-5 w-5 shrink-0 text-action" />
@@ -80,6 +83,10 @@ export default function CentreCergyPage() {
           </a>
           <a
             href={`tel:${CERGY.phoneE164}`}
+            data-track="phone_click"
+            data-track-site="cergy"
+            data-track-position="hero"
+            data-track-line="patients"
             className="flex items-start gap-3 rounded-lg border border-line bg-surface p-4 shadow-card transition-colors hover:border-action"
           >
             <PictoPhone className="mt-0.5 h-5 w-5 shrink-0 text-action" />
@@ -92,6 +99,9 @@ export default function CentreCergyPage() {
             href={CERGY.doctolibUrl}
             target="_blank"
             rel="noopener"
+            data-track="cta_doctolib_click"
+            data-track-site="cergy"
+            data-track-position="hero"
             className="flex items-start gap-3 rounded-lg bg-action p-4 text-white shadow-card transition-colors hover:bg-action-hover"
           >
             <PictoAgenda className="mt-0.5 h-5 w-5 shrink-0" />

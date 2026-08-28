@@ -52,7 +52,14 @@ export default function ContactPage() {
               </p>
               <p className="mt-2 flex items-start gap-2 text-sm">
                 <PictoPhone className="mt-0.5 h-4 w-4 shrink-0 text-action" />
-                <a href={`tel:${CERGY.phoneE164}`} className="font-bold text-brand-900 hover:text-action">
+                <a
+                  href={`tel:${CERGY.phoneE164}`}
+                  data-track="phone_click"
+                  data-track-site="cergy"
+                  data-track-position="card"
+                  data-track-line="patients"
+                  className="font-bold text-brand-900 hover:text-action"
+                >
                   {CERGY.phoneDisplay}
                 </a>
               </p>

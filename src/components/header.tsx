@@ -52,6 +52,10 @@ export function Header() {
         <div className="ml-auto flex items-center gap-2 lg:ml-0">
           <a
             href={`tel:${CERGY.phoneE164}`}
+            data-track="phone_click"
+            data-track-site="cergy"
+            data-track-position="header"
+            data-track-line="patients"
             className="hidden items-center gap-1.5 rounded-full border border-line px-3.5 py-2 text-sm font-bold whitespace-nowrap text-brand-900 transition-colors hover:border-action hover:text-action sm:flex"
           >
             <PictoPhone className="h-4 w-4" />
@@ -61,6 +65,9 @@ export function Header() {
             href={CERGY.doctolibUrl}
             target="_blank"
             rel="noopener"
+            data-track="cta_doctolib_click"
+            data-track-site="cergy"
+            data-track-position="header"
             className="rounded-full bg-action px-4 py-2 text-sm font-bold text-white shadow-card transition-colors hover:bg-action-hover"
           >
             Prendre RDV

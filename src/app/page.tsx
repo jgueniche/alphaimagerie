@@ -57,12 +57,19 @@ export default function Home() {
               href={CERGY.doctolibUrl}
               target="_blank"
               rel="noopener"
+              data-track="cta_doctolib_click"
+              data-track-site="cergy"
+              data-track-position="hero"
               className="rounded-full bg-action px-6 py-3 font-bold text-white shadow-card transition-colors hover:bg-action-hover"
             >
               Prendre rendez-vous en ligne
             </a>
             <a
               href={`tel:${CERGY.phoneE164}`}
+              data-track="phone_click"
+              data-track-site="cergy"
+              data-track-position="hero"
+              data-track-line="patients"
               className="inline-flex items-center gap-2 rounded-full border border-line bg-surface px-6 py-3 font-bold text-brand-900 transition-colors hover:border-action hover:text-action"
             >
               <PictoPhone className="h-5 w-5" />
@@ -72,6 +79,9 @@ export default function Home() {
               href={CERGY.mapsUrl}
               target="_blank"
               rel="noopener"
+              data-track="directions_click"
+              data-track-site="cergy"
+              data-track-provider="google"
               className="inline-flex items-center gap-2 px-2 py-3 font-semibold text-ink-600 underline-offset-4 hover:text-action hover:underline"
             >
               <PictoPin className="h-5 w-5" />

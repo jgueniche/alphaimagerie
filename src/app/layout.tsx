@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import { Bricolage_Grotesque, Source_Sans_3 } from "next/font/google";
+import { Analytics } from "@/components/analytics";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { CtaBar } from "@/components/cta-bar";
+import { ogImages } from "@/lib/og";
 import { SITE } from "@/lib/site";
 import "./globals.css";
 
@@ -26,6 +28,11 @@ export const metadata: Metadata = {
     "Centre d'imagerie médicale à Cergy Préfecture : IRM, scanner, échographie, mammographie, radiographie, ostéodensitométrie. Ouvert 7j/7, jours fériés inclus.",
   verification: { google: SITE.gscVerification },
   alternates: { canonical: "/" },
+  openGraph: ogImages(
+    "Imagerie médicale à Cergy",
+    "IRM, scanner, échographie, mammographie — 7j/7, jours fériés inclus",
+  ),
+  twitter: { card: "summary_large_image" },
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
@@ -36,6 +43,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <main className="pb-24 lg:pb-0">{children}</main>
         <Footer />
         <CtaBar />
+        <Analytics />
       </body>
     </html>
   );
