@@ -3,10 +3,14 @@
 > Une seule passe, comme convenu (§14 du brief). Répondez directement sous chaque question (fichier versionné) ou dans un document unique. Les valeurs précédées de **« Trouvé : »** proviennent de sources publiques datées du 27/08/2026 (site actuel, INSEE/RNE, BODACC, Doctolib, LinkedIn, annuaires) : elles ne seront utilisées qu'après votre confirmation — corrigez ce qui est faux ou périmé. Rien ne part en production avec un `[[À CONFIRMER]]` résiduel.
 >
 > Les blocs P0 conditionnent la Phase 1 (conception). P1 est nécessaire avant la Phase 3 (contenu) / Phase 4 (analytics). P2 peut suivre.
+>
+> **✅ Lot 1 de réponses intégré le 28/08/2026** (Goussainville teaser, équipe = 2 associés, plateau Cergy, horaires, bloc validations). Restent ouvertes, par priorité : capital social (q.23 — voir note LCEN), liste des examens/motifs en ligne (q.18–19), DPO + RPPS officiels (q.25–26), délais (q.21), et les blocs P1/P2.
 
 ---
 
 ## P0.1 — Goussainville (site 2)
+
+> **✅ Répondu (28/08/2026)** : **nouveau centre « Goussainville Gare », au sein d'une maison de santé — ouverture prévue fin 2027**, à teaser sur le site (formulation souple type « ouverture prévue fin 2027 »). Conséquences : page `/centres/goussainville` en teaser (sans NAP ni horaires), pas de pages modalité×ville Goussainville au lancement, pas de fiche Doctolib/GBP à ce stade. Les questions 3–9 restent à traiter **avant l'ouverture** (non bloquantes pour le lancement).
 
 1. **Nature du site** : Trouvé au registre — vous avez créé **IMAGERIE MEDICALE DE GOUSSAINVILLE GARE (IMGG)**, SIREN 991 609 215, le 16/09/2025 (société de murs/équipements, NAF 68.20B, comme IMCP pour Cergy). Par ailleurs le « Centre de radiologie de Goussainville des Drs Aidan, Bellaiche, Uzan et Sultan » (53 bd Paul Vaillant Couturier, 01 39 88 58 58, orbite GIE Gamma/Simago) existe toujours sur Doctolib. Le site Alpha Imagerie de Goussainville est-il **un nouveau centre « Goussainville Gare »** (où ?), **une reprise** de ce centre existant, ou autre ? Quelle entité d'exploitation (la SELAS Alpha Imagerie avec établissement secondaire ? une autre SELAS ?) — conditionne mentions légales, NAP, JSON-LD.
 2. **Statut d'ouverture** : déjà ouvert ? date (ou fenêtre) d'ouverture prévue ? Le site doit-il annoncer une « ouverture prochaine » au lancement ?
@@ -20,12 +24,18 @@
 
 ## P0.2 — Équipe
 
+> **✅ Répondu (28/08/2026)** : **pas de liste nominative — seuls les deux associés sont affichés (Dr Jérémy Gueniche, Dr Yoram Gueniche)**, avec de **nouvelles photos à faire** (les actuelles sont à remplacer). Restent ouvertes : q.12 (orthographe/format des noms), RPPS officiels à confirmer pour les mentions et le schema Physician (q.26), q.13 (effectifs MERM/secrétariat, protocole de coopération).
+
 10. **Radiologues** — la fiche Doctolib Cergy compte **10 praticiens** rattachés ; identifiés publiquement : **Dr Jérémy Gueniche** (RPPS trouvé : 10100992451 — annuaires privés, à revérifier), **Dr Yoram Gueniche** (RPPS trouvé : 10101184074 — idem ; exerce aussi à Ormesson-sur-Marne/Charenton d'après Doctolib) et **Dr Hassen Baklouti**. Merci de fournir la **liste nominative complète à afficher** (par site), avec pour chacun : nom, titres exacts reconnus par l'Ordre, surspécialités, parcours court, RPPS, photo oui/non. Faut-il une fiche `/equipe/[dr]` pour chacun des ~10, ou seulement pour les associés + radiologues réguliers ?
 11. Bios actuelles à valider : **Dr Jérémy Gueniche** — ancien interne des HUS (Strasbourg), ancien assistant spécialiste et praticien attaché de l'Institut Curie (site René-Huguenin, Saint-Cloud, 2019–2024 d'après Doctoome) ; sénologie, ostéo-articulaire, ORL. **Dr Yoram Gueniche** — ancien interne AP-HP, ancien CCA et praticien attaché de l'hôpital Tenon ; imagerie pelvienne, sénologie, thoracique, urinaire. Exact/complet ?
 12. **Orthographe publique** : « Dr Jérémy Gueniche » avec accents partout (le brief écrit « Jeremy », LinkedIn « jeremy-gueniche ») ? Format des mentions (« Dr », « Docteur ») ?
 13. **Équipe non médicale** : effectifs MERM et secrétariat/accueil par site ; manipulateurs échographistes en protocole de coopération (combien, quels sites) ; cadre/référent à nommer ?
 
 ## P0.3 — Plateau technique et examens (Cergy)
+
+> **✅ Répondu (28/08/2026)** — plateau confirmé : **2 IRM Philips MR5300 (1,5 T) · 1 scanner CT 3500 `[[À CONFIRMER : constructeur — Philips ?]]` · 1 mammographe Hologic avec tomosynthèse 3D et IA intégrée · 1 table télécommandée Stephanix D2RS · 4 échographes Canon · 1 ostéodensitomètre `[[À CONFIRMER : marque]]`**.
+> **Horaires confirmés : Lun–Ven 8h–19h, + 1 nocturne par semaine 19h–22h `[[À CONFIRMER : quel jour ?]]`, ouvert 7j/7 jours fériés inclus** (week-end : 8h–18h d'après Doctolib, `[[À CONFIRMER]]`). L'argument éditorial devient « **7j/7, jours fériés inclus** » (+ nocturne hebdomadaire) — l'ancien « jusqu'à 22h en semaine » est abandonné.
+> Restent ouvertes : q.16 (agrément dépistage organisé/seconde lecture), q.18 (liste des examens), q.19 (motifs en ligne), q.21 (délais).
 
 14. **IRM** : le site actuel dit « IRM Philips 1,5 T » ; un post LinkedIn (fin 2025) montre la **livraison de deux IRM par hélicoptère**, et l'article CPTS de mai 2024 annonçait « un scanner et une deuxième IRM ». Combien d'IRM à Cergy aujourd'hui, marques/modèles exacts (Philips… ?), tunnel 70 cm ? `[[À COMPLÉTER]]`
 15. **Scanner** : « Scanner en 2025 » sur le site actuel, présent dans la description Doctolib → en service depuis quand ? Marque, modèle, nombre de coupes, injecteur, dispositifs dose : `[[À COMPLÉTER]]`
@@ -45,7 +55,8 @@
 ## P0.4 — Juridique / mentions légales
 
 22. Registre (INSEE/RNE/BODACC, à confirmer) : **SELAS ALPHA IMAGERIE**, SIREN **928 012 830**, SIRET siège **928 012 830 00016**, **RCS Pontoise**, immatriculée le **24/04/2024** (INSEE : création 23/05/2024, début d'activité 19/04/2024), NAF 86.22A, siège **2 Mail des Cerclades, 95000 Cergy**, Président Jérémy Gueniche, DG Yoram Gueniche. Exact ?
-23. **Capital social** (non publié par les API gratuites) : `[[À COMPLÉTER]]` €
+23. **Capital social** : `[[À COMPLÉTER]]` €
+    > **Réponse client (28/08/2026)** : « pas besoin sur un site vitrine ». **Note juridique** : l'art. 6, III, 1°, c) LCEN (loi n° 2004-575) impose, pour un éditeur personne morale inscrite au RCS, la publication du « numéro de son inscription, **son capital social** et l'adresse de son siège social » — sanction : 1 an / 75 000 € pour le dirigeant (375 000 € personne morale). En attente : soit le montant, soit une omission expressément assumée par le directeur de la publication.
 24. **Directeur de la publication** : Dr Jérémy Gueniche (comme aujourd'hui) ? Contact affiché : contact@alphaimagerie.fr (l'actuel `Jgueniche@yahoo.fr` sera retiré). OK ?
 25. **DPO / référent RGPD** : désigné (nom/contact) ou à désigner ? : `[[À COMPLÉTER]]`
 26. **Ordre des médecins** : conseil départemental d'inscription et n° RPPS à citer pour chaque praticien mentionné : `[[À COMPLÉTER]]`
@@ -53,6 +64,8 @@
 28. Mention d'un **médiateur de la consommation** et de l'**assurance RCP** (assureur, couverture géographique) : souhaité/nécessaire ? `[[À COMPLÉTER]]`
 
 ## P0.5 — Faits à valider avant réutilisation
+
+> **✅ Validé en bloc (28/08/2026)** : secteur 2 + tiers payant, protocole de coopération écho, collaborations citables (CPTS Axe Majeur, EndoIDF, hôpital de Pontoise), MS-Santé/DMP/reconstructions 3D, repères cliniques. Compte tenu des horaires confirmés (q.20), la promesse du hero devient « **7j/7, jours fériés inclus** ». Point q.35 (accès brancards) : factuel validé — l'affichage précis sera arbitré sur maquette.
 
 29. **Conventionnement** : la description Doctolib dit « **secteur 2**, dépassements d'honoraires possibles, **tiers payant pour tous les examens** » — exact pour tous les radiologues et les deux sites ? Formulation à reprendre sur le site ?
 30. Échographies « réalisées par un radiologue **ou un manipulateur échographiste diplômé via un protocole de coopération validé par l'État** » (site actuel) : à conserver/mettre en avant ?

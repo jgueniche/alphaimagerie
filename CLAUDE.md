@@ -39,10 +39,14 @@ Vouvoiement ; ton clair, calme, précis ; grand public sans infantiliser ; phras
 
 Lighthouse mobile ≥ 95/100/100/100 ; LCP < 1,8 s, CLS < 0,05, INP < 200 ms (lab + field) ; Rich Results 0 erreur (MedicalClinic, ImagingTest, FAQPage, Physician, BreadcrumbList) ; HTML/axe-core 0 erreur bloquante ; 0 script tiers avant consentement (test Playwright) ; 0 `[[À CONFIRMER]]` en prod ; 0 duplication ; title/description/OG/canonical uniques partout ; checklist `docs/compliance-checklist.md` signée ; suite Playwright complète verte.
 
-## Données vérifiées à réutiliser telles quelles
+## Données vérifiées à réutiliser telles quelles (MàJ client 28/08/2026)
 
 - NAP Cergy : Alpha Imagerie · 2 Mail des Cerclades, 95000 Cergy · 01 86 30 30 00 (source de vérité à maintenir : `docs/nap-master.md`).
-- Horaires centre Cergy : Lun–Ven 8h–22h · Sam 8h–18h30 · Dim 8h30–18h30 (secrétariat téléphonique : Lun–Ven 8h–18h30, Sam 8h–12h30 — distinguer les deux).
+- **Horaires centre Cergy : ouvert 7j/7, jours fériés inclus — Lun–Ven 8h–19h + 1 nocturne/semaine 19h–22h `[[À CONFIRMER : jour]]` ; week-end 8h–18h `[[À CONFIRMER]]`.** L'argument éditorial est « 7j/7, jours fériés inclus » (l'ancien « jusqu'à 22h en semaine » est abandonné). Secrétariat téléphonique : Lun–Ven 8h–18h30, Sam 8h–12h30 — distinguer les deux.
+- **Plateau Cergy confirmé** : 2 IRM Philips MR5300 1,5 T · scanner CT 3500 `[[À CONFIRMER : constructeur]]` · mammographe Hologic tomosynthèse 3D avec IA intégrée · table télécommandée Stephanix D2RS · 4 échographes Canon · ostéodensitomètre `[[À CONFIRMER : marque]]`.
+- **Équipe affichée : uniquement les Drs Jérémy et Yoram Gueniche** (pas de liste des autres praticiens) ; photos actuelles à remplacer.
+- **Goussainville : teaser seulement** — « nouveau centre Goussainville Gare, au sein d'une maison de santé, ouverture prévue fin 2027 » ; aucune coordonnée publiée, pas de pages modalité×ville au lancement.
+- Conventionnement : secteur 2, dépassements possibles, tiers payant (validé client).
 - E-mail unique : contact@alphaimagerie.fr (bannir `info@`).
-- SELAS ALPHA IMAGERIE — SIREN 928 012 830, RCS Pontoise, siège 2 Mail des Cerclades 95000 Cergy (capital et DPO : voir `docs/questions.md`).
+- SELAS ALPHA IMAGERIE — SIREN 928 012 830, RCS Pontoise, siège 2 Mail des Cerclades 95000 Cergy (capital : en attente, note LCEN dans `docs/questions.md` q.23 ; DPO : q.25).
 - Doctolib Cergy : https://www.doctolib.fr/centre-d-imagerie-medicale/cergy/alpha-imagerie · Portail résultats : https://imcp-dmz.xplore.fr/Xaportaildiffusionmobile
