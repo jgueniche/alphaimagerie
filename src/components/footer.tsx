@@ -31,6 +31,9 @@ export function Footer() {
           <Link href="/equipe" className="hover:underline">L’équipe médicale</Link>
           <Link href="/resultats" className="hover:underline">Mes résultats</Link>
           <Link href="/contact" className="hover:underline">Contact</Link>
+          <Link href="/faq" className="hover:underline">Questions fréquentes</Link>
+          <Link href="/professionnels-de-sante" className="hover:underline">Professionnels de santé</Link>
+          <Link href="/recrutement" className="hover:underline">Recrutement</Link>
           <a href={XPLORE.url} target="_blank" rel="noopener" className="hover:underline">Portail médecins</a>
           <a href={SOCIALS.instagram} target="_blank" rel="noopener" className="hover:underline">Instagram</a>
           <a href={SOCIALS.linkedin} target="_blank" rel="noopener" className="hover:underline">LinkedIn</a>

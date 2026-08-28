@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { CERGY, XPLORE } from "@/lib/site";
+import { CERGY } from "@/lib/site";
 import { PictoPhone } from "@/components/pictos";
 
 const NAV = [
@@ -41,14 +41,12 @@ export function Header() {
               ) : null}
             </Link>
           ))}
-          <a
-            href={XPLORE.url}
-            target="_blank"
-            rel="noopener"
+          <Link
+            href="/professionnels-de-sante"
             className="text-sm font-semibold text-ink-600 transition-colors hover:text-brand-900"
           >
             Espace pro
-          </a>
+          </Link>
         </nav>
 
         <div className="ml-auto flex items-center gap-2 lg:ml-0">

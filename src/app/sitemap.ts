@@ -20,6 +20,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/preparer-mon-examen",
     "/equipe",
     "/resultats",
+    "/professionnels-de-sante",
+    "/faq",
+    "/recrutement",
     "/contact",
     "/mentions-legales",
   ];
