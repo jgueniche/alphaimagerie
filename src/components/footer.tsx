@@ -27,6 +27,7 @@ export function Footer() {
           <Link href="/centres/cergy" className="hover:underline">Centre de Cergy</Link>
           <Link href="/prendre-rendez-vous" className="hover:underline">Prendre rendez-vous</Link>
           <Link href="/centres/goussainville" className="hover:underline">Goussainville (fin 2027)</Link>
+          <Link href="/equipe" className="hover:underline">L’équipe médicale</Link>
           <Link href="/resultats" className="hover:underline">Mes résultats</Link>
           <a href={XPLORE.url} target="_blank" rel="noopener" className="hover:underline">Portail médecins</a>
           <a href={SOCIALS.instagram} target="_blank" rel="noopener" className="hover:underline">Instagram</a>

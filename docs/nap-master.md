@@ -12,7 +12,7 @@
 | Téléphone affiché | 01 86 30 30 00 |
 | Téléphone `tel:`/JSON-LD | +33186303000 |
 | Coordonnées géo | 49.03683, 2.08068 (INSEE — à affiner sur le point d'entrée réel) |
-| Horaires centre | Lun–Ven 08:00–19:00 · nocturne 1×/sem 19:00–22:00 `[[À CONFIRMER : lundi ou jeudi ?]]` · Sam–Dim 08:00–18:00 (confirmé) · **ouvert jours fériés** |
+| Horaires centre | Lun–Ven 08:00–19:00 · nocturne le lundi 19:00–22:00 · Sam–Dim 08:00–18:00 · **ouvert jours fériés** (tout confirmé 28/08) |
 | Secrétariat téléphonique | Lun–Ven 08:00–18:30 · Sam 08:00–12:30 |
 | E-mail public | contact@alphaimagerie.fr (unique — `info@` banni) |
 | Doctolib | https://www.doctolib.fr/centre-d-imagerie-medicale/cergy/alpha-imagerie (`pid` : en attente q.19) |

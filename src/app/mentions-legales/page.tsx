@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { Breadcrumb } from "@/components/breadcrumb";
-import { Confirmer } from "@/components/confirmer";
 import { CERGY, SITE } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -30,9 +29,7 @@ export default function MentionsLegalesPage() {
             Téléphone : <a href={`tel:${CERGY.phoneE164}`}>{CERGY.phoneDisplay}</a> — E-mail :{" "}
             <a href={`mailto:${SITE.email}`}>{SITE.email}</a>
             <br />
-            {/* [[À CONFIRMER : numéro de TVA intracommunautaire (q.27)]] */}
-            N° de TVA intracommunautaire : FR83 928 012 830{" "}
-            <Confirmer>numéro de TVA à vérifier (q.27)</Confirmer>
+            Activité de soins exonérée de TVA (article 261, 4, 1° du code général des impôts).
           </p>
 
           <h2>Directeur de la publication</h2>
@@ -45,9 +42,8 @@ export default function MentionsLegalesPage() {
           <p>
             Les médecins radiologues exerçant au sein d’Alpha Imagerie sont titulaires du diplôme
             d’État de docteur en médecine, spécialistes en radiodiagnostic et imagerie médicale,
-            et inscrits au tableau de l’Ordre des médecins.{" "}
-            {/* [[À CONFIRMER : conseil départemental d'inscription et numéros RPPS (q.26)]] */}
-            <Confirmer>conseil départemental d’inscription et numéros RPPS (q.26)</Confirmer>
+            et inscrits au tableau du conseil départemental de l’Ordre des médecins du
+            Val-d’Oise (95).
           </p>
           <p>
             Autorité de rattachement : Conseil national de l’Ordre des médecins —{" "}
@@ -72,9 +68,8 @@ export default function MentionsLegalesPage() {
           <p>
             Les modalités de traitement des données personnelles (formulaire de contact, mesure
             d’audience) sont détaillées dans la politique de confidentialité, en cours de
-            rédaction et publiée avant la mise en ligne du site.{" "}
-            {/* [[À CONFIRMER : DPO ou référent RGPD à désigner (q.25)]] */}
-            <Confirmer>DPO / référent RGPD à désigner (q.25)</Confirmer>
+            rédaction et publiée avant la mise en ligne du site. Pour toute question relative à
+            vos données personnelles : <a href={`mailto:${SITE.email}`}>{SITE.email}</a>.
           </p>
 
           <h2>Prise de rendez-vous et résultats</h2>

@@ -10,6 +10,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/centres/cergy",
     "/centres/goussainville",
     "/examens",
+    "/equipe",
     "/resultats",
     "/mentions-legales",
   ];

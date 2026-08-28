@@ -4,6 +4,9 @@
 >
 > Les blocs P0 conditionnent la Phase 1 (conception). P1 est nécessaire avant la Phase 3 (contenu) / Phase 4 (analytics). P2 peut suivre.
 >
+> **✅ Lot 4 intégré (28/08 soir) — plus aucun `[[À CONFIRMER]]` dans le site** : résultats remis sur place (CR en ligne sous 12 h max pour radio/scanner/IRM) ; nocturne **le lundi** ; scanner **Philips** CT 3500 ; mammographie : **dépistage organisé + seconde lecture** (q.16 ✓) ; PMR + **accueil brancards** ✓ (q.35/56) ; IRM **à partir de 15 ans**, radio/écho dès les premiers mois ; dépassements **modérés et maîtrisés**, aucun dépassement **C2S/AME/ALD** (q.40 ✓) ; Ordre : **conseil départemental 95** (q.26 ✓ — RPPS non nécessaires aux mentions légales, utiles plus tard pour les fiches Physician). Page `/equipe` créée (2 fondateurs nommés + douzaine de radiologues issus de centres experts).
+> **⚠ Deux formulations à valider par le directeur de la publication** : q.27 → les mentions légales indiquent désormais « Activité de soins exonérée de TVA (art. 261, 4, 1° CGI) » au lieu d'un n° de TVA (corrigez-moi si la SELAS est identifiée à la TVA) ; q.25 → en l'absence de DPO désigné, elles renvoient vers contact@alphaimagerie.fr pour les questions données personnelles (une désignation formelle reste possible plus tard).
+>
 > **✅ Lot 1 de réponses intégré le 28/08/2026** (Goussainville teaser, équipe = 2 associés, plateau Cergy, horaires, bloc validations). Restent ouvertes, par priorité : capital social (q.23 — voir note LCEN), liste des examens/motifs en ligne (q.18–19), DPO + RPPS officiels (q.25–26), délais (q.21), et les blocs P1/P2.
 
 ---

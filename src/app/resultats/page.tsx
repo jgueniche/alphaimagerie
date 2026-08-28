@@ -17,13 +17,11 @@ export default function ResultatsPage() {
         <h1 className="max-w-3xl text-3xl font-extrabold sm:text-4xl">Récupérer vos résultats</h1>
         <div className="prose prose-slate mt-6 prose-headings:font-display prose-headings:text-brand-900 prose-a:text-action">
           <p>
-            Après votre examen, le radiologue analyse vos images et rédige un compte rendu. Vos{" "}
-            <strong>images et comptes rendus</strong> sont mis à votre disposition sur notre
-            portail patients sécurisé (Xplore).{" "}
-            {/* [[À CONFIRMER : délai de mise à disposition des résultats (q.21)]] */}
-            <mark className="rounded bg-warn-100 px-1.5 py-0.5 font-semibold text-warn">
-              À confirmer&nbsp;: délai de mise à disposition (q.21)
-            </mark>
+            Après votre examen, le radiologue analyse vos images et rédige un compte rendu.{" "}
+            <strong>Vous repartez le plus souvent avec vos images et votre compte rendu.</strong>{" "}
+            Pour la radiographie, le scanner et l’IRM, le compte rendu peut être mis en ligne dans
+            un délai maximal de 12 heures sur notre portail patients sécurisé (Xplore), où vos
+            images et comptes rendus restent disponibles à tout moment.
           </p>
           <p>
             Votre <strong>médecin prescripteur</strong> reçoit automatiquement le compte rendu par

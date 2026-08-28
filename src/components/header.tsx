@@ -7,6 +7,7 @@ const NAV = [
   { href: "/examens", label: "Examens" },
   { href: "/centres/cergy", label: "Centre de Cergy" },
   { href: "/centres/goussainville", label: "Goussainville", badge: "fin 2027" },
+  { href: "/equipe", label: "L'équipe" },
   { href: "/resultats", label: "Mes résultats" },
 ] as const;
 

@@ -25,12 +25,13 @@ export const CERGY = {
   /** Horaires confirmés (jour de nocturne et week-end : voir badges « À CONFIRMER » côté contenu). */
   openingHours: [
     { days: "Lundi – Vendredi", hours: "8h – 19h" },
-    { days: "Nocturne hebdomadaire", hours: "19h – 22h" },
+    { days: "Nocturne le lundi", hours: "19h – 22h" },
     { days: "Samedi – Dimanche", hours: "8h – 18h" },
   ],
   /** schema.org openingHoursSpecification — le build de prod est bloqué tant que le contenu porte des jetons « À CONFIRMER ». */
   openingHoursSpec: [
-    { dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], opens: "08:00", closes: "19:00" },
+    { dayOfWeek: ["Monday"], opens: "08:00", closes: "22:00" },
+    { dayOfWeek: ["Tuesday", "Wednesday", "Thursday", "Friday"], opens: "08:00", closes: "19:00" },
     { dayOfWeek: ["Saturday", "Sunday"], opens: "08:00", closes: "18:00" },
   ],
   secretariat: [
@@ -55,7 +56,7 @@ export const SOCIALS = {
 /** Modalités du plateau de Cergy — équipements confirmés par le client le 28/08/2026. */
 export const MODALITES = [
   { slug: "irm", label: "IRM", equipment: "2 IRM Philips MR5300 · 1,5 T" },
-  { slug: "scanner", label: "Scanner", equipment: "Scanner CT 3500" },
+  { slug: "scanner", label: "Scanner", equipment: "Scanner Philips CT 3500" },
   { slug: "echographie", label: "Échographie", equipment: "4 échographes Canon" },
   { slug: "mammographie", label: "Mammographie", equipment: "Hologic · tomosynthèse 3D" },
   { slug: "radiographie", label: "Radiographie", equipment: "Table Stephanix D2RS" },
