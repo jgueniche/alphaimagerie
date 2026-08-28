@@ -42,7 +42,7 @@ Lighthouse mobile ≥ 95/100/100/100 ; LCP < 1,8 s, CLS < 0,05, INP < 200 ms (la
 ## Données vérifiées à réutiliser telles quelles (MàJ client 28/08/2026)
 
 - NAP Cergy : Alpha Imagerie · 2 Mail des Cerclades, 95000 Cergy · 01 86 30 30 00 (source de vérité à maintenir : `docs/nap-master.md`).
-- **Horaires centre Cergy : ouvert 7j/7, jours fériés inclus — Lun–Ven 8h–19h + 1 nocturne/semaine 19h–22h `[[À CONFIRMER : jour]]` ; week-end 8h–18h `[[À CONFIRMER]]`.** L'argument éditorial est « 7j/7, jours fériés inclus » (l'ancien « jusqu'à 22h en semaine » est abandonné). Secrétariat téléphonique : Lun–Ven 8h–18h30, Sam 8h–12h30 — distinguer les deux.
+- **Horaires centre Cergy : ouvert 7j/7, jours fériés inclus — Lun–Ven 8h–19h + 1 nocturne/semaine 19h–22h `[[À CONFIRMER : lundi ou jeudi ?]]` ; week-end 8h–18h (confirmé 28/08). Tous les examens sont réservables en ligne sur Doctolib (confirmé 28/08).** L'argument éditorial est « 7j/7, jours fériés inclus » (l'ancien « jusqu'à 22h en semaine » est abandonné). Secrétariat téléphonique : Lun–Ven 8h–18h30, Sam 8h–12h30 — distinguer les deux.
 - **Plateau Cergy confirmé** : 2 IRM Philips MR5300 1,5 T · scanner CT 3500 `[[À CONFIRMER : constructeur]]` · mammographe Hologic tomosynthèse 3D avec IA intégrée · table télécommandée Stephanix D2RS · 4 échographes Canon · ostéodensitomètre `[[À CONFIRMER : marque]]`.
 - **Équipe affichée : uniquement les Drs Jérémy et Yoram Gueniche** (pas de liste des autres praticiens) ; photos actuelles à remplacer.
 - **Goussainville : teaser seulement** — « nouveau centre Goussainville Gare, au sein d'une maison de santé, ouverture prévue fin 2027 » ; aucune coordonnée publiée, pas de pages modalité×ville au lancement.

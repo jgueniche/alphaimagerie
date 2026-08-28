@@ -34,8 +34,9 @@
 ## P0.3 — Plateau technique et examens (Cergy)
 
 > **✅ Répondu (28/08/2026)** — plateau confirmé : **2 IRM Philips MR5300 (1,5 T) · 1 scanner CT 3500 `[[À CONFIRMER : constructeur — Philips ?]]` · 1 mammographe Hologic avec tomosynthèse 3D et IA intégrée · 1 table télécommandée Stephanix D2RS · 4 échographes Canon · 1 ostéodensitomètre `[[À CONFIRMER : marque]]`**.
-> **Horaires confirmés : Lun–Ven 8h–19h, + 1 nocturne par semaine 19h–22h `[[À CONFIRMER : quel jour ?]]`, ouvert 7j/7 jours fériés inclus** (week-end : 8h–18h d'après Doctolib, `[[À CONFIRMER]]`). L'argument éditorial devient « **7j/7, jours fériés inclus** » (+ nocturne hebdomadaire) — l'ancien « jusqu'à 22h en semaine » est abandonné.
-> Restent ouvertes : q.16 (agrément dépistage organisé/seconde lecture), q.18 (liste des examens), q.19 (motifs en ligne), q.21 (délais).
+> **Horaires confirmés : Lun–Ven 8h–19h, + 1 nocturne par semaine 19h–22h, ouvert 7j/7 jours fériés inclus ; week-end 8h–18h (confirmé 28/08 lot 2)**. Nocturne : réponse partielle « **lundi ou jeudi** » — merci de trancher le jour (seul point restant sur les horaires). L'argument éditorial est « **7j/7, jours fériés inclus** ».
+> **✅ q.19 (motifs en ligne) répondue (lot 2)** : « c'est tout » — **tous les examens sont réservables en ligne sur Doctolib** ; la liste détaillée des motifs sera reprise du back-office Doctolib Pro en Phase 3 pour le sélecteur de `/prendre-rendez-vous` (le fetch public est bloqué par l'anti-bot).
+> Restent ouvertes : q.16 (agrément dépistage organisé/seconde lecture), q.18 (liste précise des examens/zones), q.21 (délais).
 
 14. **IRM** : le site actuel dit « IRM Philips 1,5 T » ; un post LinkedIn (fin 2025) montre la **livraison de deux IRM par hélicoptère**, et l'article CPTS de mai 2024 annonçait « un scanner et une deuxième IRM ». Combien d'IRM à Cergy aujourd'hui, marques/modèles exacts (Philips… ?), tunnel 70 cm ? `[[À COMPLÉTER]]`
 15. **Scanner** : « Scanner en 2025 » sur le site actuel, présent dans la description Doctolib → en service depuis quand ? Marque, modèle, nombre de coupes, injecteur, dispositifs dose : `[[À COMPLÉTER]]`

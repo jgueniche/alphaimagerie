@@ -53,12 +53,12 @@ export default function PrendreRdvPage() {
 
         <div className="mt-8 max-w-2xl rounded-lg border border-line bg-brand-50 px-5 py-4 text-[0.95rem] text-ink-600">
           <p>
-            {/* [[À CONFIRMER : liste des examens réservables en ligne (q.19)]] */}
-            Certains examens (notamment interventionnels) ne sont pas ouverts à la réservation en
-            ligne et se prennent uniquement par téléphone.{" "}
-            <mark className="rounded bg-warn-100 px-1.5 py-0.5 font-semibold text-warn">
-              À confirmer&nbsp;: liste des examens réservables en ligne (q.19)
-            </mark>
+            <strong className="text-brand-900">Tous nos examens sont ouverts à la réservation en
+            ligne</strong>{" "}
+            sur Doctolib : IRM, scanner, échographie, mammographie, radiographie,
+            ostéodensitométrie et gestes interventionnels. Lors de la réservation, Doctolib vous
+            présente le questionnaire et les éventuelles consignes de préparation propres à votre
+            examen. En cas de doute sur le motif à choisir, appelez-nous.
           </p>
         </div>
       </div>
