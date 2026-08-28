@@ -19,8 +19,13 @@ function Value({ text }: { text: string }) {
   );
 }
 
+type FicheFields = Pick<
+  ExamenFrontmatter,
+  "duree" | "injection" | "preparation" | "resultats" | "disponibleA"
+>;
+
 /** Fiche synthèse en cartes (§8.2 du brief) : durée · injection · préparation · résultats · disponibilité. */
-export function FicheSynthese({ fm }: { fm: ExamenFrontmatter }) {
+export function FicheSynthese({ fm }: { fm: FicheFields }) {
   const items = [
     { label: "Durée", value: fm.duree },
     { label: "Injection", value: fm.injection },

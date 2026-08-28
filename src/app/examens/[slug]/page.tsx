@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import type { ImagingTest, MedicalProcedure, WithContext } from "schema-dts";
 import { Breadcrumb } from "@/components/breadcrumb";
 import { EncadreInformatif } from "@/components/encadre";
@@ -7,7 +8,14 @@ import { FicheSynthese } from "@/components/fiche-synthese";
 import { JsonLd } from "@/components/jsonld";
 import { Mdx } from "@/components/mdx";
 import { PictoAgenda, PictoPhone } from "@/components/pictos";
-import { getExamen, listExamens } from "@/lib/content";
+import {
+  getExamen,
+  getExamenZone,
+  listExamens,
+  listExamenZones,
+  ZONE_PARENTS,
+  type ZoneParent,
+} from "@/lib/content";
 import { CERGY, SITE } from "@/lib/site";
 
 export const dynamicParams = false;
@@ -35,6 +43,38 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     description: fm.metaDescription,
     alternates: { canonical: `/examens/${slug}` },
   };
+}
+
+/** Maillage pilier → pages zone (§5 : pilier ↔ zone). */
+function ZonesGrid({ parent }: { parent: ZoneParent }) {
+  const zones = listExamenZones(parent);
+  if (zones.length === 0) return null;
+  const titre =
+    parent === "echographie" ? "Nos pages par type d'échographie" : "Nos pages par zone examinée";
+  return (
+    <nav aria-label={titre} className="mt-12">
+      <h2 className="text-2xl font-bold">{titre}</h2>
+      <p className="mt-2 max-w-2xl text-ink-600">
+        Indications, déroulement et préparation propres à chaque examen.
+      </p>
+      <ul className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+        {zones.map((zone) => {
+          const { frontmatter } = getExamenZone(parent, zone);
+          return (
+            <li key={zone}>
+              <Link
+                href={`/examens/${parent}/${zone}`}
+                className="flex h-full flex-col rounded-lg border border-line bg-surface p-4 shadow-card transition-colors hover:border-action"
+              >
+                <span className="font-display font-bold text-brand-900">{frontmatter.navLabel}</span>
+                <span className="mt-1 text-sm text-ink-600">{frontmatter.metaDescription}</span>
+              </Link>
+            </li>
+          );
+        })}
+      </ul>
+    </nav>
+  );
 }
 
 export default async function ExamenPage({ params }: { params: Promise<{ slug: string }> }) {
@@ -95,6 +135,10 @@ export default async function ExamenPage({ params }: { params: Promise<{ slug: s
         </div>
 
         <Mdx source={body} />
+
+        {ZONE_PARENTS.includes(slug as ZoneParent) ? (
+          <ZonesGrid parent={slug as ZoneParent} />
+        ) : null}
 
         <Faq items={fm.faq} title="Vos questions fréquentes" />
 

@@ -1,5 +1,11 @@
 import type { MetadataRoute } from "next";
-import { listExamens, listInterventionnels, listModalitesVille } from "@/lib/content";
+import {
+  listExamens,
+  listExamenZones,
+  listInterventionnels,
+  listModalitesVille,
+  ZONE_PARENTS,
+} from "@/lib/content";
 import { SITE } from "@/lib/site";
 
 /** Sitemap généré depuis les collections de contenu + routes statiques. Segmentation : Phase 4. */
@@ -15,12 +21,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/mentions-legales",
   ];
   const examens = listExamens().map((s) => `/examens/${s}`);
+  const zones = ZONE_PARENTS.flatMap((parent) =>
+    listExamenZones(parent).map((z) => `/examens/${parent}/${z}`),
+  );
   const interventionnels = listInterventionnels().map(
     (s) => `/examens/radiologie-interventionnelle/${s}`,
   );
   const modalitesVille = listModalitesVille("cergy").map((s) => `/centres/cergy/${s}`);
 
-  const all = [...staticRoutes, ...examens, ...interventionnels, ...modalitesVille];
+  const all = [...staticRoutes, ...examens, ...zones, ...interventionnels, ...modalitesVille];
   return all.map((path) => ({
     url: `${SITE.url}${path}`,
     lastModified: new Date("2026-08-28"),

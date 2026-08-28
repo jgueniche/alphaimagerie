@@ -69,7 +69,20 @@ export const modaliteVilleSchema = z.object({
   updatedAt: z.string().regex(/^\d{4}-\d{2}-\d{2}$/),
 });
 
+/** Piliers déclinables en pages zone (gabarit resserré, §5 du brief). */
+export const ZONE_PARENTS = ["irm", "scanner", "echographie"] as const;
+export type ZoneParent = (typeof ZONE_PARENTS)[number];
+
+export const examenZoneSchema = examenSchema.extend({
+  type: z.literal("examen-zone"),
+  parent: z.enum(ZONE_PARENTS),
+  /** Libellé court pour les grilles de liens et le fil d'Ariane. */
+  navLabel: z.string().max(45),
+  faq: faqSchema.min(4).max(6),
+});
+
 export type ExamenFrontmatter = z.infer<typeof examenSchema>;
+export type ExamenZoneFrontmatter = z.infer<typeof examenZoneSchema>;
 export type CentreFrontmatter = z.infer<typeof centreSchema>;
 export type ModaliteVilleFrontmatter = z.infer<typeof modaliteVilleSchema>;
 
@@ -96,6 +109,19 @@ export function getExamen(slug: string): { frontmatter: ExamenFrontmatter; body:
 
 export function listExamens(): string[] {
   return listSlugs("examens");
+}
+
+export function getExamenZone(
+  parent: ZoneParent,
+  zone: string,
+): { frontmatter: ExamenZoneFrontmatter; body: string } {
+  const { data, content } = load(path.join("examens", parent, `${zone}.mdx`));
+  const frontmatter = examenZoneSchema.parse(data);
+  return { frontmatter, body: content };
+}
+
+export function listExamenZones(parent: ZoneParent): string[] {
+  return listSlugs(path.join("examens", parent));
 }
 
 export function getInterventionnel(slug: string): { frontmatter: ExamenFrontmatter; body: string } {
