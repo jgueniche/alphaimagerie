@@ -30,6 +30,7 @@ export function Footer() {
           <Link href="/centres/goussainville" className="hover:underline">Goussainville (fin 2027)</Link>
           <Link href="/equipe" className="hover:underline">L’équipe médicale</Link>
           <Link href="/resultats" className="hover:underline">Mes résultats</Link>
+          <Link href="/contact" className="hover:underline">Contact</Link>
           <a href={XPLORE.url} target="_blank" rel="noopener" className="hover:underline">Portail médecins</a>
           <a href={SOCIALS.instagram} target="_blank" rel="noopener" className="hover:underline">Instagram</a>
           <a href={SOCIALS.linkedin} target="_blank" rel="noopener" className="hover:underline">LinkedIn</a>

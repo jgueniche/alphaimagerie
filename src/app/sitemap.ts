@@ -20,6 +20,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/preparer-mon-examen",
     "/equipe",
     "/resultats",
+    "/contact",
     "/mentions-legales",
   ];
   const examens = listExamens().map((s) => `/examens/${s}`);
