@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Breadcrumb } from "@/components/breadcrumb";
-import { MODALITE_PICTOS, PictoInterventionnel } from "@/components/pictos";
+import { MODALITE_PICTOS, PictoInterventionnel, PictoRadio } from "@/components/pictos";
 import { MODALITES } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -34,36 +34,50 @@ export default function ExamensPage() {
             );
             return (
               <li key={m.slug}>
-                {m.slug === "irm" ? (
-                  <Link
-                    href="/examens/irm"
-                    className="flex h-full flex-col rounded-lg border border-line bg-surface p-5 shadow-card transition-colors hover:border-action"
-                  >
-                    {inner}
-                    <span className="mt-3 text-sm font-semibold text-action">
-                      Déroulement, préparation, FAQ →
-                    </span>
-                  </Link>
-                ) : (
-                  <div className="flex h-full flex-col rounded-lg border border-line bg-surface p-5 shadow-card">
-                    {inner}
-                    <span className="mt-3 text-xs font-medium text-ink-400">Page détaillée à venir</span>
-                  </div>
-                )}
+                <Link
+                  href={`/examens/${m.slug}`}
+                  className="flex h-full flex-col rounded-lg border border-line bg-surface p-5 shadow-card transition-colors hover:border-action"
+                >
+                  {inner}
+                  <span className="mt-3 text-sm font-semibold text-action">
+                    Déroulement, préparation, FAQ →
+                  </span>
+                </Link>
               </li>
             );
           })}
           <li>
-            <div className="flex h-full flex-col rounded-lg border border-line bg-surface p-5 shadow-card">
+            <Link
+              href="/examens/radiologie-interventionnelle"
+              className="flex h-full flex-col rounded-lg border border-line bg-surface p-5 shadow-card transition-colors hover:border-action"
+            >
               <PictoInterventionnel className="h-8 w-8 text-brand-400" />
               <span className="mt-3 font-display text-lg font-bold text-brand-900">
                 Radiologie interventionnelle
               </span>
               <span className="mt-1 text-sm text-ink-600">
-                Infiltrations, biopsies, cytoponctions, hystérosalpingographie
+                Infiltrations (écho, radio, scanner), biopsie mammaire, cytoponctions,
+                ponctions-évacuations
               </span>
-              <span className="mt-3 text-xs font-medium text-ink-400">Page détaillée à venir</span>
-            </div>
+              <span className="mt-3 text-sm font-semibold text-action">Découvrir les gestes →</span>
+            </Link>
+          </li>
+          <li>
+            <Link
+              href="/examens/hysterosalpingographie"
+              className="flex h-full flex-col rounded-lg border border-line bg-surface p-5 shadow-card transition-colors hover:border-action"
+            >
+              <PictoRadio className="h-8 w-8 text-brand-400" />
+              <span className="mt-3 font-display text-lg font-bold text-brand-900">
+                Hystérosalpingographie
+              </span>
+              <span className="mt-1 text-sm text-ink-600">
+                Bilan de fertilité — utérus et trompes (imagerie de la femme)
+              </span>
+              <span className="mt-3 text-sm font-semibold text-action">
+                Déroulement, préparation, FAQ →
+              </span>
+            </Link>
           </li>
         </ul>
       </div>

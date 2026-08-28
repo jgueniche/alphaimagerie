@@ -5,6 +5,7 @@ import { Faq } from "@/components/faq";
 import { JsonLd } from "@/components/jsonld";
 import { Mdx } from "@/components/mdx";
 import { PictoAgenda, PictoHoraires, PictoPhone, PictoPin } from "@/components/pictos";
+import Link from "next/link";
 import { getCentre } from "@/lib/content";
 import { CERGY, MODALITES, SITE, SOCIALS, XPLORE } from "@/lib/site";
 
@@ -135,6 +136,24 @@ export default function CentreCergyPage() {
         </div>
 
         <Mdx source={body} />
+
+        {/* Landing par modalité — maillage local */}
+        <section aria-labelledby="modalites-cergy" className="mt-12">
+          <h2 id="modalites-cergy" className="text-2xl font-bold">Nos examens à Cergy</h2>
+          <ul className="mt-4 grid grid-cols-2 gap-3 md:grid-cols-3">
+            {MODALITES.map((m) => (
+              <li key={m.slug}>
+                <Link
+                  href={`/centres/cergy/${m.slug}`}
+                  className="flex h-full flex-col rounded-lg border border-line bg-surface p-4 shadow-card transition-colors hover:border-action"
+                >
+                  <span className="font-display font-bold text-brand-900">{m.label} à Cergy</span>
+                  <span className="mt-1 text-sm text-ink-600">{m.equipment}</span>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </section>
 
         <Faq items={fm.faq ?? []} title="Questions fréquentes sur le centre" />
       </div>

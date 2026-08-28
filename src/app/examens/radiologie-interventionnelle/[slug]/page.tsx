@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import type { ImagingTest, WithContext } from "schema-dts";
+import type { MedicalProcedure, WithContext } from "schema-dts";
 import { Breadcrumb } from "@/components/breadcrumb";
 import { EncadreInformatif } from "@/components/encadre";
 import { Faq } from "@/components/faq";
@@ -7,37 +7,50 @@ import { FicheSynthese } from "@/components/fiche-synthese";
 import { JsonLd } from "@/components/jsonld";
 import { Mdx } from "@/components/mdx";
 import { PictoAgenda, PictoPhone } from "@/components/pictos";
-import { getExamen } from "@/lib/content";
+import { getInterventionnel, listInterventionnels } from "@/lib/content";
 import { CERGY, SITE } from "@/lib/site";
 
-const { frontmatter: fm, body } = getExamen("irm");
+export const dynamicParams = false;
 
-export const metadata: Metadata = {
-  title: { absolute: fm.metaTitle },
-  description: fm.metaDescription,
-  alternates: { canonical: "/examens/irm" },
-};
+export function generateStaticParams() {
+  return listInterventionnels().map((slug) => ({ slug }));
+}
 
-const imagingJsonLd: WithContext<ImagingTest> = {
-  "@context": "https://schema.org",
-  "@type": "ImagingTest",
-  name: "IRM (imagerie par résonance magnétique)",
-  imagingTechnique: "MRI",
-  url: `${SITE.url}/examens/irm`,
-};
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params;
+  const { frontmatter: fm } = getInterventionnel(slug);
+  return {
+    title: { absolute: fm.metaTitle },
+    description: fm.metaDescription,
+    alternates: { canonical: `/examens/radiologie-interventionnelle/${slug}` },
+  };
+}
 
-export default function ExamenIrmPage() {
+export default async function InterventionnelPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const { frontmatter: fm, body } = getInterventionnel(slug);
+
+  const jsonLd: WithContext<MedicalProcedure> = {
+    "@context": "https://schema.org",
+    "@type": "MedicalProcedure",
+    name: fm.title,
+    url: `${SITE.url}/examens/radiologie-interventionnelle/${slug}`,
+  };
+
   return (
     <>
-      <JsonLd data={imagingJsonLd} />
-      <Breadcrumb items={[{ label: "Examens", href: "/examens" }, { label: "IRM", href: "/examens/irm" }]} />
+      <JsonLd data={jsonLd} />
+      <Breadcrumb
+        items={[
+          { label: "Examens", href: "/examens" },
+          { label: "Radiologie interventionnelle", href: "/examens/radiologie-interventionnelle" },
+          { label: fm.title, href: `/examens/radiologie-interventionnelle/${slug}` },
+        ]}
+      />
 
       <article className="mx-auto max-w-6xl px-4 pt-6 sm:px-6">
         <h1 className="max-w-3xl text-3xl font-extrabold sm:text-4xl">{fm.title}</h1>
-        <p className="mt-3 max-w-2xl text-lg text-ink-600">
-          Un examen indolore, sans rayons X, réalisé 7j/7 à Cergy Préfecture sur deux IRM Philips
-          MR5300 (1,5 tesla). Rendez-vous le plus souvent sous 48&nbsp;h.
-        </p>
+        <p className="mt-3 max-w-2xl text-lg text-ink-600">{fm.chapo}</p>
 
         <div className="mt-7">
           <FicheSynthese fm={fm} />
@@ -51,7 +64,7 @@ export default function ExamenIrmPage() {
             className="inline-flex items-center gap-2 rounded-full bg-action px-5 py-2.5 font-bold text-white shadow-card transition-colors hover:bg-action-hover"
           >
             <PictoAgenda className="h-5 w-5" />
-            Prendre RDV pour une IRM
+            Prendre rendez-vous
           </a>
           <a
             href={`tel:${CERGY.phoneE164}`}
@@ -64,7 +77,7 @@ export default function ExamenIrmPage() {
 
         <Mdx source={body} />
 
-        <Faq items={fm.faq} title="IRM : vos questions fréquentes" />
+        <Faq items={fm.faq} title="Vos questions fréquentes" />
 
         <EncadreInformatif />
       </article>

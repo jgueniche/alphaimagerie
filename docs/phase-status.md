@@ -5,7 +5,7 @@
 | **0 — Audit & questions** | Crawl site actuel (`docs/audit-site-actuel.md`), benchmark (`docs/benchmark.md`), questions uniques (`docs/questions.md`) | **Livrée — lot 1 de réponses client intégré (28/08)** |
 | 1 — Conception | `docs/sitemap.md`, `docs/keyword-map.csv`, `docs/design-system.md`, `docs/content-plan.md`, `docs/tracking-plan.md`, `docs/nap-master.md` | **En cours** — « arbitrage sur site réel » demandé par le client |
 | 2 — Squelette + pilotes | Layout, composants, `/centres/cergy` + `/examens/irm` | **Livrée en v1 (28/08)** — build vert, 12 pages statiques, 301 testées ; arbitrage design/UX client attendu |
-| 3 — Contenu intégral | Toutes pages §5 du brief, marquées à valider médicalement | À faire |
+| 3 — Contenu intégral | Toutes pages §5 du brief, marquées à valider médicalement | **Lot 1 livré (28/08)** : 7 piliers examens + hystérosalpingographie + 4 pages interventionnelles + 6 landings modalité×ville Cergy (28 pages générées). Restent : zones IRM/scanner/écho, préparer-mon-examen, équipe, professionnels-de-santé, FAQ globale, contact (formulaire), recrutement, pages légales secondaires |
 | 4 — SEO / schema / analytics / CMP | JSON-LD, GTM/GA4/Consent Mode v2, mesure exemptée, 301 | À faire |
 | 5 — QA & migration | DoD §13, `docs/migration.md`, handover README | À faire |
 

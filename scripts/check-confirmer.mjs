@@ -18,7 +18,7 @@ const TOKEN = "[[À CONFIRMER";
 const ref = process.env.VERCEL_GIT_COMMIT_REF;
 const strict =
   process.env.CHECK_CONFIRMER === "strict" ||
-  (process.env.VERCEL_ENV === "production" && (!ref || ref === "main"));
+  (process.env.VERCEL_ENV === "production" && (!ref || ref === "main" || ref === "master"));
 
 function* walk(dir) {
   for (const name of readdirSync(dir)) {

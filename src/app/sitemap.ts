@@ -1,19 +1,26 @@
 import type { MetadataRoute } from "next";
+import { listExamens, listInterventionnels, listModalitesVille } from "@/lib/content";
 import { SITE } from "@/lib/site";
 
-/** Sitemap v1 (pages existantes). Segmentation par type + lastmod réel : Phase 4. */
+/** Sitemap généré depuis les collections de contenu + routes statiques. Segmentation : Phase 4. */
 export default function sitemap(): MetadataRoute.Sitemap {
-  const routes = [
+  const staticRoutes = [
     "",
     "/prendre-rendez-vous",
     "/centres/cergy",
     "/centres/goussainville",
     "/examens",
-    "/examens/irm",
     "/resultats",
     "/mentions-legales",
   ];
-  return routes.map((path) => ({
+  const examens = listExamens().map((s) => `/examens/${s}`);
+  const interventionnels = listInterventionnels().map(
+    (s) => `/examens/radiologie-interventionnelle/${s}`,
+  );
+  const modalitesVille = listModalitesVille("cergy").map((s) => `/centres/cergy/${s}`);
+
+  const all = [...staticRoutes, ...examens, ...interventionnels, ...modalitesVille];
+  return all.map((path) => ({
     url: `${SITE.url}${path}`,
     lastModified: new Date("2026-08-28"),
     changeFrequency: "monthly",

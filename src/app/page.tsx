@@ -91,29 +91,17 @@ export default function Home() {
         <ul className="mt-8 grid grid-cols-2 gap-4 md:grid-cols-3">
           {MODALITES.map((m) => {
             const Picto = MODALITE_PICTOS[m.slug as keyof typeof MODALITE_PICTOS];
-            const card = (
-              <>
-                <Picto className="h-8 w-8 text-brand-400" />
-                <span className="mt-3 font-display text-lg font-bold text-brand-900">{m.label}</span>
-                <span className="mt-1 text-sm text-ink-600">{m.equipment}</span>
-              </>
-            );
             return (
               <li key={m.slug}>
-                {m.slug === "irm" ? (
-                  <Link
-                    href="/examens/irm"
-                    className="flex h-full flex-col rounded-lg border border-line bg-surface p-5 shadow-card transition-colors hover:border-action"
-                  >
-                    {card}
-                    <span className="mt-3 text-sm font-semibold text-action">En savoir plus →</span>
-                  </Link>
-                ) : (
-                  <div className="flex h-full flex-col rounded-lg border border-line bg-surface p-5 shadow-card">
-                    {card}
-                    <span className="mt-3 text-xs font-medium text-ink-400">Page détaillée à venir</span>
-                  </div>
-                )}
+                <Link
+                  href={`/examens/${m.slug}`}
+                  className="flex h-full flex-col rounded-lg border border-line bg-surface p-5 shadow-card transition-colors hover:border-action"
+                >
+                  <Picto className="h-8 w-8 text-brand-400" />
+                  <span className="mt-3 font-display text-lg font-bold text-brand-900">{m.label}</span>
+                  <span className="mt-1 text-sm text-ink-600">{m.equipment}</span>
+                  <span className="mt-3 text-sm font-semibold text-action">En savoir plus →</span>
+                </Link>
               </li>
             );
           })}
