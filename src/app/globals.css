@@ -3,21 +3,22 @@
 
 /*
  * Tokens Alpha Imagerie — source de vérité : docs/design-system.md
- * Bleu de marque extrait du logo réel (#01176A).
+ * Bleus issus du logo vectoriel officiel : identité #232D5C, secondaire décoratif #5976B9.
  */
 @theme {
-  --color-brand-900: #01176a;
-  --color-brand-700: #1a2fa5;
-  --color-action: #2447d1;
-  --color-action-hover: #1a37b0;
-  --color-brand-100: #e8ecfb;
-  --color-brand-50: #f3f5fd;
+  --color-brand-900: #232d5c;
+  --color-brand-700: #2c4189;
+  --color-action: #3a55a8;
+  --color-action-hover: #2c4189;
+  --color-brand-400: #5976b9;
+  --color-brand-100: #e5eaf6;
+  --color-brand-50: #f2f5fb;
   --color-paper: #fafbfd;
   --color-surface: #ffffff;
   --color-ink: #101a38;
   --color-ink-600: #46536f;
   --color-ink-400: #7d89a3;
-  --color-accent: #b4632a;
+  --color-accent: #a85a22;
   --color-accent-100: #f9ede3;
   --color-ok: #116b48;
   --color-warn: #8a5a00;

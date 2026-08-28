@@ -2,7 +2,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { CERGY, XPLORE } from "@/lib/site";
 import { PictoPhone } from "@/components/pictos";
-import logo from "../../public/brand/logo-principal-bleu.png";
 
 const NAV = [
   { href: "/examens", label: "Examens" },
@@ -17,11 +16,12 @@ export function Header() {
       <div className="mx-auto flex max-w-6xl items-center gap-4 px-4 py-3 sm:px-6">
         <Link href="/" className="flex shrink-0 items-center" aria-label="Alpha Imagerie — accueil">
           <Image
-            src={logo}
+            src="/brand/logo-principal-bleu-trim.svg"
             alt="Alpha Imagerie"
+            width={402}
+            height={200}
             priority
             className="h-11 w-auto"
-            sizes="92px"
           />
         </Link>
 

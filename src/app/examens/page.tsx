@@ -27,7 +27,7 @@ export default function ExamensPage() {
             const Picto = MODALITE_PICTOS[m.slug as keyof typeof MODALITE_PICTOS];
             const inner = (
               <>
-                <Picto className="h-8 w-8 text-action" />
+                <Picto className="h-8 w-8 text-brand-400" />
                 <span className="mt-3 font-display text-lg font-bold text-brand-900">{m.label}</span>
                 <span className="mt-1 text-sm text-ink-600">{m.equipment}</span>
               </>
@@ -55,7 +55,7 @@ export default function ExamensPage() {
           })}
           <li>
             <div className="flex h-full flex-col rounded-lg border border-line bg-surface p-5 shadow-card">
-              <PictoInterventionnel className="h-8 w-8 text-action" />
+              <PictoInterventionnel className="h-8 w-8 text-brand-400" />
               <span className="mt-3 font-display text-lg font-bold text-brand-900">
                 Radiologie interventionnelle
               </span>

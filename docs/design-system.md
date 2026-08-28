@@ -4,22 +4,25 @@
 
 ## 1. Couleur
 
-Le bleu de marque est **extrait du logo réel** (PNG HD Wix, couleur dominante des pixels opaques, mesure exacte) : **`#01176A`** — un marine indigo très profond. Il est trop sombre pour servir de couleur d'action : il devient la couleur d'**identité** (titres, footer, fonds de marque), et on en dérive une couleur d'**action** plus lumineuse de même teinte (hue ≈ 228°). À re-vérifier sur le logo vectoriel quand il sera fourni (q.36).
+Les bleus proviennent du **logo vectoriel officiel** (fourni par le client le 28/08/2026, `public/brand/logo-principal-bleu.svg` + déclinaison ronde) : identité **`#232D5C`** et secondaire **`#5976B9`** (présent dans la déclinaison ronde). La couleur d'**action** `#3A55A8` est dérivée de la même famille (entre les deux bleus du logo, saturée juste assez pour les CTA). ⚠ Le PNG de l'ancien site donnait `#01176A` (export altéré) — seuls les hex du vectoriel font foi.
 
 | Token | Hex | Usage | Contraste sur blanc |
 |---|---|---|---|
-| `brand-900` | `#01176A` | identité : H1/H2, footer, fonds profonds (texte blanc dessus : 17,4:1) | 17,4:1 |
-| `brand-700` | `#1A2FA5` | liens visités/hover appuyé, dégradés discrets | 10,2:1 |
-| `action` (`brand-600`) | `#2447D1` | **CTA primaires (Doctolib, appel), liens, focus ring** | 7,6:1 AA/AAA |
-| `brand-100` | `#E8ECFB` | fonds de sections « wash », hover cartes | — |
-| `brand-50` | `#F3F5FD` | fonds alternés | — |
+| `brand-900` | `#232D5C` | identité (bleu logo) : H1/H2, footer, fonds profonds | 13,1:1 |
+| `brand-700` | `#2C4189` | hover des CTA, interactions appuyées | 9,4:1 |
+| `action` | `#3A55A8` | **CTA primaires (Doctolib, appel), liens, focus ring** | 6,9:1 AA/AAA (blanc sur fond : 6,9:1) |
+| `brand-400` | `#5976B9` | **décoratif uniquement** (pictogrammes, illustrations — 4,45:1, insuffisant pour du texte) | 4,45:1 |
+| `brand-100` | `#E5EAF6` | fonds de sections « wash », hover cartes | — |
+| `brand-50` | `#F2F5FB` | fonds alternés | — |
 | `paper` | `#FAFBFD` | fond de page (blanc cassé froid, jamais #FFF pur en pleine page) | — |
 | `surface` | `#FFFFFF` | cartes, formulaires | — |
 | `ink` | `#101A38` | texte courant (bleu-noir, pas de #000) | 16,6:1 |
 | `ink-600` | `#46536F` | texte secondaire | 7,4:1 |
-| `accent` (chaud) | `#B4632A` | **avec parcimonie** : pastille « Ouvert 7j/7, jours fériés inclus », nocturne, points d'attention | 4,6:1 (AA texte ≥ 18 px / gras) |
+| `accent` (chaud) | `#A85A22` | **avec parcimonie** : pastille « Ouvert 7j/7, jours fériés inclus », nocturne, points d'attention | 5,1:1 AA |
 | `accent-100` | `#F9EDE3` | fond de la pastille/encarts chaleureux | — |
 | `ok` / `warn` / `error` | `#116B48` / `#8A5A00` / `#A52333` | états formulaire uniquement | ≥ 4,5:1 |
+
+Assets de marque : `public/brand/logo-principal-bleu.svg` (source), `logo-principal-bleu-trim.svg` (viewBox rognée, utilisée dans le header), `logo-rond.svg` (déclinaison ronde → favicon.ico, icon.png 512, apple-icon.png 180 — usages ponctuels : icônes, réseaux, OG).
 
 Règles : l'accent chaud n'apparaît jamais sur deux composants voisins ; les états sémantiques ne se confondent pas avec `action` ; **thème clair unique** (patientèle âgée, cohérence marque, budget perf — pas de dark mode au lancement ; décision réversible, tokens centralisés).
 
