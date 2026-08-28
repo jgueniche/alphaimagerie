@@ -30,6 +30,7 @@ Site vitrine de la SELAS Alpha Imagerie (imagerie médicale, Cergy + Goussainvil
 - SEO : `app/sitemap.ts`, `app/robots.ts`, Metadata API, JSON-LD typé `schema-dts`, 301 dans `next.config`. Conserver la meta GSC `google-site-verification=ol7ZyAQV5TShF2GzDd5J_oV7kF_Fdr_EZ1uIEna9P5Q`.
 - Qualité : ESLint + Prettier + `tsc --noEmit` en pre-commit ; Playwright (+ axe-core) ; Lighthouse CI.
 - Git : `main` protégé, branche par feature, Conventional Commits, jamais de `.env` commité.
+- **Workflow de mise en production (règle client, 28/08/2026 — BLOQUANTE)** : `master` = production Vercel publique. **Ne JAMAIS créer de PR ni merger vers `master` sans instruction explicite du client dans la session courante** — même si `CHECK_CONFIRMER=strict` passe et que tous les tests sont verts. Développer et pousser sur la branche de travail uniquement (previews Vercel) ; le client teste sur la preview, puis donne son OK de merge. Un « merge quand le strict passe » d'une consigne antérieure ne vaut PAS autorisation.
 
 ## Rédaction (§8.3)
 
