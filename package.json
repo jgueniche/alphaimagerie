@@ -10,6 +10,8 @@
     "typecheck": "tsc --noEmit",
     "check:similarity": "node scripts/check-similarity.mjs",
     "check:region": "node scripts/check-region.mjs",
+    "check:jsonld": "node scripts/check-jsonld.mjs",
+    "check:seo": "node scripts/check-seo.mjs",
     "test": "playwright test"
   },
   "dependencies": {

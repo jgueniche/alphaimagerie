@@ -6,7 +6,7 @@ import { SITE } from "@/lib/site";
 export const metadata: Metadata = {
   title: { absolute: "Accessibilité – Alpha Imagerie" },
   description:
-    "Déclaration d'accessibilité du site alphaimagerie.fr : objectif RGAA 4.1 / WCAG 2.1 AA, état de conformité, signalement des difficultés et voies de recours.",
+    "Déclaration d'accessibilité du site alphaimagerie.fr : objectif RGAA 4.1 / WCAG 2.1 AA, état de conformité, signalement des difficultés et recours.",
   alternates: { canonical: "/accessibilite" },
 };
 

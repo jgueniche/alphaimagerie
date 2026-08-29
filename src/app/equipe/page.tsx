@@ -9,7 +9,7 @@ import { CERGY, SITE } from "@/lib/site";
 export const metadata: Metadata = {
   title: { absolute: "Nos médecins radiologues – Alpha Imagerie" },
   description:
-    "Une équipe d'une douzaine de radiologues issus de centres experts (Institut Curie, hôpital Tenon, Pitié-Salpêtrière), fondée par les Drs Jérémy et Yoram Gueniche.",
+    "Une douzaine de radiologues issus de centres experts (Institut Curie, hôpital Tenon, Pitié-Salpêtrière), autour des Drs Jérémy et Yoram Gueniche.",
   alternates: { canonical: "/equipe" },
 };
 
@@ -44,6 +44,16 @@ const physiciansJsonLd: WithContext<Physician>[] = FONDATEURS.map((f) => ({
   name: f.nom,
   medicalSpecialty: "https://schema.org/Radiography",
   url: `${SITE.url}/equipe`,
+  // Physician hérite de MedicalBusiness : Google attend l'adresse du lieu d'exercice.
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: CERGY.streetAddress,
+    postalCode: CERGY.postalCode,
+    addressLocality: CERGY.city,
+    addressRegion: "Île-de-France",
+    addressCountry: "FR",
+  },
+  telephone: CERGY.phoneE164,
   worksFor: {
     "@type": "MedicalClinic",
     name: CERGY.displayName,

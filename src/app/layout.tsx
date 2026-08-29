@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     template: "%s – Alpha Imagerie",
   },
   description:
-    "Centre d'imagerie médicale à Cergy Préfecture : IRM, scanner, échographie, mammographie, radiographie, ostéodensitométrie. Ouvert 7j/7, jours fériés inclus.",
+    "Centre d'imagerie médicale à Cergy Préfecture : IRM, scanner, échographie, mammographie, radiographie, ostéodensitométrie. Ouvert 7j/7.",
   verification: { google: SITE.gscVerification },
   alternates: { canonical: "/" },
   openGraph: ogImages(

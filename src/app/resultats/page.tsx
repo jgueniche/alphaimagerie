@@ -5,7 +5,7 @@ import { XPLORE } from "@/lib/site";
 export const metadata: Metadata = {
   title: { absolute: "Vos résultats d'imagerie en ligne – Alpha Imagerie" },
   description:
-    "Consultez vos comptes rendus et vos images d'imagerie médicale en ligne via notre portail patients sécurisé. Votre médecin les reçoit par messagerie sécurisée et DMP.",
+    "Consultez vos comptes rendus et vos images en ligne via le portail patients sécurisé. Votre médecin les reçoit par messagerie sécurisée et DMP.",
   alternates: { canonical: "/resultats" },
 };
 

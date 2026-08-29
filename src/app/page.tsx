@@ -1,8 +1,14 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import type { MedicalOrganization, WebSite, WithContext } from "schema-dts";
 import { JsonLd } from "@/components/jsonld";
 import { MODALITE_PICTOS, PictoHoraires, PictoPhone, PictoPin } from "@/components/pictos";
 import { CERGY, MODALITES, SITE, SOCIALS } from "@/lib/site";
+
+export const metadata: Metadata = {
+  description:
+    "IRM, scanner, échographie, mammographie et radiographie à Cergy Préfecture (95). Ouvert 7j/7, jours fériés inclus. Rendez-vous en ligne sur Doctolib.",
+};
 
 const orgJsonLd: WithContext<MedicalOrganization> = {
   "@context": "https://schema.org",

@@ -89,6 +89,8 @@ export default async function ExamenPage({ params }: { params: Promise<{ slug: s
         "@context": "https://schema.org",
         "@type": "ImagingTest",
         name: fm.title,
+        // Reprise de la meta description du MDX : contenu déjà relu, aucune assertion ajoutée.
+        description: fm.metaDescription,
         imagingTechnique: technique,
         url: `${SITE.url}/examens/${slug}`,
       }
@@ -96,6 +98,7 @@ export default async function ExamenPage({ params }: { params: Promise<{ slug: s
         "@context": "https://schema.org",
         "@type": "MedicalProcedure",
         name: fm.title,
+        description: fm.metaDescription,
         url: `${SITE.url}/examens/${slug}`,
       };
 

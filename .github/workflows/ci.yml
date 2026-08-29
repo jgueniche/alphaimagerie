@@ -32,6 +32,10 @@ jobs:
       - name: Région d'exécution UE (config)
         run: node scripts/check-region.mjs
       - run: npm run build
+      - name: Données structurées (§13 — 5 types, 0 erreur)
+        run: node scripts/check-jsonld.mjs
+      - name: SEO on-page (§13 — title/description/OG/canonical uniques)
+        run: node scripts/check-seo.mjs
       - name: Navigateurs Playwright
         run: npx playwright install --with-deps chromium
       - name: Tests E2E

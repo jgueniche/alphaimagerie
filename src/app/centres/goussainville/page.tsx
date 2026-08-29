@@ -4,7 +4,7 @@ import { Breadcrumb } from "@/components/breadcrumb";
 import { CERGY } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: { absolute: "Radiologie à Goussainville : ouverture fin 2027 – Alpha Imagerie" },
+  title: { absolute: "Radiologie à Goussainville, fin 2027 – Alpha Imagerie" },
   description:
     "Alpha Imagerie ouvrira un nouveau centre d'imagerie médicale à Goussainville Gare, au sein d'une maison de santé. Ouverture prévue fin 2027.",
   alternates: { canonical: "/centres/goussainville" },

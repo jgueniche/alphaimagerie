@@ -42,6 +42,8 @@ export function ExamenZonePage({ parent, zone }: { parent: ZoneParent; zone: str
     "@context": "https://schema.org",
     "@type": "ImagingTest",
     name: fm.title,
+    // Reprise de la meta description du MDX : contenu déjà relu, aucune assertion ajoutée.
+    description: fm.metaDescription,
     imagingTechnique: meta.technique,
     url: `${SITE.url}${url}`,
   };
