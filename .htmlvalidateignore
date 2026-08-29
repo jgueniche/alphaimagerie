@@ -1,0 +1,5 @@
+# Gabarit 500 interne de Next, rendu avant hydratation et non surchargeable depuis
+# l'application : il omet l'attribut `lang`. La vraie page d'erreur du site est
+# src/app/global-error.tsx (en français, lang="fr"), et c'est elle qui s'affiche
+# dès que React a repris la main. Rien à corriger côté projet.
+.next/server/app/_global-error.html

@@ -97,6 +97,7 @@ Légende : ✅ vérifié · ⏳ en attente d'une réponse client · ⬜ à véri
 | 6.4 | Un seul `<h1>` par page, hiérarchie de titres cohérente | ✅ | `scripts/check-seo.mjs` sur les 71 pages + `tests/e2e/parcours.spec.ts` |
 | 6.5 | Erreurs de formulaire annoncées aux technologies d'assistance | ✅ | `tests/e2e/formulaire.spec.ts` |
 | 6.6 | Déclaration d'accessibilité publiée | ✅ | `/accessibilite` |
+| 6.9 | Pages d'erreur en français, avec `lang="fr"` | ✅ | `src/app/not-found.tsx` et `src/app/global-error.tsx` remplacent les gabarits anglais de Next |
 | 6.7 | Navigation au clavier et focus visible | ⬜ | Vérification manuelle à la recette |
 | 6.8 | Test avec un lecteur d'écran (NVDA ou VoiceOver) sur 3 gabarits | ⬜ | Vérification manuelle à la recette |
 
@@ -118,12 +119,12 @@ Légende : ✅ vérifié · ⏳ en attente d'une réponse client · ⬜ à véri
 | 8.1 | Lighthouse mobile ≥ 95 / 100 / 100 / 100 | ⏳ | Accessibilité, bonnes pratiques et SEO à 100 bloquants en CI. **Performance à mesurer sur l'hébergement réel** — PSI, clé API à fournir |
 | 8.2 | LCP < 1,8 s · CLS < 0,05 · INP < 200 ms (labo **et** terrain) | ⏳ | Labo : à confirmer par PSI. Terrain : disponible dans Search Console après 28 jours de trafic |
 | 8.3 | Rich Results : 0 erreur sur les 5 types | ✅ | `scripts/check-jsonld.mjs` — 0 erreur, 5 types présents. Passage à l'outil Google planifié après bascule (`docs/rich-results.md`) |
-| 8.4 | HTML et axe-core : 0 erreur bloquante | ✅ | `tests/e2e/accessibilite.spec.ts` |
+| 8.4 | HTML et axe-core : 0 erreur bloquante | ✅ | `npm run check:html` (html-validate, 73 pages, 0 erreur) + `tests/e2e/accessibilite.spec.ts` |
 | 8.5 | 0 script tiers avant consentement | ✅ | `tests/e2e/tiers.spec.ts` |
 | 8.6 | 0 `[[À CONFIRMER]]` en production | ✅ | `CHECK_CONFIRMER=strict` bloquant en CI |
 | 8.7 | 0 duplication de contenu | ✅ | `scripts/check-similarity.mjs` |
 | 8.8 | title / description / OG / canonical uniques partout | ✅ | `scripts/check-seo.mjs` — 70 pages indexables, 0 doublon |
-| 8.9 | Suite Playwright complète verte | ✅ | 59 tests passés, 1 ignoré volontairement |
+| 8.9 | Suite Playwright complète verte | ✅ | 61 tests passés, 1 ignoré volontairement |
 | 8.10 | Checklist de conformité signée | ⬜ | **Le présent document, §10** |
 
 ## 9. Points bloquants avant signature
@@ -167,6 +168,7 @@ CHECK_CONFIRMER=strict node scripts/check-confirmer.mjs
 npm run build                       # inclut les garde-fous contenu
 npm run check:jsonld                # §13 — données structurées
 npm run check:seo                   # §13 — SEO on-page
+npm run check:html                  # §13 — validation HTML
 npm run check:region                # §4  — région UE (configuration)
 npx playwright install --with-deps chromium
 npm test                            # suite Playwright

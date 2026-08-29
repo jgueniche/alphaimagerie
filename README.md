@@ -35,11 +35,12 @@ de contact écrit les envois dans la console tant que `CONTACT_TRANSPORT` n'est 
 | `npm run check:region` | Région d'exécution UE — configuration, et déploiement si une URL est passée |
 | `npm run check:jsonld` | Données structurées : 5 types du §13, 0 erreur |
 | `npm run check:seo` | title / description / OG / canonical : longueurs et unicité |
-| `npm test` | Suite Playwright (60 tests, 2 profils) |
+| `npm run check:html` | Validation HTML et accessibilité des 73 pages prérendues |
+| `npm test` | Suite Playwright (62 tests, 2 profils) |
 
-Les quatre `check:*` lisent le HTML **prérendu** : lancer `npm run build` d'abord.
+Les `check:*` lisent le HTML **prérendu** : lancer `npm run build` d'abord.
 
-## Les cinq garde-fous
+## Les six garde-fous
 
 Ils sont tous bloquants en CI. Ce ne sont pas des conventions de style : chacun protège une
 exigence contractuelle du brief.
@@ -61,6 +62,12 @@ exigence contractuelle du brief.
 5. **`scripts/check-seo.mjs`** — title ≤ 60 car., description ≤ 155 car., un seul `<h1>`,
    canonical et Open Graph présents, tout cela unique sur les 70 pages indexables. *§8.3 et
    §13.*
+6. **`html-validate`** (`.htmlvalidate.json`) — conformité au modèle de contenu HTML et
+   règles d'accessibilité, sur les 73 pages prérendues. *§13 : « validation HTML, 0 erreur
+   bloquante ».* Le validateur W3C en ligne n'étant pas automatisable, la vérification se
+   fait hors ligne. Les règles purement stylistiques et la sérialisation JSX de React
+   (`charSet`, `crossorigin=""`, identifiants `useId`) sont désactivées, avec la raison ;
+   `.htmlvalidateignore` exclut le seul gabarit 500 interne de Next, non surchargeable.
 
 À quoi s'ajoute la suite Playwright, dont `tests/e2e/tiers.spec.ts` : **0 requête tierce et
 0 cookie** au chargement, sur six gabarits. C'est la preuve technique de la conformité CNIL
@@ -78,7 +85,7 @@ src/components/         composants partagés (header, footer, CTA, encadrés, JS
 src/lib/site.ts         NAP, horaires, plateau technique — miroir de docs/nap-master.md
 src/lib/content.ts      lecture et validation du MDX
 src/lib/mailer.ts       transport e-mail du formulaire (inactif tant que Brevo n'est pas branché)
-scripts/                les cinq garde-fous
+scripts/                les garde-fous (sauf la validation HTML, confiée à html-validate)
 tests/e2e/              Playwright : parcours, CTA/dataLayer, 301, tiers, formulaire, axe-core
 docs/                   toute la documentation projet (voir ci-dessous)
 ```

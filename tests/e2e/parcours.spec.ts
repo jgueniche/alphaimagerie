@@ -19,6 +19,21 @@ test.describe("Parcours patient", () => {
     await expect(page.getByRole("navigation", { name: "Pour aller plus loin" })).toBeVisible();
   });
 
+  test("une URL inconnue rend la page 404 du site, en français", async ({ page }) => {
+    // Compte à la bascule depuis Wix : toute ancienne URL non redirigée atterrit ici
+    // (docs/migration.md §5). Le gabarit par défaut de Next serait en anglais et sans navigation.
+    const reponse = await page.goto("/une-url-qui-n-existe-pas");
+    expect(reponse?.status()).toBe(404);
+    await expect(page.locator("h1")).toHaveCount(1);
+    await expect(page.locator("h1")).toContainText("n’existe pas");
+    await expect(page.locator("html")).toHaveAttribute("lang", "fr");
+
+    // Les raccourcis doivent ramener vers les parcours réels, pas seulement vers l'accueil.
+    await expect(page.getByRole("link", { name: "Prendre rendez-vous", exact: true })).toBeVisible();
+    await page.getByRole("link", { name: /plan du site/ }).click();
+    await expect(page).toHaveURL(/\/plan-du-site$/);
+  });
+
   test("chaque gabarit porte un H1 unique et un canonical", async ({ page }) => {
     for (const url of [
       "/",

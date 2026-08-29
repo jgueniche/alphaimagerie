@@ -36,6 +36,8 @@ jobs:
         run: node scripts/check-jsonld.mjs
       - name: SEO on-page (§13 — title/description/OG/canonical uniques)
         run: node scripts/check-seo.mjs
+      - name: Validation HTML (§13 — 0 erreur bloquante)
+        run: npm run check:html
       - name: Navigateurs Playwright
         run: npx playwright install --with-deps chromium
       - name: Tests E2E

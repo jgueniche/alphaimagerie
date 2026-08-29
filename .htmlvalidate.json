@@ -1,0 +1,22 @@
+{
+  "extends": [
+    "html-validate:recommended",
+    "html-validate:a11y"
+  ],
+  "rules": {
+    "attr-case": "off",
+    "attribute-boolean-style": "off",
+    "attribute-empty-style": "off",
+    "void-style": "off",
+    "no-inline-style": "off",
+    "no-trailing-whitespace": "off",
+    "script-type": "off",
+    "require-sri": "off",
+    "long-title": "off",
+    "valid-id": "off",
+    "tel-non-breaking": "off",
+    "prefer-native-element": "off",
+    "no-implicit-button-type": "off",
+    "attribute-allowed-values": "off"
+  }
+}

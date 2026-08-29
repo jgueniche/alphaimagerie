@@ -131,6 +131,11 @@ Elle couvre l'intégralité du sitemap Wix relevé le 29/08/2026.
 | `/mentions-légales` et `/mentions-l%C3%A9gales` | `/mentions-legales` | ✔ |
 | `alphaimagerie.fr/*` (apex) | `www.alphaimagerie.fr/*` | via Vercel |
 
+Toute ancienne URL qui échapperait malgré tout à ce tableau atterrit sur la page 404 du
+site (`src/app/not-found.tsx`) : en français, avec la navigation et des raccourcis vers les
+parcours réels — et non sur le gabarit anglais par défaut de Next. C'est un filet, pas un
+substitut à la redirection : une URL qui reçoit du trafic doit être redirigée.
+
 > **À compléter dès réception de l'export Search Console** (q.38) : toute URL indexée
 > absente de ce tableau doit y être ajoutée avant la bascule, sinon elle renverra un 404.
 > Le paramètre Wix `?lightbox=` était bloqué par le `robots.txt` actuel : aucune URL de ce
