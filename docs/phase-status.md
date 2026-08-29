@@ -7,7 +7,7 @@
 | 2 — Squelette + pilotes | Layout, composants, `/centres/cergy` + `/examens/irm` | **Livrée en v1 (28/08)** — build vert, 12 pages statiques, 301 testées ; arbitrage design/UX client attendu |
 | 3 — Contenu intégral | Toutes pages §5 du brief, marquées à valider médicalement | **Livrée (28/08 soir, lots 2–6)** : 24 zones longue traîne (12 IRM, 6 scanner, 6 écho), hub `/preparer-mon-examen` + 11 fiches imprimables (CSS print), formulaire `/contact` conforme §3.2 (transport factice en attente Brevo q.46), `/professionnels-de-sante`, `/faq`, `/recrutement`, pages légales complètes (`/politique-de-confidentialite` + `docs/rgpd/`, `/cookies`, `/accessibilite`, `/plan-du-site`). **77 pages générées.** Hors périmètre lancement : pages Goussainville détaillées (P0.1), fiches `/equipe/[dr]` (attente q.10/26), tarifs détaillés (q.40), actualités (q.51) |
 | 4 — SEO / schema / analytics / CMP | JSON-LD, GTM/GA4/Consent Mode v2, mesure exemptée, 301 | **Socle livré (28/08) + volet technique clos (29/08)** : images OG par gabarit (`/og` via next/og), dataLayer first-party complet (0 tag tiers), script de similarité bloquant, suite Playwright 60 tests, CI GitHub Actions + Lighthouse CI. **29/08** : fonctions forcées en `cdg1` (elles tournaient en `iad1`), garde-fous données structurées et SEO on-page ajoutés au build et à la CI. **Restent (bloqués par arbitrages q.44–47)** : CMP + Consent Mode v2 + GTM/GA4 + mesure exemptée |
-| 5 — QA & migration | DoD §13, `docs/migration.md`, handover README | **En cours (29/08)** — livrés : `docs/migration.md` (runbook de bascule, DNS OVH relevé), `docs/compliance-checklist.md` (recette signable), `docs/rich-results.md`, `docs/google-ads-plan.md`, `docs/gbp-playbook.md`, README de passation. **Restent** : mesure PSI sur la production (clé API à fournir), test Rich Results en ligne (après bascule), relecture médicale (55 fichiers), signature de la checklist |
+| 5 — QA & migration | DoD §13, `docs/migration.md`, handover README | **En cours (29/08)** — livrés : `docs/migration.md` (runbook de bascule, DNS OVH relevé), `docs/compliance-checklist.md` (recette signable), `docs/rich-results.md`, `docs/google-ads-plan.md`, `docs/gbp-playbook.md`, README de passation, validation HTML (§13) et pages 404/500 françaises. **Restent** : mesure PSI sur la production (clé API à fournir), test Rich Results en ligne (après bascule), relecture médicale (55 fichiers), signature de la checklist |
 
 Notes de session :
 - 2026-08-27 : **Phase 0 livrée** — `docs/audit-site-actuel.md`, `docs/benchmark.md` (+ annexes `docs/benchmark/`), `docs/questions.md` (57 questions, une seule passe). GSC non audité (accès manquant → question n° 38). CWV lab non mesurés (PSI en quota anonyme épuisé, Lighthouse local bloqué par l'interception TLS du bac à sable) → relance PSI avec clé API en Phase 1 (`docs/benchmark/psi_fetch.sh`).
@@ -29,5 +29,12 @@ Notes de session :
   q.25/27 restent ouvertes, donc ni Brevo, ni CMP, ni Plausible, ni ligne prescripteurs, ni
   JobPosting n'ont été implémentés. Deux questions ajoutées : q.59 (téléphone de l'hébergeur,
   LCEN) et q.60 (accès OVH pour la bascule).
+  Ajout du dernier critère du §13 qui manquait, la **validation HTML** (html-validate hors
+  ligne, le validateur W3C étant derrière Cloudflare) : 0 erreur sur 73 pages. Elle a révélé
+  que les pages **404 et 500 étaient les gabarits anglais par défaut de Next** — remplacées
+  par `src/app/not-found.tsx` (raccourcis vers les parcours réels, filet de la bascule Wix)
+  et `src/app/global-error.tsx` (`lang="fr"`, autonome). Suite Playwright : 61 tests verts.
+  **PSI toujours impossible** : quota anonyme épuisé (HTTP 429), la clé API du client reste
+  nécessaire pour valider les seuils de performance du §13.
 
 - (Historique) **Déploiement Vercel : action client requise** — le connecteur de la session n'a pas le droit de créer un projet (403). Importer `jgueniche/alphaimagerie` sur https://vercel.com/new (l'intégration GitHub est déjà en place) : chaque push de la branche produira ensuite une preview automatique. Région/functions et domaine : Phase 5.
