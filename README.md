@@ -1,36 +1,170 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# alphaimagerie.fr
 
-## Getting Started
+Site vitrine de la **SELAS Alpha Imagerie** — imagerie médicale à Cergy Préfecture (95),
+second centre à Goussainville prévu fin 2027.
 
-First, run the development server:
+Next.js 15 App Router · TypeScript strict · Tailwind CSS v4 · contenu MDX · déploiement Vercel.
+70 pages statiques, aucun script tiers, aucun cookie.
+
+> **À lire avant toute modification** : [`CLAUDE.md`](CLAUDE.md) — règles bloquantes
+> (conformité déontologique, RGPD, HDS, workflow de mise en production) et données client
+> confirmées. Le brief fondateur est dans [`docs/BRIEF.md`](docs/BRIEF.md).
+
+---
+
+## Démarrer
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm ci          # et non `npm install` : le lockfile fait foi
+npm run dev     # http://localhost:3000
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Node 22. Aucune variable d'environnement n'est nécessaire en développement : le formulaire
+de contact écrit les envois dans la console tant que `CONTACT_TRANSPORT` n'est pas défini.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Commandes
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| Commande | Rôle |
+|---|---|
+| `npm run dev` | Serveur de développement |
+| `npm run build` | Build de production — **enchaîne les garde-fous contenu** avant `next build` |
+| `npm start` | Sert le build |
+| `npm run lint` | ESLint |
+| `npm run typecheck` | `tsc --noEmit` |
+| `npm run check:similarity` | Détection de duplication entre pages proches (seuil 50 %) |
+| `npm run check:region` | Région d'exécution UE — configuration, et déploiement si une URL est passée |
+| `npm run check:jsonld` | Données structurées : 5 types du §13, 0 erreur |
+| `npm run check:seo` | title / description / OG / canonical : longueurs et unicité |
+| `npm test` | Suite Playwright (60 tests, 2 profils) |
 
-## Learn More
+Les quatre `check:*` lisent le HTML **prérendu** : lancer `npm run build` d'abord.
 
-To learn more about Next.js, take a look at the following resources:
+## Les cinq garde-fous
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Ils sont tous bloquants en CI. Ce ne sont pas des conventions de style : chacun protège une
+exigence contractuelle du brief.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. **`scripts/check-confirmer.mjs`** — aucun jeton `[[À CONFIRMER : …]]` ne part en
+   production. En développement, simple avertissement ; en CI (`CHECK_CONFIRMER=strict`) et
+   sur un déploiement de production, échec du build. *Rien d'inventé ne doit être publié :
+   tout fait médical, tarifaire, d'équipement, d'horaire ou juridique non confirmé par le
+   client s'écrit avec ce jeton.*
+2. **`scripts/check-similarity.mjs`** — les 24 pages de zone et les 6 landings
+   modalité×ville se ressemblent par construction ; au-delà de 50 % de similarité, le build
+   échoue. *Protège contre la pénalité de contenu dupliqué.*
+3. **`scripts/check-region.mjs`** — les fonctions serveur doivent s'exécuter dans l'UE
+   (`cdg1`). *§4 du brief ; sans cela, une Server Action traitant un formulaire tournerait
+   aux États-Unis.*
+4. **`scripts/check-jsonld.mjs`** — données structurées valides, et **refus de tout
+   `aggregateRating`, `review` ou `Rating`**. *L'article R.4127-19-1 CSP interdit les avis
+   et notations : le garde-fou empêche qu'un balisage les réintroduise par inadvertance.*
+5. **`scripts/check-seo.mjs`** — title ≤ 60 car., description ≤ 155 car., un seul `<h1>`,
+   canonical et Open Graph présents, tout cela unique sur les 70 pages indexables. *§8.3 et
+   §13.*
 
-## Deploy on Vercel
+À quoi s'ajoute la suite Playwright, dont `tests/e2e/tiers.spec.ts` : **0 requête tierce et
+0 cookie** au chargement, sur six gabarits. C'est la preuve technique de la conformité CNIL
+tant qu'aucune CMP n'est installée.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Où se trouve quoi
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```
+content/                MDX + frontmatter validé par zod — c'est ici qu'on édite le contenu
+  examens/              piliers, zones (irm/, scanner/, echographie/), interventionnel/
+  centres/cergy/        landings modalité × ville
+  preparation/          11 fiches imprimables
+src/app/                routes App Router (une page = un dossier)
+src/components/         composants partagés (header, footer, CTA, encadrés, JSON-LD…)
+src/lib/site.ts         NAP, horaires, plateau technique — miroir de docs/nap-master.md
+src/lib/content.ts      lecture et validation du MDX
+src/lib/mailer.ts       transport e-mail du formulaire (inactif tant que Brevo n'est pas branché)
+scripts/                les cinq garde-fous
+tests/e2e/              Playwright : parcours, CTA/dataLayer, 301, tiers, formulaire, axe-core
+docs/                   toute la documentation projet (voir ci-dessous)
+```
+
+### Modifier un contenu
+
+1. Éditer le `.mdx` dans `content/`. Le frontmatter est validé au build : une clé manquante
+   fait échouer le build avec un message explicite.
+2. Toute affirmation nouvelle non confirmée par le client s'écrit
+   `[[À CONFIRMER : description précise]]`, **et** la question correspondante est ajoutée à
+   [`docs/questions.md`](docs/questions.md). Jamais l'un sans l'autre.
+3. Une page de contenu médical non relue porte `{/* À VALIDER MÉDICALEMENT */}` en tête.
+4. `npm run build && npm run check:seo && npm run check:similarity` avant de pousser.
+
+### Modifier une donnée NAP (adresse, téléphone, horaires)
+
+Un seul endroit : `src/lib/site.ts`, qui reflète `docs/nap-master.md`. Toute divergence
+entre les deux est un bug. Ces valeurs alimentent le site, le JSON-LD, les liens `tel:` et
+les deep links d'itinéraire.
+
+## Documentation
+
+| Fichier | Contenu |
+|---|---|
+| [`CLAUDE.md`](CLAUDE.md) | Règles bloquantes et données client confirmées — **prioritaire** |
+| [`docs/BRIEF.md`](docs/BRIEF.md) | Brief fondateur intégral |
+| [`docs/phase-status.md`](docs/phase-status.md) | Avancement, décisions, historique de session |
+| [`docs/questions.md`](docs/questions.md) | Questions client et réponses — liste unique |
+| [`docs/compliance-checklist.md`](docs/compliance-checklist.md) | Recette de conformité à signer avant production |
+| [`docs/migration.md`](docs/migration.md) | Runbook de bascule du domaine |
+| [`docs/nap-master.md`](docs/nap-master.md) | Source de vérité NAP |
+| [`docs/design-system.md`](docs/design-system.md) | Palette, typographie, composants |
+| [`docs/sitemap.md`](docs/sitemap.md) · [`docs/content-plan.md`](docs/content-plan.md) · [`docs/keyword-map.csv`](docs/keyword-map.csv) | Architecture éditoriale et SEO |
+| [`docs/tracking-plan.md`](docs/tracking-plan.md) | Plan de marquage (dataLayer, conversions) |
+| [`docs/rich-results.md`](docs/rich-results.md) | Inventaire des données structurées, plan de vérification Google |
+| [`docs/google-ads-plan.md`](docs/google-ads-plan.md) | Cadre publicitaire et contraintes santé |
+| [`docs/gbp-playbook.md`](docs/gbp-playbook.md) | Fiche Google Business Profile |
+| [`docs/rgpd/`](docs/rgpd/) | Registre des traitements |
+| [`docs/formulaire-contact.md`](docs/formulaire-contact.md) | Fonctionnement et configuration du formulaire |
+| [`docs/audit-site-actuel.md`](docs/audit-site-actuel.md) · [`docs/benchmark.md`](docs/benchmark.md) | Phase 0 |
+
+## Déploiement
+
+- **`master` = production Vercel publique.** Toute autre branche produit une preview.
+- **Aucune PR ni aucun merge vers `master` sans instruction explicite du client dans la
+  session courante** — même si tous les contrôles sont verts (règle client du 28/08/2026,
+  rappelée dans `CLAUDE.md`). Le client teste sur la preview, puis donne son accord.
+- Région imposée : `cdg1` (Paris), déclarée dans `vercel.json` **et** via `preferredRegion`
+  sur le layout racine. Après chaque déploiement de production :
+  `node scripts/check-region.mjs https://www.alphaimagerie.fr`.
+- Le domaine définitif est `https://www.alphaimagerie.fr` ; l'apex redirige en 301.
+  Procédure complète : [`docs/migration.md`](docs/migration.md).
+
+### Variables d'environnement
+
+Aucune n'est commitée ; elles se règlent dans l'interface Vercel (*Settings → Environment
+Variables*).
+
+| Variable | Rôle | Statut |
+|---|---|---|
+| `CONTACT_TRANSPORT` | `log` (défaut) : transport factice, le message est seulement journalisé. `brevo` : envoi réel. | En attente de l'arbitrage q.46 |
+| `BREVO_API_KEY` | Clé API Brevo, requise si `CONTACT_TRANSPORT=brevo` | À fournir par le client |
+| `CONTACT_FROM` | Expéditeur, défaut `contact@alphaimagerie.fr` — doit être validé dans Brevo | — |
+
+Tant que `CONTACT_TRANSPORT` vaut `log`, **le formulaire n'envoie rien** : c'est le point
+bloquant n° 1 de la mise en production.
+
+Voir [`docs/formulaire-contact.md`](docs/formulaire-contact.md).
+
+## Intégration continue
+
+`.github/workflows/ci.yml`, sur `master`, sur les branches `claude/**` et sur toute PR :
+
+```
+npm ci → lint → typecheck → check-confirmer (strict) → check-similarity → check-region
+       → build → check-jsonld → check-seo → Playwright → Lighthouse CI
+```
+
+Lighthouse CI bloque sur *Accessibility*, *Best Practices* et *SEO* à 100. La performance y
+est en avertissement : `next start` sur un runner partagé, sans CDN ni compression, sous-évalue
+le score. **Le seuil de performance du §13 (≥ 95 mobile) se mesure sur l'hébergement réel**,
+via PageSpeed Insights (`docs/benchmark/psi_fetch.sh`, clé API requise).
+
+## Conventions
+
+- Commits [Conventional Commits](https://www.conventionalcommits.org/fr/), en français.
+- Une branche par sujet ; `master` protégé.
+- Jamais de `.env` commité, jamais de secret dans le dépôt.
+- Le code et les commentaires sont en français, comme le contenu.
