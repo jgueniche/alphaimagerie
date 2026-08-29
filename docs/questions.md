@@ -11,6 +11,27 @@
 
 ---
 
+## ⛔ Ce qui bloque au 29/08/2026 — par ordre d'impact
+
+> Aucun de ces points ne relève du développement : le code correspondant est écrit ou
+> documenté, il attend une décision ou un accès. Le détail de chaque question est plus bas.
+
+| # | Question | Ce qui est bloqué | Sans réponse |
+|---|---|---|---|
+| 1 | **q.46** — clé API Brevo + validation SPF/DKIM | Envoi réel du formulaire de contact | Le formulaire affiche « message envoyé » mais **rien n'est transmis** (`CONTACT_TRANSPORT=log`) |
+| 2 | **q.44 / q.45** — CMP et mesure d'audience | CMP, Consent Mode v2, GA4/GTM, Plausible | Aucune mesure d'audience, et aucune campagne Ads possible |
+| 3 | **Clé API PageSpeed** | Seuils de performance du §13 | Impossible de valider ≥ 95 mobile et les Core Web Vitals (quota anonyme épuisé : HTTP 429) |
+| 4 | **q.38** — accès GSC / GA4 / Ads / GBP / OVH | Suivi, bascule du domaine, fiche Google | Bascule impossible à surveiller ; fiche GBP non modifiable |
+| 5 | **q.58** — durées de conservation RGPD | Signature de la checklist | Engagements publiés mais non validés par le responsable de traitement |
+| 6 | **q.25 / q.27** — DPO et mention TVA | Mentions légales définitives | Formulations en place mais non validées |
+| 7 | **q.41 / q.42** — ligne prescripteurs et urgences | Page `/professionnels-de-sante` | Pas de ligne dédiée publiée |
+| 8 | **Relecture médicale** | Mise en production | 55 fichiers portent encore `À VALIDER MÉDICALEMENT` |
+| 9 | **q.37** — photos réelles | `/equipe`, `/centres/cergy`, fiche GBP | Placeholders initiales ; aucune photo de banque ne sera utilisée |
+| 10 | **Export motifs Doctolib Pro + `pid`** | Sélecteur site→examen→motif de `/prendre-rendez-vous` | Lien générique vers la fiche Doctolib |
+| 11 | **q.50 / q.52 / q.53** | JobPosting, lien Facebook, villes desservies | Fonctionnalités non activées |
+
+---
+
 ## P0.1 — Goussainville (site 2)
 
 > **✅ Répondu (28/08/2026)** : **nouveau centre « Goussainville Gare », au sein d'une maison de santé — ouverture prévue fin 2027**, à teaser sur le site (formulation souple type « ouverture prévue fin 2027 »). Conséquences : page `/centres/goussainville` en teaser (sans NAP ni horaires), pas de pages modalité×ville Goussainville au lancement, pas de fiche Doctolib/GBP à ce stade. Les questions 3–9 restent à traiter **avant l'ouverture** (non bloquantes pour le lancement).
