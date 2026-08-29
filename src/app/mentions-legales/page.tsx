@@ -60,8 +60,9 @@ export default function MentionsLegalesPage() {
             <a href="https://vercel.com" target="_blank" rel="noopener">
               vercel.com
             </a>
-            . Ce site est un site d’information statique : il n’héberge ni ne traite aucune donnée
-            de santé.
+            . Le site est déployé dans la région <em>Paris (cdg1)</em> du réseau Vercel : les
+            pages et les traitements serveur s’exécutent dans l’Union européenne. Ce site est un
+            site d’information statique : il n’héberge ni ne traite aucune donnée de santé.
           </p>
 
           <h2>Données personnelles</h2>

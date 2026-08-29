@@ -120,3 +120,17 @@
 56. **PMR** : GBP Cergy indique entrée/parking/WC accessibles — précisions à afficher (ascenseur, table adaptée…) + équivalent Goussainville : `[[À COMPLÉTER]]`
 57. L'Instagram se présente comme « **centre de référence imagerie de la femme** » : cette formulation relève du superlatif à éviter sur le site (R.4127-19-1). Je propose « pôle dédié à l'imagerie de la femme » — OK ?
 58. **RGPD — durées de conservation à valider** (publiées le 28/08 dans `/politique-de-confidentialite` et `docs/rgpd/registre-traitement.md`) : e-mails du formulaire de contact supprimés **au plus tard 12 mois** après le dernier échange ; candidatures supprimées **au plus tard 2 ans** après réception (recommandation CNIL). Ces engagements opérationnels vous conviennent-ils (c'est le secrétariat qui devra les appliquer) ?
+
+59. **Téléphone de l'hébergeur dans les mentions légales** : l'article 6, III, 1°, d) de la
+    LCEN cite « les nom, dénomination ou raison sociale et adresse et numéro de téléphone »
+    du prestataire d'hébergement. Les mentions publient aujourd'hui la raison sociale et
+    l'adresse de Vercel Inc. (et la région de déploiement, Paris/cdg1), sans numéro de
+    téléphone — usage courant des sites français hébergés à l'étranger. Souhaitez-vous
+    qu'on publie un numéro (à obtenir auprès de Vercel) ou qu'on s'en tienne à l'adresse ?
+    Recommandation : s'en tenir à l'adresse, le risque étant théorique. `[[À TRANCHER]]`
+
+60. **Bascule du domaine** — la zone DNS est chez **OVH** (`ns104.ovh.net`), la messagerie
+    aussi (MX `mx1/mx2/mx3.mail.ovh.net`, SPF `include:mx.ovh.com`). Il faut un accès à
+    l'espace client OVH le jour de la bascule (`docs/migration.md`). Qui en dispose, et
+    confirmez-vous qu'OVH est bien le registrar (et non un simple hébergeur DNS) ?
+    `[[À COMPLÉTER]]`
