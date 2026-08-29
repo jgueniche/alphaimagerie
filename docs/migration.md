@@ -35,6 +35,11 @@ en cochant au fur et à mesure.
 - [ ] CI verte sur `master` : lint, `tsc`, `[[À CONFIRMER]]` strict, similarité, région UE,
       données structurées, SEO on-page, build, Playwright, Lighthouse CI.
 - [ ] `node scripts/check-region.mjs https://alphaimagerie.vercel.app` → fonctions en `cdg1`.
+      *Ce contrôle ne peut pas se faire sur une preview* : Vercel Authentication intercepte
+      la requête à l'edge (302 vers `/sso-api`), aucune fonction n'est exécutée et aucune
+      région n'est lisible. Il faut viser un déploiement public (production), ou créer un
+      jeton *Protection Bypass for Automation* (Vercel → Settings → Deployment Protection)
+      et le passer par `VERCEL_BYPASS`.
 - [ ] Seuils §13 mesurés sur la production Vercel avec PageSpeed Insights
       (`docs/benchmark/psi_fetch.sh`, **clé API à fournir**) : mobile ≥ 95/100/100/100,
       LCP < 1,8 s, CLS < 0,05, INP < 200 ms.

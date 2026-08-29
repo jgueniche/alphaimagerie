@@ -128,7 +128,9 @@ les deep links d'itinéraire.
   rappelée dans `CLAUDE.md`). Le client teste sur la preview, puis donne son accord.
 - Région imposée : `cdg1` (Paris), déclarée dans `vercel.json` **et** via `preferredRegion`
   sur le layout racine. Après chaque déploiement de production :
-  `node scripts/check-region.mjs https://www.alphaimagerie.fr`.
+  `node scripts/check-region.mjs https://www.alphaimagerie.fr`. Sur une preview, ce contrôle
+  ne peut pas aboutir — Vercel Authentication répond avant la fonction — sauf avec un jeton
+  *Protection Bypass for Automation* passé par `VERCEL_BYPASS`.
 - Le domaine définitif est `https://www.alphaimagerie.fr` ; l'apex redirige en 301.
   Procédure complète : [`docs/migration.md`](docs/migration.md).
 

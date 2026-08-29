@@ -107,8 +107,16 @@ if (!base) {
       const parts = id.split("::");
       const region = parts.length >= 3 ? parts[1] : null;
 
-      if (reponse.status === 401) {
-        ko(`${sonde.label} : 401 — preview protégée, relancer avec VERCEL_BYPASS=…`);
+      const sso =
+        reponse.status === 401 ||
+        (reponse.status === 302 && (reponse.headers.get("location") ?? "").includes("/sso-api"));
+
+      if (sso) {
+        // Vercel Authentication intercepte la requête à l'edge : aucune fonction n'est
+        // exécutée, donc aucune région à lire. Il faut un jeton « Protection Bypass for
+        // Automation » (Vercel → Settings → Deployment Protection), ou attendre que le
+        // déploiement soit public (production).
+        ko(`${sonde.label} : déploiement protégé par Vercel Authentication (${reponse.status}) — relancer avec VERCEL_BYPASS=<jeton>, ou viser un déploiement public`);
       } else if (!region) {
         ko(`${sonde.label} : région absente de x-vercel-id (« ${id || "en-tête manquant"} ») — réponse servie par le cache ?`);
       } else if (REGIONS_UE.has(region)) {

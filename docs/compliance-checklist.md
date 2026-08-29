@@ -51,7 +51,7 @@ Légende : ✅ vérifié · ⏳ en attente d'une réponse client · ⬜ à véri
 | 3.2 | Résultats accessibles uniquement par lien sortant vers Xplore | ✅ | `/resultats` — lien externe, aucune intégration |
 | 3.3 | Aucun upload d'ordonnance, de CV ou d'image | ✅ | `/recrutement` renvoie vers l'e-mail ; aucun champ fichier |
 | 3.4 | Mention explicite dans les mentions légales | ✅ | `/mentions-legales`, section *Hébergeur* |
-| 3.5 | Fonctions serveur exécutées dans l'Union européenne | ✅ | `vercel.json` (`cdg1`) + `preferredRegion` ; `scripts/check-region.mjs` (volet config en CI). **Volet en ligne à repasser après déploiement** |
+| 3.5 | Fonctions serveur exécutées dans l'Union européenne | ✅ | `vercel.json` (`cdg1`) + `preferredRegion` ; `scripts/check-region.mjs` (volet config en CI). **Volet en ligne à repasser sur un déploiement public** — sur une preview, Vercel Authentication répond avant la fonction et la région n'est pas lisible |
 
 ## 4. Cookies et traceurs — recommandation CNIL
 
