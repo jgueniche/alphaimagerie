@@ -9,6 +9,7 @@
     "lint": "eslint",
     "typecheck": "tsc --noEmit",
     "check:similarity": "node scripts/check-similarity.mjs",
+    "check:region": "node scripts/check-region.mjs",
     "test": "playwright test"
   },
   "dependencies": {

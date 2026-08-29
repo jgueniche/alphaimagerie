@@ -5,7 +5,7 @@ name: CI
 
 on:
   push:
-    branches: [master]
+    branches: [master, 'claude/**']
   pull_request:
   workflow_dispatch:
 
@@ -29,6 +29,8 @@ jobs:
         run: CHECK_CONFIRMER=strict node scripts/check-confirmer.mjs
       - name: Similarité de contenu
         run: node scripts/check-similarity.mjs
+      - name: Région d'exécution UE (config)
+        run: node scripts/check-region.mjs
       - run: npm run build
       - name: Navigateurs Playwright
         run: npx playwright install --with-deps chromium

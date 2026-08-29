@@ -7,6 +7,9 @@ import { ImageResponse } from "next/og";
  * dépendance à un fichier : rendu garanti dans l'environnement serverless.
  */
 
+/** Fonction exécutée dans l'UE (§4 du brief) — voir aussi vercel.json. */
+export const preferredRegion = "cdg1";
+
 const BRAND_900 = "#232d5c";
 const BRAND_400 = "#5976b9";
 const PAPER = "#fafbfd";

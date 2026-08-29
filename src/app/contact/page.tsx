@@ -7,6 +7,9 @@ import { PictoHoraires, PictoPhone, PictoPin } from "@/components/pictos";
 import { FormulaireContact } from "@/app/contact/formulaire";
 import { CERGY, SITE } from "@/lib/site";
 
+/** La Server Action d'envoi doit rester dans l'UE (§4 et §3.2 du brief). */
+export const preferredRegion = "cdg1";
+
 export const metadata: Metadata = {
   title: "Contact",
   description:

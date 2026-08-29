@@ -18,6 +18,14 @@ const sourceSans = Source_Sans_3({
   subsets: ["latin", "latin-ext"],
 });
 
+/**
+ * Région d'exécution des fonctions (§4 du brief : cdg1/fra1, jamais hors UE).
+ * Héritée par tous les segments enfants ; doublée par `regions` dans vercel.json
+ * pour couvrir aussi les fonctions générées hors config de segment.
+ * Repli documenté si cdg1 est saturée : fra1 (Francfort) — voir docs/migration.md.
+ */
+export const preferredRegion = "cdg1";
+
 export const metadata: Metadata = {
   metadataBase: new URL(SITE.url),
   title: {
