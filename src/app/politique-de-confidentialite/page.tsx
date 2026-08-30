@@ -6,7 +6,7 @@ import { SITE } from "@/lib/site";
 export const metadata: Metadata = {
   title: { absolute: "Politique de confidentialité – Alpha Imagerie" },
   description:
-    "Comment alphaimagerie.fr traite vos données personnelles : formulaire de contact sans donnée de santé, aucun stockage, vos droits RGPD et leur exercice.",
+    "Comment alphaimagerie.fr traite vos données personnelles : aucune collecte sur le site, aucune donnée de santé, vos droits RGPD et leur exercice.",
   alternates: { canonical: "/politique-de-confidentialite" },
 };
 
@@ -20,7 +20,7 @@ export default function ConfidentialitePage() {
           <p>
             Cette page décrit la manière dont le site <strong>www.alphaimagerie.fr</strong>{" "}
             traite vos données personnelles, conformément au règlement général sur la protection
-            des données (RGPD) et à la loi Informatique et Libertés. Version du 28 août 2026.
+            des données (RGPD) et à la loi Informatique et Libertés. Version du 30 août 2026.
           </p>
 
           <h2>Responsable de traitement</h2>
@@ -40,30 +40,21 @@ export default function ConfidentialitePage() {
             par Doctolib, qui applique sa propre politique de confidentialité.
           </p>
 
-          <h2>Formulaire de contact</h2>
-          <ul>
-            <li>
-              <strong>Données collectées</strong> : civilité, nom, prénom, e-mail, téléphone
-              (facultatif), centre concerné, type de demande (liste fermée), message libre — avec
-              la consigne explicite de n&rsquo;y indiquer{" "}
-              <strong>aucune information médicale</strong>.
-            </li>
-            <li>
-              <strong>Finalité</strong> : répondre à votre demande. <strong>Base légale</strong> :
-              votre démarche volontaire (mesures précontractuelles et intérêt légitime à vous
-              répondre).
-            </li>
-            <li>
-              <strong>Destinataire</strong> : le secrétariat d&rsquo;Alpha Imagerie, par e-mail
-              chiffré en transit (TLS) vers {SITE.email}.
-            </li>
-            <li>
-              <strong>Conservation</strong> : votre message n&rsquo;est{" "}
-              <strong>enregistré dans aucune base de données</strong> du site. L&rsquo;e-mail reçu
-              est conservé le temps du traitement de votre demande, puis supprimé au plus tard
-              12 mois après le dernier échange.
-            </li>
-          </ul>
+          <h2>Aucune collecte de données sur ce site</h2>
+          <p>
+            Ce site <strong>ne comporte aucun formulaire</strong> et ne vous demande de saisir
+            aucune information : ni nom, ni e-mail, ni téléphone, ni message. Il n&rsquo;y a donc
+            aucune donnée personnelle collectée par le site lui-même, et rien à stocker.
+          </p>
+          <p>
+            Pour nous joindre, vous utilisez les moyens habituels indiqués sur la{" "}
+            <Link href="/contact">page contact</Link> — téléphone, e-mail — ou la prise de
+            rendez-vous en ligne. Un e-mail que vous nous adressez de votre propre initiative
+            est reçu et traité par notre secrétariat comme tout courrier : il est conservé le
+            temps de traiter votre demande, puis supprimé au plus tard 12 mois après le dernier
+            échange. <strong>N&rsquo;y faites figurer aucune information médicale</strong> : la
+            messagerie n&rsquo;est pas un canal sécurisé pour les données de santé.
+          </p>
 
           <h2>Autres traitements</h2>
           <ul>
@@ -107,11 +98,12 @@ export default function ConfidentialitePage() {
 
           <h2>Hébergement et transferts</h2>
           <p>
-            Le site est hébergé par Vercel Inc. (États-Unis), avec diffusion depuis des serveurs
-            situés en Europe. Les données du formulaire transitent de manière chiffrée et ne
-            font l&rsquo;objet d&rsquo;aucun stockage applicatif ; les éventuels transferts hors
-            Union européenne liés à l&rsquo;hébergement sont encadrés par les clauses
-            contractuelles types de la Commission européenne.
+            Le site est hébergé par Vercel Inc. (États-Unis) et déployé dans la région Paris
+            (cdg1) : les pages et les traitements serveur s&rsquo;exécutent dans l&rsquo;Union
+            européenne. Le site n&rsquo;ayant aucun stockage applicatif, les seules données
+            traitées à ce titre sont les journaux de connexion mentionnés ci-dessus ; les
+            éventuels transferts hors Union européenne liés à l&rsquo;hébergement sont encadrés
+            par les clauses contractuelles types de la Commission européenne.
           </p>
         </div>
       </div>

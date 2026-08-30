@@ -2,7 +2,7 @@
 
 # Données structurées — état et plan de vérification Rich Results
 
-Généré le 2026-08-29 à partir du build (71 pages prérendues).
+Généré le 2026-08-30 à partir du build (70 pages prérendues).
 
 ## 1. Contrôle automatisé (bloquant en CI)
 

@@ -40,7 +40,7 @@
 | `/professionnels-de-sante` | prescripteurs | portail médecins, MS-Santé/DMP, reconstructions 3D, CPTS Axe Majeur, EndoIDF, ligne dédiée (q.41) |
 | `/recrutement` | marque employeur | JobPosting dès offres fournies (q.50) ; candidature par e-mail |
 | `/faq` | FAQPage globale | questions transverses (RDV, documents, résultats, tiers payant) |
-| `/contact` | contact conforme §3.2 | formulaire + coordonnées ; page merci `noindex` |
+| `/contact` | coordonnées du centre | téléphone, e-mail, adresse, itinéraires, Doctolib ; **aucun formulaire** (décision client 30/08) |
 | `/mentions-legales` · `/politique-de-confidentialite` · `/cookies` · `/accessibilite` · `/plan-du-site` | conformité | LCEN complet (capital : q.23) |
 
 ## Post-ouverture Goussainville (fin 2027 — préparé, non publié)

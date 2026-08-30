@@ -45,13 +45,14 @@ des traceurs publicitaires sans base légale.
 ## 2. Objectif et mesure
 
 L'objectif est la **prise de rendez-vous**, qui se produit à 100 % hors du site (Doctolib
-ou téléphone). Les conversions sont donc des proxys, à assumer comme tels.
+ou téléphone). Les conversions sont donc des proxys, à assumer comme tels — d'autant que
+le site ne comporte plus aucun formulaire depuis le 30/08/2026 : il ne reste que deux
+signaux, tous deux des intentions de départ vers un canal externe.
 
 | Conversion | Source | Valeur | Rôle |
 |---|---|---|---|
 | `cta_doctolib_click` | dataLayer, clic vers Doctolib | primaire | La plus proche du rendez-vous réel |
 | `phone_click` | dataLayer, clic sur un `tel:` | secondaire | Sous-estimée sur ordinateur ; fiable sur mobile |
-| `contact_submit` | Server Action, page `/contact/merci` | secondaire | Volume faible, intention forte |
 
 Deux angles morts à garder en tête pour ne pas se tromper dans les arbitrages :
 

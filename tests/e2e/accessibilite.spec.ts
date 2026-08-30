@@ -2,7 +2,27 @@ import AxeBuilder from "@axe-core/playwright";
 import { expect, test } from "@playwright/test";
 
 /** axe-core sur les gabarits représentatifs — 0 violation sérieuse/critique (§13). */
-const PAGES = ["/", "/examens/irm", "/examens/irm/genou", "/preparer-mon-examen/irm", "/contact", "/faq"];
+/* Un gabarit de chaque famille, plus les pages de conversion et les pages légales :
+   /prendre-rendez-vous manquait à cette liste, et y portait un défaut non détecté. */
+const PAGES = [
+  "/",
+  "/examens/irm",
+  "/examens/irm/genou",
+  "/examens/radiologie-interventionnelle/infiltrations",
+  "/centres/cergy",
+  "/centres/cergy/irm",
+  "/preparer-mon-examen/irm",
+  "/prendre-rendez-vous",
+  "/contact",
+  "/equipe",
+  "/resultats",
+  "/professionnels-de-sante",
+  "/recrutement",
+  "/faq",
+  "/mentions-legales",
+  "/politique-de-confidentialite",
+  "/plan-du-site",
+];
 
 test.describe("Accessibilité (axe-core)", () => {
   for (const url of PAGES) {

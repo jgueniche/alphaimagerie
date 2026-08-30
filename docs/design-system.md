@@ -15,12 +15,12 @@ Les bleus proviennent du **logo vectoriel officiel** (fourni par le client le 28
 | `brand-100` | `#E5EAF6` | fonds de sections « wash », hover cartes | — |
 | `brand-50` | `#F2F5FB` | fonds alternés | — |
 | `paper` | `#FAFBFD` | fond de page (blanc cassé froid, jamais #FFF pur en pleine page) | — |
-| `surface` | `#FFFFFF` | cartes, formulaires | — |
+| `surface` | `#FFFFFF` | cartes, encadrés | — |
 | `ink` | `#101A38` | texte courant (bleu-noir, pas de #000) | 16,6:1 |
 | `ink-600` | `#46536F` | texte secondaire | 7,4:1 |
 | `accent` (chaud) | `#9D5420` | **avec parcimonie** : pastille « Ouvert 7j/7, jours fériés inclus », nocturne, points d'attention | 5,6:1 sur blanc, 4,9:1 sur `accent-100` (AA vérifié axe-core 28/08 ; `ink-400` foncé à `#626F8C` pour la même raison) |
 | `accent-100` | `#F9EDE3` | fond de la pastille/encarts chaleureux | — |
-| `ok` / `warn` / `error` | `#116B48` / `#8A5A00` / `#A52333` | états formulaire uniquement | ≥ 4,5:1 |
+| `ok` / `warn` / `error` | `#116B48` / `#8A5A00` / `#A52333` | encadrés d'avertissement uniquement | ≥ 4,5:1 |
 
 Assets de marque : `public/brand/logo-principal-bleu.svg` (source), `logo-principal-bleu-trim.svg` (viewBox rognée, utilisée dans le header), `logo-rond.svg` (déclinaison ronde → favicon.ico, icon.png 512, apple-icon.png 180 — usages ponctuels : icônes, réseaux, OG).
 

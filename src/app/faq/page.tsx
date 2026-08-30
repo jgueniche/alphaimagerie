@@ -105,9 +105,9 @@ export default function FaqPage() {
 
         <p className="mt-8 max-w-prose text-sm text-ink-600">
           Vous ne trouvez pas votre réponse ? Appelez le secrétariat au {CERGY.phoneDisplay} ou
-          utilisez le{" "}
+          écrivez-nous — toutes nos coordonnées sont sur la{" "}
           <Link href="/contact" className="font-semibold text-action underline-offset-2 hover:underline">
-            formulaire de contact
+            page contact
           </Link>{" "}
           (sans y indiquer d&rsquo;information médicale).
         </p>

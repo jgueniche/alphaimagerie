@@ -225,7 +225,7 @@ for (const fichier of pages) {
   parPage.set(url, typesDeLaPage);
 
   // Fil d'Ariane attendu sur toute page indexable de profondeur ≥ 1 (maillage §7 du brief).
-  // Les pages en noindex (confirmation de formulaire) en sont dispensées.
+  // Les pages en noindex en sont dispensées.
   const profondeur = url.split("/").filter(Boolean).length;
   const noindex = /<meta name="robots" content="[^"]*noindex/.test(html);
   if (profondeur >= 1 && !noindex && !typesDeLaPage.includes("BreadcrumbList")) {

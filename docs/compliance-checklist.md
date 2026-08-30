@@ -7,7 +7,7 @@ et les critères de la *Definition of Done* du §13.
 Chaque ligne porte une **preuve** : un fichier, un test automatisé, ou une vérification
 manuelle datée. Une ligne sans preuve n'est pas conforme, elle est seulement non vérifiée.
 
-**Statut au 29/08/2026** : recette technique complète, **hors points en attente de réponse
+**Statut au 30/08/2026** : recette technique complète, **hors points en attente de réponse
 client** (repérés « ⏳ » et listés au §9). Le site ne peut pas être déclaré conforme tant
 que ces points ne sont pas tranchés.
 
@@ -30,16 +30,21 @@ Légende : ✅ vérifié · ⏳ en attente d'une réponse client · ⬜ à véri
 
 ## 2. RGPD
 
+> **Le formulaire de contact a été supprimé le 30/08/2026** (décision client : utilité
+> jugée faible au regard du risque). Le site ne comporte plus aucun champ de saisie : il ne
+> collecte, ne transmet et ne stocke aucune donnée personnelle. C'est la mise en conformité
+> la plus solide qui soit — il n'y a plus de traitement à sécuriser côté site.
+
 | # | Exigence | Statut | Preuve |
 |---|---|:--:|---|
-| 2.1 | Formulaire limité aux champs du §3.2 | ✅ | `src/app/contact/champs.ts` : civilité, nom, prénom, e-mail, téléphone, site, type de demande (liste fermée), message |
-| 2.2 | Mention « N'indiquez aucune information médicale » visible | ✅ | `tests/e2e/formulaire.spec.ts` |
-| 2.3 | Aucune donnée de santé collectée, aucun upload | ✅ | Aucun `<input type="file">` dans le code ; ordonnances, CV et images explicitement exclus |
-| 2.4 | Envoi TLS vers `contact@alphaimagerie.fr` | ⏳ | `src/lib/mailer.ts` — transport de production **non activé** (q.46, Brevo) ; `CONTACT_TRANSPORT=log` en attente |
-| 2.5 | Aucun stockage des soumissions | ✅ | Aucune base connectée (q.47 : recommandation « e-mail seul » suivie par défaut) |
-| 2.6 | Politique de confidentialité publiée et à jour | ✅ | `/politique-de-confidentialite` |
-| 2.7 | Registre des traitements tenu | ✅ | `docs/rgpd/registre-traitement.md` |
-| 2.8 | Durées de conservation validées par le responsable de traitement | ⏳ | Publiées (12 mois contact / 2 ans candidatures) mais **non validées** — q.58 |
+| 2.1 | Aucun formulaire ni champ de saisie sur le site | ✅ | `tests/e2e/contact.spec.ts` — 0 `<form>`, 0 `input/textarea/select` sur 5 gabarits |
+| 2.2 | Aucune donnée personnelle collectée, transmise ou stockée par le site | ✅ | Ni Server Action, ni transport e-mail, ni base : `src/app/contact/actions.ts` et `src/lib/mailer.ts` supprimés |
+| 2.3 | Aucune donnée de santé, aucun upload | ✅ | Aucun `<input type="file">` ; ordonnances, CV et images explicitement exclus |
+| 2.4 | Coordonnées de contact affichées en clair | ✅ | `/contact` : téléphone, `contact@alphaimagerie.fr`, adresse postale, itinéraires, Doctolib |
+| 2.5 | Consigne « aucune information médicale » maintenue | ✅ | `tests/e2e/contact.spec.ts` — encadré sur `/contact`, repris dans la politique de confidentialité |
+| 2.6 | Politique de confidentialité à jour de la suppression | ✅ | `/politique-de-confidentialite`, version du 30/08/2026 |
+| 2.7 | Registre des traitements à jour | ✅ | `docs/rgpd/registre-traitement.md` — traitement « formulaire » clos, 2 traitements résiduels (candidatures, journaux d'hébergement) |
+| 2.8 | Durées de conservation validées par le responsable de traitement | ⏳ | Ne portent plus que sur les candidatures (2 ans) et les e-mails spontanés (12 mois) — q.58 |
 | 2.9 | Contact « données personnelles » identifié | ⏳ | `contact@alphaimagerie.fr` faute de DPO désigné — q.25 à valider |
 | 2.10 | Droits des personnes décrits (accès, rectification, effacement, opposition, réclamation CNIL) | ✅ | `/politique-de-confidentialite` |
 
@@ -47,7 +52,7 @@ Légende : ✅ vérifié · ⏳ en attente d'une réponse client · ⬜ à véri
 
 | # | Exigence | Statut | Preuve |
 |---|---|:--:|---|
-| 3.1 | Zéro donnée de santé sur le site (Vercel n'est pas certifié HDS) | ✅ | Aucun formulaire ni stockage de donnée médicale ; audit du code |
+| 3.1 | Zéro donnée de santé sur le site (Vercel n'est pas certifié HDS) | ✅ | Aucun formulaire, aucune saisie, aucun stockage — le site est purement statique |
 | 3.2 | Résultats accessibles uniquement par lien sortant vers Xplore | ✅ | `/resultats` — lien externe, aucune intégration |
 | 3.3 | Aucun upload d'ordonnance, de CV ou d'image | ✅ | `/recrutement` renvoie vers l'e-mail ; aucun champ fichier |
 | 3.4 | Mention explicite dans les mentions légales | ✅ | `/mentions-legales`, section *Hébergeur* |
@@ -91,11 +96,11 @@ Légende : ✅ vérifié · ⏳ en attente d'une réponse client · ⬜ à véri
 
 | # | Exigence | Statut | Preuve |
 |---|---|:--:|---|
-| 6.1 | 0 violation axe-core sérieuse ou critique | ✅ | `tests/e2e/accessibilite.spec.ts` |
+| 6.1 | 0 violation axe-core sérieuse ou critique | ✅ | `tests/e2e/accessibilite.spec.ts` — 17 pages, 2 profils |
 | 6.2 | Score Lighthouse *Accessibility* = 100 | ✅ | `lighthouserc.json` — seuil bloquant en CI |
 | 6.3 | Contrastes AA | ✅ | Palette corrigée le 28/08 (`ink-400` #626F8C, `accent` #9D5420) |
-| 6.4 | Un seul `<h1>` par page, hiérarchie de titres cohérente | ✅ | `scripts/check-seo.mjs` sur les 71 pages + `tests/e2e/parcours.spec.ts` |
-| 6.5 | Erreurs de formulaire annoncées aux technologies d'assistance | ✅ | `tests/e2e/formulaire.spec.ts` |
+| 6.4 | Un seul `<h1>` par page, hiérarchie de titres cohérente | ✅ | `scripts/check-seo.mjs` sur les 70 pages + `tests/e2e/parcours.spec.ts` |
+| 6.5 | Liens distingués autrement que par la couleur (WCAG 1.4.1) | ✅ | axe-core sur **17 pages** (`tests/e2e/accessibilite.spec.ts`) ; défaut corrigé le 30/08 sur `/contact` et `/prendre-rendez-vous` |
 | 6.6 | Déclaration d'accessibilité publiée | ✅ | `/accessibilite` |
 | 6.9 | Pages d'erreur en français, avec `lang="fr"` | ✅ | `src/app/not-found.tsx` et `src/app/global-error.tsx` remplacent les gabarits anglais de Next |
 | 6.7 | Navigation au clavier et focus visible | ⬜ | Vérification manuelle à la recette |
@@ -119,12 +124,12 @@ Légende : ✅ vérifié · ⏳ en attente d'une réponse client · ⬜ à véri
 | 8.1 | Lighthouse mobile ≥ 95 / 100 / 100 / 100 | ⏳ | Accessibilité, bonnes pratiques et SEO à 100 bloquants en CI. **Performance à mesurer sur l'hébergement réel** — PSI, clé API à fournir |
 | 8.2 | LCP < 1,8 s · CLS < 0,05 · INP < 200 ms (labo **et** terrain) | ⏳ | Labo : à confirmer par PSI. Terrain : disponible dans Search Console après 28 jours de trafic |
 | 8.3 | Rich Results : 0 erreur sur les 5 types | ✅ | `scripts/check-jsonld.mjs` — 0 erreur, 5 types présents. Passage à l'outil Google planifié après bascule (`docs/rich-results.md`) |
-| 8.4 | HTML et axe-core : 0 erreur bloquante | ✅ | `npm run check:html` (html-validate, 73 pages, 0 erreur) + `tests/e2e/accessibilite.spec.ts` |
+| 8.4 | HTML et axe-core : 0 erreur bloquante | ✅ | `npm run check:html` (html-validate, 72 pages, 0 erreur) + `tests/e2e/accessibilite.spec.ts` |
 | 8.5 | 0 script tiers avant consentement | ✅ | `tests/e2e/tiers.spec.ts` |
 | 8.6 | 0 `[[À CONFIRMER]]` en production | ✅ | `CHECK_CONFIRMER=strict` bloquant en CI |
 | 8.7 | 0 duplication de contenu | ✅ | `scripts/check-similarity.mjs` |
 | 8.8 | title / description / OG / canonical uniques partout | ✅ | `scripts/check-seo.mjs` — 70 pages indexables, 0 doublon |
-| 8.9 | Suite Playwright complète verte | ✅ | 61 tests passés, 1 ignoré volontairement |
+| 8.9 | Suite Playwright complète verte | ✅ | 81 tests passés, 1 ignoré volontairement |
 | 8.10 | Checklist de conformité signée | ⬜ | **Le présent document, §10** |
 
 ## 9. Points bloquants avant signature
@@ -132,16 +137,19 @@ Légende : ✅ vérifié · ⏳ en attente d'une réponse client · ⬜ à véri
 Aucun de ces points ne relève d'un développement : ils attendent tous une décision ou une
 information du client. Ils sont détaillés dans `docs/questions.md`.
 
+> La suppression du formulaire (30/08) a levé d'un coup les points **q.46** (Brevo) et
+> **q.47** (stockage des soumissions), qui étaient les deux plus contraignants de cette
+> liste. Il n'y a plus rien à configurer pour que le site fonctionne.
+
 1. **q.44 / q.45** — CMP et mesure d'audience exemptée : sans arbitrage, le site reste sans
    aucune mesure. Bloque 4.5 à 4.7.
-2. **q.46** — Brevo (clé API + validation SPF/DKIM) : sans transport, le formulaire
-   n'envoie rien en production. Bloque 2.4. **Point le plus critique de la liste.**
-3. **q.58** — validation des durées de conservation. Bloque 2.8.
-4. **q.25 / q.27** — DPO et mention TVA. Bloquent 5.10 et 5.11.
-5. **q.40** — tarifs et dépassements. Bloque 1.7.
-6. **Relecture médicale** (7.4) — indépendante des questions, à planifier avec l'équipe.
-7. **Clé API PageSpeed** — bloque la mesure des seuils 8.1 et 8.2.
-8. **Accès Search Console** (q.38) — bloque le suivi terrain (8.2) et la bascule (§2 de
+2. **q.58** — validation des durées de conservation (candidatures, e-mails reçus).
+   Bloque 2.8.
+3. **q.25 / q.27** — DPO et mention TVA. Bloquent 5.10 et 5.11.
+4. **q.40** — tarifs et dépassements. Bloque 1.7.
+5. **Relecture médicale** (7.4) — indépendante des questions, à planifier avec l'équipe.
+6. **Clé API PageSpeed** — bloque la mesure des seuils 8.1 et 8.2.
+7. **Accès Search Console** (q.38) — bloque le suivi terrain (8.2) et la bascule (§2 de
    `docs/migration.md`).
 
 ## 10. Signature

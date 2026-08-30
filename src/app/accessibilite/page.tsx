@@ -50,9 +50,9 @@ export default function AccessibilitePage() {
           <h2>Signaler une difficulté</h2>
           <p>
             Si vous rencontrez un obstacle d&rsquo;accessibilité sur ce site, écrivez-nous à{" "}
-            <a href={`mailto:${SITE.email}`}>{SITE.email}</a> ou utilisez le{" "}
-            <Link href="/contact">formulaire de contact</Link> en décrivant la page et la
-            difficulté rencontrée : nous nous efforcerons de vous apporter une alternative
+            <a href={`mailto:${SITE.email}`}>{SITE.email}</a>, ou appelez le secrétariat
+            (coordonnées sur la <Link href="/contact">page contact</Link>), en décrivant la page
+            et la difficulté rencontrée : nous nous efforcerons de vous apporter une alternative
             accessible et de corriger le défaut.
           </p>
 

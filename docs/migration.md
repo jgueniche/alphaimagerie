@@ -20,9 +20,9 @@ en cochant au fur et à mesure.
 | Apex → www | `301` fait par Wix au niveau HTTP | **À reprendre côté Vercel** : c'est une redirection applicative, pas un enregistrement DNS. |
 | Serveur HTTP actuel | `Pepyaka` + `x-wix-request-id` | Confirme l'hébergement Wix. |
 | MX | `mx1/mx2/mx3.mail.ovh.net` | **Messagerie OVH — à ne surtout pas toucher** (`contact@alphaimagerie.fr`). |
-| SPF | `v=spf1 include:mx.ovh.com ~all` | À étendre si Brevo est retenu (q.46) — voir §7. |
+| SPF | `v=spf1 include:mx.ovh.com ~all` | Rien à changer : le site n'envoie aucun e-mail. |
 | DMARC | `v=DMARC1; p=none;` | Politique en observation ; à durcir plus tard, hors bascule. |
-| DKIM | aucun sélecteur publié | À créer avec Brevo le cas échéant (q.46). |
+| DKIM | aucun sélecteur publié | Sans objet pour le site ; à traiter le jour où la SELAS enverra des e-mails applicatifs. |
 | CAA | **aucun** | Bonne nouvelle : rien ne bloquera l'émission du certificat TLS par Vercel. |
 | TXT | `1\|www.alphaimagerie.fr` | Jeton de vérification Wix — à supprimer **après** la bascule, pas avant. |
 | Pages indexées (sitemap Wix) | 5 + l'accueil | Toutes couvertes par la table de redirections (§5). |
@@ -186,18 +186,19 @@ Puis, manuellement :
 - [ ] Vérifier le portail résultats Xplore (lien sortant, aucune donnée de santé sur le site).
 - [ ] Envoyer un e-mail **vers** `contact@alphaimagerie.fr` depuis une adresse externe.
 
-## 7. Enregistrements DNS à ajouter *hors bascule*
+## 7. Enregistrements DNS — rien à ajouter
 
-À traiter séparément, **jamais le même jour** que le changement d'hébergement — pour que
-le moindre incident de messagerie soit imputable à une seule cause.
+Le site ne comporte plus de formulaire et n'envoie donc aucun e-mail (décision client du
+30/08/2026) : **aucun enregistrement SPF, DKIM ou DMARC n'est à créer ou à modifier pour
+la bascule.** Les enregistrements existants servent la messagerie OVH et doivent rester
+exactement en l'état.
 
-- **Brevo (q.46, si validé)** : ajouter l'inclusion Brevo au SPF existant sans le
-  dupliquer — un domaine ne doit publier **qu'un seul** enregistrement SPF :
-  `v=spf1 include:mx.ovh.com include:spf.brevo.com ~all`, puis publier le sélecteur DKIM
-  fourni par Brevo et valider le domaine dans son interface. Les valeurs exactes sont
-  données par Brevo à l'ajout du domaine expéditeur.
-- **DMARC** : une fois SPF et DKIM alignés et observés pendant quelques semaines, passer
-  `p=none` à `p=quarantine`. Hors périmètre du lancement.
+Pour mémoire, si la SELAS décide un jour d'envoyer des e-mails applicatifs depuis le
+domaine : un domaine ne doit publier **qu'un seul** enregistrement SPF — il faudrait donc
+étendre l'existant (`v=spf1 include:mx.ovh.com include:… ~all`) et non en ajouter un
+second, publier le sélecteur DKIM du prestataire, et ne le faire **jamais le même jour**
+que la bascule d'hébergement, pour qu'un incident de messagerie reste imputable à une
+seule cause.
 
 ## 8. Sauvegarde de la zone
 

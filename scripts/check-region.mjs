@@ -11,10 +11,9 @@
  *  2. En ligne (si une URL est passée) — les fonctions déployées s'exécutent-elles
  *     réellement en UE ? Vercel expose la région dans `x-vercel-id`, sous la forme
  *     `<edge>::<region>::<id>` quand une fonction a tourné (`<edge>::<id>` quand la
- *     réponse sort du cache CDN). On ne sonde donc que des routes qui exécutent du code :
- *       · /og            → route handler next/og ;
- *       · POST /contact avec un en-tête `Next-Action` bidon → force l'exécution de la
- *         fonction qui porte la Server Action (404 attendu : seule la région nous intéresse).
+ *     réponse sort du cache CDN). On ne sonde donc que des routes qui exécutent du code —
+ *     depuis la suppression du formulaire de contact (30/08/2026), la route `/og` est la
+ *     seule : tout le reste du site est prérendu et servi par le CDN.
  *
  * Usage :
  *   node scripts/check-region.mjs                                  # config seule
@@ -48,10 +47,13 @@ try {
   ko(`vercel.json illisible (${e.message})`);
 }
 
+/* Segments qui portent du code exécuté à la demande. La page /contact en faisait partie
+   tant qu'elle hébergeait la Server Action du formulaire ; celui-ci ayant été supprimé le
+   30/08/2026, /og reste la seule route dynamique. Le layout racine couvre de toute façon
+   tout l'arbre par héritage : c'est lui qui protège les segments à venir. */
 const SEGMENTS = [
   ["src/app/layout.tsx", "layout racine (hérité par tous les segments)"],
   ["src/app/og/route.tsx", "route /og"],
-  ["src/app/contact/page.tsx", "page /contact (Server Action)"],
 ];
 
 for (const [fichier, label] of SEGMENTS) {
@@ -86,17 +88,6 @@ if (!base) {
       label: "route /og (next/og)",
       url: `${base}/og?titre=${encodeURIComponent(`Contrôle ${Date.now()}`)}`,
       init: { headers: bypass },
-    },
-    {
-      label: "Server Action /contact",
-      url: `${base}/contact`,
-      init: {
-        method: "POST",
-        // Identifiant d'action volontairement invalide : Next répond 404 mais la fonction
-        // a bien été exécutée, ce qui suffit à lire sa région dans x-vercel-id.
-        headers: { ...bypass, "Next-Action": "0".repeat(41) + "a", "content-type": "text/plain" },
-        body: "",
-      },
     },
   ];
 

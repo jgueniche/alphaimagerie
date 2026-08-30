@@ -37,4 +37,21 @@ Notes de session :
   **PSI toujours impossible** : quota anonyme épuisé (HTTP 429), la clé API du client reste
   nécessaire pour valider les seuils de performance du §13.
 
+- 2026-08-30 : **suppression du formulaire de contact** (décision client : utilité faible au
+  regard du risque RGPD). `/contact` devient une page de coordonnées — téléphone, e-mail,
+  adresse et itinéraires, horaires centre et secrétariat, CTA Doctolib, portail résultats,
+  renvoi prescripteurs et teaser Goussainville. Supprimés : Server Action, schéma zod,
+  honeypot, rate limiting, transport Brevo (`src/lib/mailer.ts`), page `/contact/merci`,
+  `tests/e2e/formulaire.spec.ts`, `docs/formulaire-contact.md`.
+  **Conséquence RGPD : le site ne collecte plus aucune donnée personnelle.** Politique de
+  confidentialité et registre de traitement repris en conséquence (traitement « formulaire »
+  clos ; restent les candidatures par e-mail et les journaux d'hébergement). CLAUDE.md §3.2
+  réécrit — ne jamais réintroduire de formulaire sans instruction explicite. Les questions
+  **q.46 (Brevo) et q.47 (stockage) sont sans objet** ; l'événement `contact_submit` sort du
+  plan de marquage et des conversions Ads.
+  Au passage, le contrôle axe-core a révélé un défaut WCAG 1.4.1 (lien téléphone distingué
+  par la seule couleur) **également présent sur `/prendre-rendez-vous`**, page qui n'était pas
+  couverte : les deux sont corrigés et la liste axe passe de 6 à **17 pages**. Suite Playwright :
+  **81 tests verts**.
+
 - (Historique) **Déploiement Vercel : action client requise** — le connecteur de la session n'a pas le droit de créer un projet (403). Importer `jgueniche/alphaimagerie` sur https://vercel.com/new (l'intégration GitHub est déjà en place) : chaque push de la branche produira ensuite une preview automatique. Région/functions et domaine : Phase 5.

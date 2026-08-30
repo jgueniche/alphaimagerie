@@ -19,8 +19,8 @@ npm ci          # et non `npm install` : le lockfile fait foi
 npm run dev     # http://localhost:3000
 ```
 
-Node 22. Aucune variable d'environnement n'est nécessaire en développement : le formulaire
-de contact écrit les envois dans la console tant que `CONTACT_TRANSPORT` n'est pas défini.
+Node 22. **Aucune variable d'environnement n'est nécessaire**, ni en développement ni en
+production : le site est entièrement statique et ne parle à aucun service.
 
 ## Commandes
 
@@ -35,8 +35,8 @@ de contact écrit les envois dans la console tant que `CONTACT_TRANSPORT` n'est 
 | `npm run check:region` | Région d'exécution UE — configuration, et déploiement si une URL est passée |
 | `npm run check:jsonld` | Données structurées : 5 types du §13, 0 erreur |
 | `npm run check:seo` | title / description / OG / canonical : longueurs et unicité |
-| `npm run check:html` | Validation HTML et accessibilité des 73 pages prérendues |
-| `npm test` | Suite Playwright (62 tests, 2 profils) |
+| `npm run check:html` | Validation HTML et accessibilité des 72 pages prérendues |
+| `npm test` | Suite Playwright (82 tests, 2 profils) |
 
 Les `check:*` lisent le HTML **prérendu** : lancer `npm run build` d'abord.
 
@@ -54,8 +54,8 @@ exigence contractuelle du brief.
    modalité×ville se ressemblent par construction ; au-delà de 50 % de similarité, le build
    échoue. *Protège contre la pénalité de contenu dupliqué.*
 3. **`scripts/check-region.mjs`** — les fonctions serveur doivent s'exécuter dans l'UE
-   (`cdg1`). *§4 du brief ; sans cela, une Server Action traitant un formulaire tournerait
-   aux États-Unis.*
+   (`cdg1`). *§4 du brief. Le site n'ayant plus de Server Action, seule la route `/og`
+   s'exécute encore à la demande — la règle reste vraie pour tout code serveur à venir.*
 4. **`scripts/check-jsonld.mjs`** — données structurées valides, et **refus de tout
    `aggregateRating`, `review` ou `Rating`**. *L'article R.4127-19-1 CSP interdit les avis
    et notations : le garde-fou empêche qu'un balisage les réintroduise par inadvertance.*
@@ -63,7 +63,7 @@ exigence contractuelle du brief.
    canonical et Open Graph présents, tout cela unique sur les 70 pages indexables. *§8.3 et
    §13.*
 6. **`html-validate`** (`.htmlvalidate.json`) — conformité au modèle de contenu HTML et
-   règles d'accessibilité, sur les 73 pages prérendues. *§13 : « validation HTML, 0 erreur
+   règles d'accessibilité, sur les 72 pages prérendues. *§13 : « validation HTML, 0 erreur
    bloquante ».* Le validateur W3C en ligne n'étant pas automatisable, la vérification se
    fait hors ligne. Les règles purement stylistiques et la sérialisation JSX de React
    (`charSet`, `crossorigin=""`, identifiants `useId`) sont désactivées, avec la raison ;
@@ -84,9 +84,8 @@ src/app/                routes App Router (une page = un dossier)
 src/components/         composants partagés (header, footer, CTA, encadrés, JSON-LD…)
 src/lib/site.ts         NAP, horaires, plateau technique — miroir de docs/nap-master.md
 src/lib/content.ts      lecture et validation du MDX
-src/lib/mailer.ts       transport e-mail du formulaire (inactif tant que Brevo n'est pas branché)
 scripts/                les garde-fous (sauf la validation HTML, confiée à html-validate)
-tests/e2e/              Playwright : parcours, CTA/dataLayer, 301, tiers, formulaire, axe-core
+tests/e2e/              Playwright : parcours, CTA/dataLayer, 301, tiers, contact, axe-core
 docs/                   toute la documentation projet (voir ci-dessous)
 ```
 
@@ -124,7 +123,6 @@ les deep links d'itinéraire.
 | [`docs/google-ads-plan.md`](docs/google-ads-plan.md) | Cadre publicitaire et contraintes santé |
 | [`docs/gbp-playbook.md`](docs/gbp-playbook.md) | Fiche Google Business Profile |
 | [`docs/rgpd/`](docs/rgpd/) | Registre des traitements |
-| [`docs/formulaire-contact.md`](docs/formulaire-contact.md) | Fonctionnement et configuration du formulaire |
 | [`docs/audit-site-actuel.md`](docs/audit-site-actuel.md) · [`docs/benchmark.md`](docs/benchmark.md) | Phase 0 |
 
 ## Déploiement
@@ -143,19 +141,10 @@ les deep links d'itinéraire.
 
 ### Variables d'environnement
 
-Aucune n'est commitée ; elles se règlent dans l'interface Vercel (*Settings → Environment
-Variables*).
-
-| Variable | Rôle | Statut |
-|---|---|---|
-| `CONTACT_TRANSPORT` | `log` (défaut) : transport factice, le message est seulement journalisé. `brevo` : envoi réel. | En attente de l'arbitrage q.46 |
-| `BREVO_API_KEY` | Clé API Brevo, requise si `CONTACT_TRANSPORT=brevo` | À fournir par le client |
-| `CONTACT_FROM` | Expéditeur, défaut `contact@alphaimagerie.fr` — doit être validé dans Brevo | — |
-
-Tant que `CONTACT_TRANSPORT` vaut `log`, **le formulaire n'envoie rien** : c'est le point
-bloquant n° 1 de la mise en production.
-
-Voir [`docs/formulaire-contact.md`](docs/formulaire-contact.md).
+**Aucune.** Le site ne comporte ni formulaire, ni Server Action, ni appel à un service
+externe : rien à configurer côté Vercel, et donc aucun secret à gérer. Le formulaire de
+contact et son transport e-mail ont été supprimés le 30/08/2026 sur décision du client
+(voir `CLAUDE.md` §3.2) — la page `/contact` affiche les coordonnées du centre.
 
 ## Intégration continue
 

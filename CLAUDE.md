@@ -12,7 +12,7 @@ Site vitrine de la SELAS Alpha Imagerie (imagerie médicale, Cergy + Goussainvil
 ## Conformité (§3 du brief — NON NÉGOCIABLE)
 
 1. **R.4127-19-1 CSP** : aucun témoignage/avis/note (ni widget Google/Doctolib), aucune comparaison avec d'autres centres, aucun superlatif commercial, aucune incitation à des actes. Titres uniquement reconnus par l'Ordre. Tarifs/conventionnement communicables (transparence).
-2. **RGPD** : formulaire sans donnée de santé (civilité, nom, prénom, e-mail, téléphone, site, type de demande en liste fermée, message + mention « N'indiquez aucune information médicale »). Envoi TLS vers contact@alphaimagerie.fr ; si stockage : Supabase UE, purge 90 j. Docs dans `docs/rgpd/`.
+2. **RGPD — aucune collecte (décision client 30/08/2026, BLOQUANTE)** : le formulaire de contact a été **supprimé**, jugé peu utile au regard du risque. Le site ne comporte **aucun champ de saisie** : ni formulaire, ni Server Action de traitement, ni transport e-mail, ni base de données. Le contact passe par le téléphone, l'adresse `contact@alphaimagerie.fr` affichée en clair, et Doctolib. **Ne jamais réintroduire de formulaire sans instruction explicite du client.** Registre et traitements résiduels : `docs/rgpd/`.
 3. **HDS** : zéro donnée de santé sur le site (Vercel non HDS). Résultats = lien sortant Xplore uniquement. Jamais d'upload d'ordonnance/CV/image.
 4. **Cookies CNIL** : CMP conforme ; 0 tag tiers avant consentement ; GA4/Ads en Consent Mode v2 défaut `denied` ; mesure exemptée en parallèle ; Maps embed sous consentement (fallback image statique + lien) ; polices self-host via `next/font`, zéro appel Google Fonts.
 5. **Mentions légales** LCEN complètes (SELAS, capital, RCS Pontoise, SIRET, siège, directeur de publication, hébergeur, Ordre, DPO).
@@ -25,7 +25,7 @@ Site vitrine de la SELAS Alpha Imagerie (imagerie médicale, Cergy + Goussainvil
 - Next.js 15+ App Router, TypeScript strict, RSC, SSG intégral pour le contenu ; `next/image`, `next/font` self-hosted ; zéro JS client inutile (budget < 100 kB gz/page contenu).
 - Tailwind CSS v4 + shadcn/ui (composants copiés). Design system : `docs/design-system.md`.
 - Contenu : MDX dans `/content`, frontmatter validé zod (ou Velite), versionné Git. Pas de CMS au lancement.
-- Formulaire : Server Action + zod + honeypot + rate limiting ; envoi SMTP UE.
+- Aucun formulaire (cf. §3.2 ci-dessus) : le site est intégralement statique, sans Server Action ni envoi d'e-mail.
 - Hébergement : Vercel `cdg1`/`fra1` ; canonical `https://www.alphaimagerie.fr` ; apex → 301 www.
 - SEO : `app/sitemap.ts`, `app/robots.ts`, Metadata API, JSON-LD typé `schema-dts`, 301 dans `next.config`. Conserver la meta GSC `google-site-verification=ol7ZyAQV5TShF2GzDd5J_oV7kF_Fdr_EZ1uIEna9P5Q`.
 - Qualité : ESLint + Prettier + `tsc --noEmit` en pre-commit ; Playwright (+ axe-core) ; Lighthouse CI.

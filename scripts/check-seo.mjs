@@ -7,7 +7,7 @@
  *
  * La suite Playwright vérifie ces règles sur quelques gabarits, avec un vrai navigateur ;
  * ce script les vérifie sur les 70+ pages du build, sans navigateur, donc en CI à chaque
- * commit. Les pages en `noindex` (confirmation de formulaire) sont exclues des contrôles
+ * commit. Les pages en `noindex`, s'il en existe, sont exclues des contrôles
  * d'unicité : elles ne concourent pas dans l'index.
  *
  * Usage : npm run build && node scripts/check-seo.mjs

@@ -49,7 +49,7 @@ export default function PrendreRdvPage() {
                 data-track-site="cergy"
                 data-track-position="prise-rdv"
                 data-track-line="patients"
-                className="text-action underline-offset-4 hover:underline"
+                className="text-action underline underline-offset-4"
               >
                 {CERGY.phoneDisplay}
               </a>

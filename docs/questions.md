@@ -11,24 +11,29 @@
 
 ---
 
-## ⛔ Ce qui bloque au 29/08/2026 — par ordre d'impact
+## ⛔ Ce qui bloque au 30/08/2026 — par ordre d'impact
 
 > Aucun de ces points ne relève du développement : le code correspondant est écrit ou
 > documenté, il attend une décision ou un accès. Le détail de chaque question est plus bas.
+>
+> **30/08 — le formulaire de contact a été supprimé** sur votre décision. Cela clôt
+> **q.46** (Brevo) et **q.47** (stockage), qui occupaient les deux premières lignes de ce
+> tableau : le site n'a plus besoin d'aucun identifiant ni d'aucune configuration pour
+> fonctionner. La durée de conservation de q.58 ne porte donc plus que sur les candidatures
+> et les e-mails reçus spontanément par le secrétariat.
 
 | # | Question | Ce qui est bloqué | Sans réponse |
 |---|---|---|---|
-| 1 | **q.46** — clé API Brevo + validation SPF/DKIM | Envoi réel du formulaire de contact | Le formulaire affiche « message envoyé » mais **rien n'est transmis** (`CONTACT_TRANSPORT=log`) |
-| 2 | **q.44 / q.45** — CMP et mesure d'audience | CMP, Consent Mode v2, GA4/GTM, Plausible | Aucune mesure d'audience, et aucune campagne Ads possible |
-| 3 | **Clé API PageSpeed** | Seuils de performance du §13 | Impossible de valider ≥ 95 mobile et les Core Web Vitals (quota anonyme épuisé : HTTP 429) |
-| 4 | **q.38** — accès GSC / GA4 / Ads / GBP / OVH | Suivi, bascule du domaine, fiche Google | Bascule impossible à surveiller ; fiche GBP non modifiable |
-| 5 | **q.58** — durées de conservation RGPD | Signature de la checklist | Engagements publiés mais non validés par le responsable de traitement |
-| 6 | **q.25 / q.27** — DPO et mention TVA | Mentions légales définitives | Formulations en place mais non validées |
-| 7 | **q.41 / q.42** — ligne prescripteurs et urgences | Page `/professionnels-de-sante` | Pas de ligne dédiée publiée |
-| 8 | **Relecture médicale** | Mise en production | 55 fichiers portent encore `À VALIDER MÉDICALEMENT` |
-| 9 | **q.37** — photos réelles | `/equipe`, `/centres/cergy`, fiche GBP | Placeholders initiales ; aucune photo de banque ne sera utilisée |
-| 10 | **Export motifs Doctolib Pro + `pid`** | Sélecteur site→examen→motif de `/prendre-rendez-vous` | Lien générique vers la fiche Doctolib |
-| 11 | **q.50 / q.52 / q.53** | JobPosting, lien Facebook, villes desservies | Fonctionnalités non activées |
+| 1 | **q.44 / q.45** — CMP et mesure d'audience | CMP, Consent Mode v2, GA4/GTM, Plausible | Aucune mesure d'audience, et aucune campagne Ads possible |
+| 2 | **Clé API PageSpeed** | Seuils de performance du §13 | Impossible de valider ≥ 95 mobile et les Core Web Vitals (quota anonyme épuisé : HTTP 429) |
+| 3 | **q.38** — accès GSC / GA4 / Ads / GBP / OVH | Suivi, bascule du domaine, fiche Google | Bascule impossible à surveiller ; fiche GBP non modifiable |
+| 4 | **q.58** — durées de conservation RGPD | Signature de la checklist | Engagements publiés mais non validés par le responsable de traitement |
+| 5 | **q.25 / q.27** — DPO et mention TVA | Mentions légales définitives | Formulations en place mais non validées |
+| 6 | **q.41 / q.42** — ligne prescripteurs et urgences | Page `/professionnels-de-sante` | Pas de ligne dédiée publiée |
+| 7 | **Relecture médicale** | Mise en production | 55 fichiers portent encore `À VALIDER MÉDICALEMENT` |
+| 8 | **q.37** — photos réelles | `/equipe`, `/centres/cergy`, fiche GBP | Placeholders initiales ; aucune photo de banque ne sera utilisée |
+| 9 | **Export motifs Doctolib Pro + `pid`** | Sélecteur site→examen→motif de `/prendre-rendez-vous` | Lien générique vers la fiche Doctolib |
+| 10 | **q.50 / q.52 / q.53** | JobPosting, lien Facebook, villes desservies | Fonctionnalités non activées |
 
 ---
 
@@ -125,8 +130,8 @@
 
 44. **CMP** : recommandation **tarteaucitron.js auto-hébergé** (gratuit, CNIL, zéro dépendance tierce) ; Axeptio si préférence UX payante. Choix ?
 45. **Mesure exemptée de consentement** : recommandation **Plausible EU** (SaaS ~9 €/mois, simple) ; alternative Matomo auto-hébergé (gratuit, à maintenir). Choix ?
-46. **Envoi e-mail formulaire** : recommandation **Brevo** (français, SMTP UE) plutôt que Resend (US). Choix ?
-47. **Stockage des soumissions** : recommandation **aucune base au lancement** (e-mail TLS seul) ; Supabase UE + purge 90 j si backoffice souhaité. Choix ?
+46. ~~**Envoi e-mail formulaire**~~ — **sans objet depuis le 30/08/2026** : le formulaire de contact a été supprimé, le site n'envoie aucun e-mail. Aucune clé API Brevo n'est nécessaire.
+47. ~~**Stockage des soumissions**~~ — **sans objet depuis le 30/08/2026** : il n'y a plus de soumissions, donc rien à stocker.
 48. **Attribution des appels Ads** : un 3CX avec SDA disponibles existe-t-il (numéros par campagne), ou extension d'appel Google au départ ?
 49. **SMS de rappel Doctolib** actifs ? (réassurance à mentionner sur `/prendre-rendez-vous`).
 
