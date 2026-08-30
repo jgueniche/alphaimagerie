@@ -32,7 +32,7 @@ const FONDATEURS = [
     role: "Radiologue · co-fondateur, directeur général de la SELAS",
     parcours: [
       "Ancien interne de l'AP-HP (Assistance Publique – Hôpitaux de Paris)",
-      "Ancien chef de clinique assistant et praticien attaché de l'hôpital Tenon (Paris)",
+      "Ancien assistant spécialiste et praticien attaché de l'hôpital Tenon (Paris)",
     ],
     specialites: "Imagerie pelvienne · sénologie · imagerie thoracique et urinaire",
   },
